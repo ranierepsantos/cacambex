@@ -1,0 +1,2396 @@
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Visualizacoes\VisualizarTabelaPreco.cs
+FN:20,System.Linq.Expressions.Expression`1<System.Func`2<Domain.TabelaPrecos.Agregacao.TabelaPreco,Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco>> VisualizarTabelaPrecoExtensao::ToView()
+FNDA:0,System.Linq.Expressions.Expression`1<System.Func`2<Domain.TabelaPrecos.Agregacao.TabelaPreco,Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco>> VisualizarTabelaPrecoExtensao::ToView()
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+FN:10,System.Int32 Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Id()
+FNDA:0,System.Int32 Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Id()
+DA:11,0
+FN:11,System.Nullable`1<Domain.TabelaPrecos.Enumeraveis.TipoDeTabela> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Tipo()
+FNDA:0,System.Nullable`1<Domain.TabelaPrecos.Enumeraveis.TipoDeTabela> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Tipo()
+DA:12,0
+FN:12,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Cliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Cliente()
+DA:13,0
+FN:13,System.Double Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Valor()
+FNDA:0,System.Double Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_Valor()
+DA:14,0
+FN:14,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_DataCriacao()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_DataCriacao()
+DA:15,0
+FN:15,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_DataAlteracao()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Visualizacoes.VisualizarTabelaPreco::get_DataAlteracao()
+DA:16,0
+LF:15
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Consultas\ConsultarTabelaPrecos.cs
+FN:7,System.Int32 Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_PageIndex()
+FNDA:0,System.Int32 Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_PageIndex()
+DA:8,0
+FN:8,System.Int32 Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_PageSize()
+FNDA:0,System.Int32 Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_PageSize()
+DA:9,0
+FN:9,System.String Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_NomeCliente()
+FNDA:0,System.String Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_NomeCliente()
+DA:10,0
+FN:10,System.String Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_Sort()
+FNDA:0,System.String Domain.TabelaPrecos.Consultas.ConsultarTabelaPrecos::get_Sort()
+DA:11,0
+LF:4
+LH:0
+BRF:0
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Comandos\AtualizarTabelaPreco.cs
+FN:6,System.Int32 Domain.TabelaPrecos.Comandos.AtualizarTabelaPrecoComando::get_Id()
+FNDA:0,System.Int32 Domain.TabelaPrecos.Comandos.AtualizarTabelaPrecoComando::get_Id()
+DA:7,0
+FN:10,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPrecoValidacao::.ctor()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPrecoValidacao::.ctor()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+FN:19,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio)
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPreco/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.AtualizarTabelaPreco/<Handle>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+BRDA:28,62,0,0
+BRDA:28,62,1,0
+LF:17
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Comandos\CriarTabelaPreco.cs
+FN:12,Domain.TabelaPrecos.Enumeraveis.TipoDeTabela Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Tipo()
+FNDA:0,Domain.TabelaPrecos.Enumeraveis.TipoDeTabela Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Tipo()
+DA:13,0
+FN:13,System.Double Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Valor()
+FNDA:0,System.Double Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Valor()
+DA:14,0
+FN:14,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Cliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_Cliente()
+DA:15,0
+FN:15,System.DateTime Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_DataCriacao()
+FNDA:0,System.DateTime Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_DataCriacao()
+DA:16,0
+FN:16,System.DateTime Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_DataAlteracao()
+FNDA:0,System.DateTime Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::get_DataAlteracao()
+DA:17,0
+FN:11,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::.ctor(Domain.TabelaPrecos.Enumeraveis.TipoDeTabela,System.Double,Domain.Clientes.Agrecacao.Cliente,System.DateTime,System.DateTime)
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPrecoComando::.ctor(Domain.TabelaPrecos.Enumeraveis.TipoDeTabela,System.Double,Domain.Clientes.Agrecacao.Cliente,System.DateTime,System.DateTime)
+DA:12,0
+FN:20,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPrecoValidacao::.ctor()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPrecoValidacao::.ctor()
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+FN:31,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio,Domain.Clientes.Interface.IClienteRepositorio)
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio,Domain.Clientes.Interface.IClienteRepositorio)
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+FN:38,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPreco/<Handle>d__3::MoveNext()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.CriarTabelaPreco/<Handle>d__3::MoveNext()
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:46,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:52,0
+DA:53,0
+DA:54,0
+BRDA:41,78,0,0
+BRDA:41,78,1,0
+LF:29
+LH:0
+BRF:2
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Comandos\DeletarTabelaPreco.cs
+FN:7,System.Int32 Domain.TabelaPrecos.Comandos.DeletarTabelaPrecoComando::get_Id()
+FNDA:0,System.Int32 Domain.TabelaPrecos.Comandos.DeletarTabelaPrecoComando::get_Id()
+DA:8,0
+FN:11,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPrecoValidacao::.ctor()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPrecoValidacao::.ctor()
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+FN:20,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio)
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPreco::.ctor(Domain.TabelaPrecos.Interface.ITabelaPrecoRepositorio)
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+FN:26,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPreco/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.TabelaPrecos.Comandos.DeletarTabelaPreco/<Handle>d__2::MoveNext()
+DA:27,0
+DA:28,0
+DA:29,0
+DA:31,0
+DA:32,0
+DA:33,0
+BRDA:29,62,0,0
+BRDA:29,62,1,0
+LF:15
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\TabelaPrecos\Agregacao\TabelaPreco.cs
+FN:8,System.Nullable`1<Domain.TabelaPrecos.Enumeraveis.TipoDeTabela> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Tipo()
+FNDA:0,System.Nullable`1<Domain.TabelaPrecos.Enumeraveis.TipoDeTabela> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Tipo()
+DA:9,0
+FN:9,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Cliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Cliente()
+DA:10,0
+FN:10,System.Double Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Valor()
+FNDA:0,System.Double Domain.TabelaPrecos.Agregacao.TabelaPreco::get_Valor()
+DA:11,0
+FN:11,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_DataCriacao()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_DataCriacao()
+DA:12,0
+FN:12,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_DataAlteracao()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.TabelaPrecos.Agregacao.TabelaPreco::get_DataAlteracao()
+DA:13,0
+FN:24,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::AtualizarPreco(System.Double)
+FNDA:0,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::AtualizarPreco(System.Double)
+DA:25,0
+FN:26,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::UltimaAtualizacao()
+FNDA:0,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::UltimaAtualizacao()
+DA:27,0
+DA:28,0
+DA:29,0
+FN:14,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::.ctor(Domain.TabelaPrecos.Enumeraveis.TipoDeTabela,System.Double,Domain.Clientes.Agrecacao.Cliente)
+FNDA:0,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::.ctor(Domain.TabelaPrecos.Enumeraveis.TipoDeTabela,System.Double,Domain.Clientes.Agrecacao.Cliente)
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:22,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::.ctor()
+FNDA:0,System.Void Domain.TabelaPrecos.Agregacao.TabelaPreco::.ctor()
+DA:23,0
+LF:18
+LH:0
+BRF:0
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Visualizacoes\VisualizarEvento.cs
+FN:7,System.DateTime Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Quando()
+FNDA:0,System.DateTime Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Quando()
+DA:8,0
+FN:8,System.String Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Descricao()
+FNDA:0,System.String Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Descricao()
+DA:9,0
+FN:9,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Status()
+FNDA:0,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Status()
+DA:10,0
+FN:10,System.String Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Mensagem()
+FNDA:0,System.String Domain.Pedidos.Visualizacoes.VisualizarEvento::get_Mensagem()
+DA:11,0
+FN:15,Domain.Pedidos.Visualizacoes.VisualizarEvento Domain.Pedidos.Visualizacoes.VisualizarEventoExtensao::ToView(Domain.Pedidos.Eventos.Evento)
+FNDA:0,Domain.Pedidos.Visualizacoes.VisualizarEvento Domain.Pedidos.Visualizacoes.VisualizarEventoExtensao::ToView(Domain.Pedidos.Eventos.Evento)
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+FN:25,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Visualizacoes.VisualizarEventoExtensao::ResumirStatus(System.Collections.Generic.IEnumerable`1<Domain.Pedidos.Eventos.Evento>)
+FNDA:0,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Visualizacoes.VisualizarEventoExtensao::ResumirStatus(System.Collections.Generic.IEnumerable`1<Domain.Pedidos.Eventos.Evento>)
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+BRDA:27,38,0,0
+BRDA:27,77,0,0
+BRDA:27,116,0,0
+BRDA:27,116,1,0
+BRDA:27,77,1,0
+BRDA:27,38,1,0
+LF:22
+LH:0
+BRF:6
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Visualizacoes\VisualizarPedido.cs
+FN:9,System.Int32 Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Id()
+FNDA:0,System.Int32 Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Id()
+DA:10,0
+FN:10,Domain.Clientes.Agrecacao.Cliente Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Cliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Cliente()
+DA:11,0
+FN:11,Domain.Clientes.Agrecacao.Endereco Domain.Pedidos.Visualizacoes.VisualizarPedido::get_EnderecoDeEntrega()
+FNDA:0,Domain.Clientes.Agrecacao.Endereco Domain.Pedidos.Visualizacoes.VisualizarPedido::get_EnderecoDeEntrega()
+DA:12,0
+FN:12,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Visualizacoes.VisualizarPedido::get_TipoDePagamento()
+FNDA:0,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Visualizacoes.VisualizarPedido::get_TipoDePagamento()
+DA:13,0
+FN:13,System.String Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Observacao()
+FNDA:0,System.String Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Observacao()
+DA:14,0
+FN:14,System.String Domain.Pedidos.Visualizacoes.VisualizarPedido::get_NumeroDaNotaFiscal()
+FNDA:0,System.String Domain.Pedidos.Visualizacoes.VisualizarPedido::get_NumeroDaNotaFiscal()
+DA:15,0
+FN:15,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem> Domain.Pedidos.Visualizacoes.VisualizarPedido::get_PedidoItems()
+FNDA:0,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem> Domain.Pedidos.Visualizacoes.VisualizarPedido::get_PedidoItems()
+DA:16,0
+FN:16,System.Double Domain.Pedidos.Visualizacoes.VisualizarPedido::get_TotalDoPedido()
+FNDA:0,System.Double Domain.Pedidos.Visualizacoes.VisualizarPedido::get_TotalDoPedido()
+DA:17,0
+FN:17,System.Collections.Generic.List`1<Domain.Pedidos.Visualizacoes.VisualizarEvento> Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Eventos()
+FNDA:0,System.Collections.Generic.List`1<Domain.Pedidos.Visualizacoes.VisualizarEvento> Domain.Pedidos.Visualizacoes.VisualizarPedido::get_Eventos()
+DA:18,0
+FN:18,System.DateTime Domain.Pedidos.Visualizacoes.VisualizarPedido::get_EmitidoEm()
+FNDA:0,System.DateTime Domain.Pedidos.Visualizacoes.VisualizarPedido::get_EmitidoEm()
+DA:19,0
+FN:19,System.Double Domain.Pedidos.Visualizacoes.VisualizarPedido::get_PrecoVigente()
+FNDA:0,System.Double Domain.Pedidos.Visualizacoes.VisualizarPedido::get_PrecoVigente()
+DA:20,0
+FN:24,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Pedidos.Agregacao.Pedido,Domain.Pedidos.Visualizacoes.VisualizarPedido>> Domain.Pedidos.Visualizacoes.VisualizarPedidoExtensao::ToView()
+FNDA:0,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Pedidos.Agregacao.Pedido,Domain.Pedidos.Visualizacoes.VisualizarPedido>> Domain.Pedidos.Visualizacoes.VisualizarPedidoExtensao::ToView()
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+LF:43
+LH:0
+BRF:0
+BRH:0
+FNF:12
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Fila\Mensagem.cs
+FN:13,System.Void Domain.Pedidos.Fila.Mensagem::AdicionarMensagem(System.String)
+FNDA:0,System.Void Domain.Pedidos.Fila.Mensagem::AdicionarMensagem(System.String)
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+BRDA:17,50,0,0
+BRDA:17,50,1,0
+FN:8,System.Void Domain.Pedidos.Fila.Mensagem::.ctor(Azure.Storage.Queues.QueueClient)
+FNDA:0,System.Void Domain.Pedidos.Fila.Mensagem::.ctor(Azure.Storage.Queues.QueueClient)
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+LF:11
+LH:0
+BRF:2
+BRH:0
+FNF:2
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Excecoes\PedidoExcecoes.cs
+FN:6,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor()
+DA:7,0
+DA:8,0
+DA:9,0
+FN:10,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.String)
+FNDA:4,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.String)
+DA:11,4
+DA:12,4
+DA:13,4
+FN:14,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.String,System.Exception)
+FNDA:0,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.String,System.Exception)
+DA:15,0
+DA:16,0
+DA:17,0
+FN:18,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+FNDA:0,System.Void Domain.Pedidos.Execoes.PedidoExcecoes::.ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)
+DA:19,0
+DA:20,0
+DA:21,0
+LF:12
+LH:3
+BRF:0
+BRH:0
+FNF:4
+FNH:1
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Eventos\0.Evento.cs
+FN:7,System.DateTime Domain.Pedidos.Eventos.Evento::get_Quando()
+FNDA:20,System.DateTime Domain.Pedidos.Eventos.Evento::get_Quando()
+DA:8,20
+FN:8,System.String Domain.Pedidos.Eventos.Evento::get_Descricao()
+FNDA:20,System.String Domain.Pedidos.Eventos.Evento::get_Descricao()
+DA:9,20
+FN:9,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Eventos.Evento::get_Status()
+FNDA:20,Domain.Pedidos.Enumeraveis.StatusPedido Domain.Pedidos.Eventos.Evento::get_Status()
+DA:10,20
+FN:10,System.String Domain.Pedidos.Eventos.Evento::get_Mensagem()
+FNDA:20,System.String Domain.Pedidos.Eventos.Evento::get_Mensagem()
+DA:11,20
+FN:21,System.Void Domain.Pedidos.Eventos.Evento::AtualizarStatus(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+FNDA:0,System.Void Domain.Pedidos.Eventos.Evento::AtualizarStatus(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+FN:12,System.Void Domain.Pedidos.Eventos.Evento::.ctor(System.String,Domain.Pedidos.Enumeraveis.StatusPedido)
+FNDA:20,System.Void Domain.Pedidos.Eventos.Evento::.ctor(System.String,Domain.Pedidos.Enumeraveis.StatusPedido)
+DA:13,20
+DA:14,20
+DA:15,20
+DA:16,20
+DA:17,20
+DA:18,20
+DA:19,20
+LF:16
+LH:11
+BRF:0
+BRH:0
+FNF:6
+FNH:5
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Eventos\1.PedidoEmitido.cs
+FN:6,System.Void Domain.Pedidos.Eventos.PedidoEmitido::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+FNDA:3,System.Void Domain.Pedidos.Eventos.PedidoEmitido::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+DA:7,3
+DA:8,3
+DA:9,3
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Eventos\2.NotaFiscal.cs
+FN:6,System.Void Domain.Pedidos.Eventos.NotaFiscal::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+FNDA:3,System.Void Domain.Pedidos.Eventos.NotaFiscal::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+DA:7,3
+DA:8,3
+DA:9,3
+LF:3
+LH:3
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Eventos\3.CTR.cs
+FN:6,System.Void Domain.Pedidos.Eventos.CTR::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+FNDA:21,System.Void Domain.Pedidos.Eventos.CTR::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+DA:7,21
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Eventos\4.MTR.cs
+FN:6,System.Void Domain.Pedidos.Eventos.MTR::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+FNDA:21,System.Void Domain.Pedidos.Eventos.MTR::.ctor(Domain.Pedidos.Enumeraveis.StatusPedido)
+DA:7,21
+LF:1
+LH:1
+BRF:0
+BRH:0
+FNF:1
+FNH:1
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Consultas\IPedidoConsulta.cs
+FN:9,System.Int32 Domain.Pedidos.Consultas.ConsultaPedidos::get_PageIndex()
+FNDA:0,System.Int32 Domain.Pedidos.Consultas.ConsultaPedidos::get_PageIndex()
+DA:10,0
+FN:11,System.Int32 Domain.Pedidos.Consultas.ConsultaPedidos::get_PageSize()
+FNDA:0,System.Int32 Domain.Pedidos.Consultas.ConsultaPedidos::get_PageSize()
+DA:12,0
+FN:13,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NumeroCTR()
+FNDA:0,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NumeroCTR()
+DA:14,0
+FN:15,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_DocumentoCliente()
+FNDA:0,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_DocumentoCliente()
+DA:16,0
+FN:16,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NomeCliente()
+FNDA:0,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NomeCliente()
+DA:17,0
+FN:17,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NotaFiscal()
+FNDA:0,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_NotaFiscal()
+DA:18,0
+FN:18,System.Nullable`1<System.DateTime> Domain.Pedidos.Consultas.ConsultaPedidos::get_DataInicio()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.Pedidos.Consultas.ConsultaPedidos::get_DataInicio()
+DA:19,0
+FN:19,System.Nullable`1<System.DateTime> Domain.Pedidos.Consultas.ConsultaPedidos::get_DataFim()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.Pedidos.Consultas.ConsultaPedidos::get_DataFim()
+DA:20,0
+FN:20,System.Boolean Domain.Pedidos.Consultas.ConsultaPedidos::get_FiltrarPorData()
+FNDA:0,System.Boolean Domain.Pedidos.Consultas.ConsultaPedidos::get_FiltrarPorData()
+DA:21,0
+FN:21,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_Sort()
+FNDA:0,System.String Domain.Pedidos.Consultas.ConsultaPedidos::get_Sort()
+DA:22,0
+LF:10
+LH:0
+BRF:0
+BRH:0
+FNF:10
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\AtualizarPedido.cs
+FN:11,System.Int32 Domain.Pedidos.Comandos.AtualizarPedidoComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.AtualizarPedidoComando::get_PedidoId()
+DA:12,0
+FN:12,System.Int32 Domain.Pedidos.Comandos.AtualizarPedidoComando::get_EnderecoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.AtualizarPedidoComando::get_EnderecoId()
+DA:13,0
+FN:13,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoItem> Domain.Pedidos.Comandos.AtualizarPedidoComando::get_Itens()
+FNDA:0,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoItem> Domain.Pedidos.Comandos.AtualizarPedidoComando::get_Itens()
+DA:14,0
+FN:14,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Comandos.AtualizarPedidoComando::get_TipoDePagamento()
+FNDA:0,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Comandos.AtualizarPedidoComando::get_TipoDePagamento()
+DA:15,0
+FN:15,System.String Domain.Pedidos.Comandos.AtualizarPedidoComando::get_Observacao()
+FNDA:0,System.String Domain.Pedidos.Comandos.AtualizarPedidoComando::get_Observacao()
+DA:16,0
+FN:10,System.Void Domain.Pedidos.Comandos.AtualizarPedidoComando::.ctor(System.Int32,System.Int32,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoItem>,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String)
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedidoComando::.ctor(System.Int32,System.Int32,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoItem>,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String)
+DA:11,0
+FN:16,System.Int32 Domain.Pedidos.Comandos.NovoItem::get_Id()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoItem::get_Id()
+DA:17,0
+FN:19,System.Void Domain.Pedidos.Comandos.AtualizarPedidoValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedidoValidacao::.ctor()
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+FN:33,System.Void Domain.Pedidos.Comandos.AtualizarPedido::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio,Microsoft.Extensions.Logging.ILogger`1<Domain.Pedidos.Comandos.AtualizarPedido>)
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedido::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio,Microsoft.Extensions.Logging.ILogger`1<Domain.Pedidos.Comandos.AtualizarPedido>)
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+FN:55,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_1(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_1(Domain.Pedidos.Agregacao.PedidoItem)
+DA:56,0
+FN:61,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_3(Domain.Pedidos.Comandos.NovoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_3(Domain.Pedidos.Comandos.NovoItem)
+DA:62,0
+FN:62,Domain.Pedidos.Agregacao.PedidoItem Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_4(Domain.Pedidos.Comandos.NovoItem)
+FNDA:0,Domain.Pedidos.Agregacao.PedidoItem Domain.Pedidos.Comandos.AtualizarPedido/<>c::<Handle>b__3_4(Domain.Pedidos.Comandos.NovoItem)
+DA:63,0
+FN:54,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+DA:55,0
+FN:57,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__2(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__2(Domain.Pedidos.Agregacao.PedidoItem)
+DA:58,0
+FN:64,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__5(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<>c__DisplayClass3_0::<Handle>b__5(Domain.Pedidos.Agregacao.PedidoItem)
+DA:65,0
+FN:40,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<Handle>d__3::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.AtualizarPedido/<Handle>d__3::MoveNext()
+DA:41,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:51,0
+DA:54,0
+DA:57,0
+DA:60,0
+DA:61,0
+DA:64,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:71,0
+DA:72,0
+DA:73,0
+BRDA:44,105,0,0
+BRDA:44,105,1,0
+BRDA:48,174,0,0
+BRDA:48,174,1,0
+LF:44
+LH:0
+BRF:4
+BRH:0
+FNF:16
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\CriarNovaNotaFiscal.cs
+FN:10,System.Int32 Domain.Pedidos.Comandos.NovaNotaFiscalComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovaNotaFiscalComando::get_PedidoId()
+DA:11,0
+FN:15,System.Void Domain.Pedidos.Comandos.NovaNotaFiscalValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.NovaNotaFiscalValidacao::.ctor()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+FN:24,System.Void Domain.Pedidos.Comandos.CriarNovaNotaFiscal::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovaNotaFiscal::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+FN:30,System.Void Domain.Pedidos.Comandos.CriarNovaNotaFiscal/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovaNotaFiscal/<Handle>d__2::MoveNext()
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:42,0
+BRDA:33,62,0,0
+BRDA:33,62,1,0
+LF:17
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\CriarNovoCtr.cs
+FN:10,System.Int32 Domain.Pedidos.Comandos.NovoCtrComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoCtrComando::get_PedidoId()
+DA:11,0
+FN:11,System.Int32 Domain.Pedidos.Comandos.NovoCtrComando::get_CacambaId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoCtrComando::get_CacambaId()
+DA:12,0
+FN:16,System.Void Domain.Pedidos.Comandos.NovoCtrValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.NovoCtrValidacao::.ctor()
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+FN:26,System.Void Domain.Pedidos.Comandos.CriarNovoCtr::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoCtr::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:37,System.Boolean Domain.Pedidos.Comandos.CriarNovoCtr/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.CriarNovoCtr/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+DA:38,0
+BRDA:38,7,0,0
+BRDA:38,7,1,0
+FN:32,System.Void Domain.Pedidos.Comandos.CriarNovoCtr/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoCtr/<Handle>d__2::MoveNext()
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:39,0
+DA:40,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+BRDA:35,95,0,0
+BRDA:35,95,1,0
+BRDA:39,165,0,0
+BRDA:39,165,1,0
+LF:22
+LH:0
+BRF:6
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\CriarNovoMtr.cs
+FN:10,System.Int32 Domain.Pedidos.Comandos.NovoMtrComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoMtrComando::get_PedidoId()
+DA:11,0
+FN:11,System.Int32 Domain.Pedidos.Comandos.NovoMtrComando::get_CacambaId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoMtrComando::get_CacambaId()
+DA:12,0
+FN:15,System.Void Domain.Pedidos.Comandos.NovoMtrValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.NovoMtrValidacao::.ctor()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+FN:25,System.Void Domain.Pedidos.Comandos.CriarNovoMtr::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoMtr::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+FN:36,System.Boolean Domain.Pedidos.Comandos.CriarNovoMtr/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.CriarNovoMtr/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+DA:37,0
+BRDA:37,7,0,0
+BRDA:37,7,1,0
+FN:31,System.Void Domain.Pedidos.Comandos.CriarNovoMtr/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoMtr/<Handle>d__2::MoveNext()
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:38,0
+DA:39,0
+DA:43,0
+DA:44,0
+DA:46,0
+DA:47,0
+DA:49,0
+BRDA:34,95,0,0
+BRDA:34,95,1,0
+BRDA:38,165,0,0
+BRDA:38,165,1,0
+BRDA:44,210,0,0
+BRDA:44,210,1,0
+BRDA:44,221,0,0
+BRDA:44,221,1,0
+LF:23
+LH:0
+BRF:10
+BRH:0
+FNF:6
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\CriarNovoPedido.cs
+FN:12,System.Int32 Domain.Pedidos.Comandos.NovoPedidoComando::get_ClienteId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoPedidoComando::get_ClienteId()
+DA:13,0
+FN:13,System.Int32 Domain.Pedidos.Comandos.NovoPedidoComando::get_EnderecoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.NovoPedidoComando::get_EnderecoId()
+DA:14,0
+FN:14,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Comandos.NovoPedidoComando::get_TipoDePagamento()
+FNDA:0,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Comandos.NovoPedidoComando::get_TipoDePagamento()
+DA:15,0
+FN:15,System.String Domain.Pedidos.Comandos.NovoPedidoComando::get_Observacao()
+FNDA:0,System.String Domain.Pedidos.Comandos.NovoPedidoComando::get_Observacao()
+DA:16,0
+FN:16,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoPedidoItem> Domain.Pedidos.Comandos.NovoPedidoComando::get_Items()
+FNDA:0,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoPedidoItem> Domain.Pedidos.Comandos.NovoPedidoComando::get_Items()
+DA:17,0
+FN:11,System.Void Domain.Pedidos.Comandos.NovoPedidoComando::.ctor(System.Int32,System.Int32,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoPedidoItem>)
+FNDA:0,System.Void Domain.Pedidos.Comandos.NovoPedidoComando::.ctor(System.Int32,System.Int32,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String,System.Collections.Generic.List`1<Domain.Pedidos.Comandos.NovoPedidoItem>)
+DA:12,0
+FN:17,System.String Domain.Pedidos.Comandos.NovoPedidoItem::get_volumeDaCacamba()
+FNDA:0,System.String Domain.Pedidos.Comandos.NovoPedidoItem::get_volumeDaCacamba()
+DA:18,0
+FN:21,System.Void Domain.Pedidos.Comandos.NovoPedidoValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.NovoPedidoValidacao::.ctor()
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+FN:41,System.Void Domain.Pedidos.Comandos.CriarNovoPedidoComando::.ctor(Domain.Pedidos.Fila.IMensagem,Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoPedidoComando::.ctor(Domain.Pedidos.Fila.IMensagem,Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+FN:57,System.Double Domain.Pedidos.Comandos.CriarNovoPedidoComando/<>c::<Handle>b__3_0(Domain.Pedidos.Comandos.NovoPedidoItem)
+FNDA:0,System.Double Domain.Pedidos.Comandos.CriarNovoPedidoComando/<>c::<Handle>b__3_0(Domain.Pedidos.Comandos.NovoPedidoItem)
+DA:58,0
+FN:60,Domain.Pedidos.Agregacao.PedidoItem Domain.Pedidos.Comandos.CriarNovoPedidoComando/<>c::<Handle>b__3_1(Domain.Pedidos.Comandos.NovoPedidoItem)
+FNDA:0,Domain.Pedidos.Agregacao.PedidoItem Domain.Pedidos.Comandos.CriarNovoPedidoComando/<>c::<Handle>b__3_1(Domain.Pedidos.Comandos.NovoPedidoItem)
+DA:61,0
+FN:48,System.Void Domain.Pedidos.Comandos.CriarNovoPedidoComando/<Handle>d__3::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.CriarNovoPedidoComando/<Handle>d__3::MoveNext()
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:59,0
+DA:60,0
+DA:62,0
+DA:64,0
+DA:65,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+BRDA:51,62,0,0
+BRDA:51,62,1,0
+BRDA:55,126,0,0
+BRDA:55,126,1,0
+LF:42
+LH:0
+BRF:4
+BRH:0
+FNF:12
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\DeletarPedido.cs
+FN:7,System.Int32 Domain.Pedidos.Comandos.DeletarPedidoComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.DeletarPedidoComando::get_PedidoId()
+DA:8,0
+FN:10,System.Void Domain.Pedidos.Comandos.DeletarPedidoValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.DeletarPedidoValidacao::.ctor()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+FN:19,System.Void Domain.Pedidos.Comandos.DeletarPedido::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.DeletarPedido::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.Void Domain.Pedidos.Comandos.DeletarPedido/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.DeletarPedido/<Handle>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:31,0
+DA:32,0
+DA:33,0
+BRDA:28,62,0,0
+BRDA:28,62,1,0
+LF:16
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Comandos\VincularCacamba.cs
+FN:9,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_PedidoId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_PedidoId()
+DA:10,0
+FN:10,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_PedidoItemId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_PedidoItemId()
+DA:11,0
+FN:11,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_CacambaId()
+FNDA:0,System.Int32 Domain.Pedidos.Comandos.VincularCacambaComando::get_CacambaId()
+DA:12,0
+FN:16,System.Void Domain.Pedidos.Comandos.VincularCacambaValidacao::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Comandos.VincularCacambaValidacao::.ctor()
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:26,System.Void Domain.Pedidos.Comandos.VincularCacamba::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+FNDA:0,System.Void Domain.Pedidos.Comandos.VincularCacamba::.ctor(Domain.Pedidos.Interface.IPedidoRepositorio)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:36,System.Boolean Domain.Pedidos.Comandos.VincularCacamba/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Boolean Domain.Pedidos.Comandos.VincularCacamba/<>c__DisplayClass2_0::<Handle>b__0(Domain.Pedidos.Agregacao.PedidoItem)
+DA:37,0
+FN:31,System.Void Domain.Pedidos.Comandos.VincularCacamba/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Pedidos.Comandos.VincularCacamba/<Handle>d__2::MoveNext()
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:38,0
+DA:39,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+BRDA:34,106,0,0
+BRDA:34,106,1,0
+BRDA:38,176,0,0
+BRDA:38,176,1,0
+BRDA:42,247,0,0
+BRDA:42,247,1,0
+LF:29
+LH:0
+BRF:6
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Agregacao\Pedido.cs
+FN:10,Domain.Clientes.Agrecacao.Cliente Domain.Pedidos.Agregacao.Pedido::get_Cliente()
+FNDA:7,Domain.Clientes.Agrecacao.Cliente Domain.Pedidos.Agregacao.Pedido::get_Cliente()
+DA:11,7
+FN:11,Domain.Clientes.Agrecacao.Endereco Domain.Pedidos.Agregacao.Pedido::get_EnderecoDeEntrega()
+FNDA:6,Domain.Clientes.Agrecacao.Endereco Domain.Pedidos.Agregacao.Pedido::get_EnderecoDeEntrega()
+DA:12,6
+FN:12,System.Double Domain.Pedidos.Agregacao.Pedido::get_TotalDoPedido()
+FNDA:5,System.Double Domain.Pedidos.Agregacao.Pedido::get_TotalDoPedido()
+DA:13,5
+FN:13,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Agregacao.Pedido::get_TipoDePagamento()
+FNDA:5,Domain.Pedidos.Enumeraveis.TipoDePagamento Domain.Pedidos.Agregacao.Pedido::get_TipoDePagamento()
+DA:14,5
+FN:14,System.String Domain.Pedidos.Agregacao.Pedido::get_Observacao()
+FNDA:3,System.String Domain.Pedidos.Agregacao.Pedido::get_Observacao()
+DA:15,3
+FN:15,System.String Domain.Pedidos.Agregacao.Pedido::get_NumeroDaNotaFiscal()
+FNDA:0,System.String Domain.Pedidos.Agregacao.Pedido::get_NumeroDaNotaFiscal()
+DA:16,0
+FN:16,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem> Domain.Pedidos.Agregacao.Pedido::get_PedidoItems()
+FNDA:5,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem> Domain.Pedidos.Agregacao.Pedido::get_PedidoItems()
+DA:17,5
+FN:17,Domain.Pedidos.Eventos.PedidoEmitido Domain.Pedidos.Agregacao.Pedido::get_PedidoEmitido()
+FNDA:3,Domain.Pedidos.Eventos.PedidoEmitido Domain.Pedidos.Agregacao.Pedido::get_PedidoEmitido()
+DA:18,3
+FN:18,Domain.Pedidos.Eventos.NotaFiscal Domain.Pedidos.Agregacao.Pedido::get_NotaFiscal()
+FNDA:3,Domain.Pedidos.Eventos.NotaFiscal Domain.Pedidos.Agregacao.Pedido::get_NotaFiscal()
+DA:19,3
+FN:45,System.Void Domain.Pedidos.Agregacao.Pedido::AtualizarNotaFiscal(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AtualizarNotaFiscal(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+DA:46,0
+DA:47,0
+DA:48,0
+FN:48,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarTipoDePagamento(Domain.Pedidos.Enumeraveis.TipoDePagamento)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarTipoDePagamento(Domain.Pedidos.Enumeraveis.TipoDePagamento)
+DA:49,0
+FN:49,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarObservacao(System.String)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarObservacao(System.String)
+DA:50,0
+FN:50,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarEnderecoDeEntrega(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AlterarEnderecoDeEntrega(Domain.Clientes.Agrecacao.Endereco)
+DA:51,0
+FN:52,System.Void Domain.Pedidos.Agregacao.Pedido::GerarNumeroDaNotaFiscal()
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::GerarNumeroDaNotaFiscal()
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+FN:56,System.Void Domain.Pedidos.Agregacao.Pedido::RemoverItem(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::RemoverItem(Domain.Pedidos.Agregacao.PedidoItem)
+DA:57,0
+FN:58,System.Void Domain.Pedidos.Agregacao.Pedido::AtualizarTotalDoPedido()
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AtualizarTotalDoPedido()
+DA:59,0
+DA:60,0
+DA:61,0
+FN:61,System.Void Domain.Pedidos.Agregacao.Pedido::AdicionarItem(Domain.Pedidos.Agregacao.PedidoItem)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::AdicionarItem(Domain.Pedidos.Agregacao.PedidoItem)
+DA:62,0
+FN:63,System.Double Domain.Pedidos.Agregacao.Pedido::PrecoVigente()
+FNDA:0,System.Double Domain.Pedidos.Agregacao.Pedido::PrecoVigente()
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:69,0
+DA:70,0
+BRDA:65,17,0,0
+BRDA:65,17,1,0
+FN:20,System.Void Domain.Pedidos.Agregacao.Pedido::.ctor(Domain.Clientes.Agrecacao.Cliente,Domain.Clientes.Agrecacao.Endereco,System.Double,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem>)
+FNDA:7,System.Void Domain.Pedidos.Agregacao.Pedido::.ctor(Domain.Clientes.Agrecacao.Cliente,Domain.Clientes.Agrecacao.Endereco,System.Double,Domain.Pedidos.Enumeraveis.TipoDePagamento,System.String,System.Collections.Generic.List`1<Domain.Pedidos.Agregacao.PedidoItem>)
+DA:21,7
+DA:22,7
+DA:23,7
+DA:24,8
+DA:26,6
+DA:27,7
+DA:29,5
+DA:30,5
+DA:31,5
+DA:32,5
+DA:33,1
+DA:35,4
+DA:36,5
+DA:38,3
+DA:39,3
+DA:40,3
+DA:41,3
+DA:42,3
+BRDA:24,22,0,1
+BRDA:24,22,1,6
+BRDA:27,49,0,1
+BRDA:27,49,1,5
+BRDA:30,73,0,3
+BRDA:30,78,0,3
+BRDA:30,73,1,2
+BRDA:30,78,1,2
+BRDA:30,93,0,1
+BRDA:30,93,1,4
+BRDA:36,127,0,1
+BRDA:36,127,1,3
+FN:42,System.Void Domain.Pedidos.Agregacao.Pedido::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Agregacao.Pedido::.ctor()
+DA:43,0
+LF:49
+LH:26
+BRF:18
+BRH:12
+FNF:20
+FNH:9
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Pedidos\Agregacao\PedidoItem.cs
+FN:9,System.String Domain.Pedidos.Agregacao.PedidoItem::get_VolumeDaCacamba()
+FNDA:7,System.String Domain.Pedidos.Agregacao.PedidoItem::get_VolumeDaCacamba()
+DA:10,7
+FN:10,System.Double Domain.Pedidos.Agregacao.PedidoItem::get_PrecoDaAlocacao()
+FNDA:7,System.Double Domain.Pedidos.Agregacao.PedidoItem::get_PrecoDaAlocacao()
+DA:11,7
+FN:11,Domain.Cacambas.Agregacao.Cacamba Domain.Pedidos.Agregacao.PedidoItem::get_Cacamba()
+FNDA:0,Domain.Cacambas.Agregacao.Cacamba Domain.Pedidos.Agregacao.PedidoItem::get_Cacamba()
+DA:12,0
+FN:12,Domain.Pedidos.Eventos.CTR Domain.Pedidos.Agregacao.PedidoItem::get_CTR()
+FNDA:7,Domain.Pedidos.Eventos.CTR Domain.Pedidos.Agregacao.PedidoItem::get_CTR()
+DA:13,7
+FN:13,Domain.Pedidos.Eventos.MTR Domain.Pedidos.Agregacao.PedidoItem::get_MTR()
+FNDA:7,Domain.Pedidos.Eventos.MTR Domain.Pedidos.Agregacao.PedidoItem::get_MTR()
+DA:14,7
+FN:26,System.Void Domain.Pedidos.Agregacao.PedidoItem::VincularCacamba(Domain.Cacambas.Agregacao.Cacamba)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.PedidoItem::VincularCacamba(Domain.Cacambas.Agregacao.Cacamba)
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+FN:31,System.Void Domain.Pedidos.Agregacao.PedidoItem::AlterarOPreco(System.Double)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.PedidoItem::AlterarOPreco(System.Double)
+DA:32,0
+DA:33,0
+DA:34,0
+FN:36,System.Void Domain.Pedidos.Agregacao.PedidoItem::AtualizarCTR(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.PedidoItem::AtualizarCTR(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+DA:37,0
+DA:38,0
+DA:39,0
+FN:41,System.Void Domain.Pedidos.Agregacao.PedidoItem::AtualizarMTR(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+FNDA:0,System.Void Domain.Pedidos.Agregacao.PedidoItem::AtualizarMTR(Domain.Pedidos.Enumeraveis.StatusPedido,System.String)
+DA:42,0
+DA:43,0
+DA:44,0
+FN:15,System.Void Domain.Pedidos.Agregacao.PedidoItem::.ctor()
+FNDA:0,System.Void Domain.Pedidos.Agregacao.PedidoItem::.ctor()
+DA:16,0
+FN:17,System.Void Domain.Pedidos.Agregacao.PedidoItem::.ctor(System.String,System.Double)
+FNDA:7,System.Void Domain.Pedidos.Agregacao.PedidoItem::.ctor(System.String,System.Double)
+DA:18,7
+DA:19,7
+DA:20,7
+DA:21,7
+DA:22,7
+DA:23,7
+DA:24,7
+LF:26
+LH:11
+BRF:0
+BRH:0
+FNF:11
+FNH:5
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Visualizacoes\VisualizarUsuario.cs
+FN:8,System.Int32 Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Id()
+FNDA:0,System.Int32 Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Id()
+DA:9,0
+FN:9,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Nome()
+FNDA:0,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Nome()
+DA:10,0
+FN:10,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Email()
+FNDA:0,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Email()
+DA:11,0
+FN:11,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Senha()
+FNDA:0,System.String Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Senha()
+DA:12,0
+FN:12,System.Boolean Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Ativo()
+FNDA:0,System.Boolean Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Ativo()
+DA:13,0
+FN:13,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Funcao()
+FNDA:0,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Visualizacoes.VisualizarUsuario::get_Funcao()
+DA:14,0
+FN:17,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Identidade.Agregacao.Usuario,Domain.Identidade.Visualizacoes.VisualizarUsuario>> Domain.Identidade.Visualizacoes.VisualizarUsuarioExtensao::ToView()
+FNDA:0,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Identidade.Agregacao.Usuario,Domain.Identidade.Visualizacoes.VisualizarUsuario>> Domain.Identidade.Visualizacoes.VisualizarUsuarioExtensao::ToView()
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+DA:25,0
+LF:14
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Consultas\ConsultarUsuario.cs
+FN:7,System.Int32 Domain.Identidade.Consultas.ConsultarUsuario::get_PageIndex()
+FNDA:0,System.Int32 Domain.Identidade.Consultas.ConsultarUsuario::get_PageIndex()
+DA:8,0
+FN:8,System.Int32 Domain.Identidade.Consultas.ConsultarUsuario::get_PageSize()
+FNDA:0,System.Int32 Domain.Identidade.Consultas.ConsultarUsuario::get_PageSize()
+DA:9,0
+FN:9,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Nome()
+FNDA:0,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Nome()
+DA:10,0
+FN:10,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Email()
+FNDA:0,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Email()
+DA:11,0
+FN:11,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Sort()
+FNDA:0,System.String Domain.Identidade.Consultas.ConsultarUsuario::get_Sort()
+DA:12,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Comandos\AtualizarUsuario.cs
+FN:8,System.Int32 Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Id()
+FNDA:0,System.Int32 Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Id()
+DA:9,0
+FN:9,System.String Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Nome()
+FNDA:0,System.String Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Nome()
+DA:10,0
+FN:10,System.String Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Email()
+FNDA:0,System.String Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Email()
+DA:11,0
+FN:11,System.Boolean Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Ativo()
+FNDA:0,System.Boolean Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Ativo()
+DA:12,0
+FN:12,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Funcao()
+FNDA:0,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Comandos.AtualizarUsuarioComando::get_Funcao()
+DA:13,0
+FN:7,System.Void Domain.Identidade.Comandos.AtualizarUsuarioComando::.ctor(System.Int32,System.String,System.String,System.Boolean,Domain.Identidade.Enumeraveis.Funcao)
+FNDA:0,System.Void Domain.Identidade.Comandos.AtualizarUsuarioComando::.ctor(System.Int32,System.String,System.String,System.Boolean,Domain.Identidade.Enumeraveis.Funcao)
+DA:8,0
+FN:16,System.Void Domain.Identidade.Comandos.AtualizarUsuarioValidacao::.ctor()
+FNDA:0,System.Void Domain.Identidade.Comandos.AtualizarUsuarioValidacao::.ctor()
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:28,System.Void Domain.Identidade.Comandos.AtualizarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+FNDA:0,System.Void Domain.Identidade.Comandos.AtualizarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+FN:34,System.Void Domain.Identidade.Comandos.AtualizarUsuario/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Identidade.Comandos.AtualizarUsuario/<Handle>d__2::MoveNext()
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:45,0
+DA:46,0
+DA:47,0
+BRDA:37,62,0,0
+BRDA:37,62,1,0
+LF:28
+LH:0
+BRF:2
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Comandos\CriarUsuario.cs
+FN:9,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Nome()
+FNDA:0,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Nome()
+DA:10,0
+FN:10,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Email()
+FNDA:0,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Email()
+DA:11,0
+FN:11,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Senha()
+FNDA:0,System.String Domain.Identidade.Comandos.CriarUsuarioComando::get_Senha()
+DA:12,0
+FN:12,System.Boolean Domain.Identidade.Comandos.CriarUsuarioComando::get_Ativo()
+FNDA:0,System.Boolean Domain.Identidade.Comandos.CriarUsuarioComando::get_Ativo()
+DA:13,0
+FN:13,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Comandos.CriarUsuarioComando::get_Funcao()
+FNDA:0,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Comandos.CriarUsuarioComando::get_Funcao()
+DA:14,0
+FN:8,System.Void Domain.Identidade.Comandos.CriarUsuarioComando::.ctor(System.String,System.String,System.String,System.Boolean,Domain.Identidade.Enumeraveis.Funcao)
+FNDA:0,System.Void Domain.Identidade.Comandos.CriarUsuarioComando::.ctor(System.String,System.String,System.String,System.Boolean,Domain.Identidade.Enumeraveis.Funcao)
+DA:9,0
+FN:17,System.Void Domain.Identidade.Comandos.CriarUsuarioValidacao::.ctor()
+FNDA:0,System.Void Domain.Identidade.Comandos.CriarUsuarioValidacao::.ctor()
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:28,System.Void Domain.Identidade.Comandos.CriarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+FNDA:0,System.Void Domain.Identidade.Comandos.CriarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+FN:34,System.Void Domain.Identidade.Comandos.CriarUsuario/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Identidade.Comandos.CriarUsuario/<Handle>d__2::MoveNext()
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+BRDA:37,170,0,0
+BRDA:37,170,1,0
+LF:24
+LH:0
+BRF:2
+BRH:0
+FNF:9
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Comandos\DeletarUsuario.cs
+FN:6,System.Int32 Domain.Identidade.Comandos.DeletarUsuarioComando::get_Id()
+FNDA:0,System.Int32 Domain.Identidade.Comandos.DeletarUsuarioComando::get_Id()
+DA:7,0
+FN:10,System.Void Domain.Identidade.Comandos.DeletarUsuarioValidacao::.ctor()
+FNDA:0,System.Void Domain.Identidade.Comandos.DeletarUsuarioValidacao::.ctor()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+FN:18,System.Void Domain.Identidade.Comandos.DeletarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+FNDA:0,System.Void Domain.Identidade.Comandos.DeletarUsuario::.ctor(Domain.Identidade.Interfaces.IUsuarioRepositorio)
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:24,System.Void Domain.Identidade.Comandos.DeletarUsuario/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Identidade.Comandos.DeletarUsuario/<Handle>d__2::MoveNext()
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+BRDA:27,62,0,0
+BRDA:27,62,1,0
+LF:16
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Comandos\NovoAutoCadastro.cs
+FN:13,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Documento()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Documento()
+DA:14,0
+FN:14,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Nome()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Nome()
+DA:15,0
+FN:15,System.DateTime Domain.Identidade.Comandos.NovoAutoCadastroComando::get_DataNascimento()
+FNDA:0,System.DateTime Domain.Identidade.Comandos.NovoAutoCadastroComando::get_DataNascimento()
+DA:16,0
+FN:16,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_CEP()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_CEP()
+DA:17,0
+FN:17,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Logradouro()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Logradouro()
+DA:18,0
+FN:18,System.Int32 Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Numero()
+FNDA:0,System.Int32 Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Numero()
+DA:19,0
+FN:19,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Complemento()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Complemento()
+DA:20,0
+FN:20,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Bairro()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Bairro()
+DA:21,0
+FN:21,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Cidade()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Cidade()
+DA:22,0
+FN:22,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_UF()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_UF()
+DA:23,0
+FN:23,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Telefone()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Telefone()
+DA:24,0
+FN:24,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Contato()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Contato()
+DA:25,0
+FN:25,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Email()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Email()
+DA:26,0
+FN:26,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Observacao()
+FNDA:0,System.String Domain.Identidade.Comandos.NovoAutoCadastroComando::get_Observacao()
+DA:27,0
+FN:29,Domain.Identidade.Agregacao.Usuario Domain.Identidade.Comandos.NovoAutoCadastroComando::ToUsuario()
+FNDA:0,Domain.Identidade.Agregacao.Usuario Domain.Identidade.Comandos.NovoAutoCadastroComando::ToUsuario()
+DA:30,0
+DA:31,0
+DA:32,0
+FN:33,Domain.Clientes.Agrecacao.Cliente Domain.Identidade.Comandos.NovoAutoCadastroComando::ToCliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.Identidade.Comandos.NovoAutoCadastroComando::ToCliente()
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+FN:42,System.Void Domain.Identidade.Comandos.NovoAutoCadastroValidacao::.ctor()
+FNDA:0,System.Void Domain.Identidade.Comandos.NovoAutoCadastroValidacao::.ctor()
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+FN:62,System.Void Domain.Identidade.Comandos.NovoAutoCadastro::.ctor(Domain.Identidade.Interfaces.IAutoCadastroRepositorio)
+FNDA:0,System.Void Domain.Identidade.Comandos.NovoAutoCadastro::.ctor(Domain.Identidade.Interfaces.IAutoCadastroRepositorio)
+DA:63,0
+DA:64,0
+DA:65,0
+DA:66,0
+FN:68,System.Void Domain.Identidade.Comandos.NovoAutoCadastro/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Identidade.Comandos.NovoAutoCadastro/<Handle>d__2::MoveNext()
+DA:69,0
+DA:70,0
+DA:71,0
+DA:72,0
+DA:73,0
+DA:74,0
+DA:75,0
+DA:76,0
+BRDA:72,69,0,0
+BRDA:72,69,1,0
+BRDA:72,85,0,0
+BRDA:72,85,1,0
+LF:49
+LH:0
+BRF:4
+BRH:0
+FNF:19
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Agregacao\AutoCadastro.cs
+FN:9,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Documento()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Documento()
+DA:10,0
+FN:10,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Nome()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Nome()
+DA:11,0
+FN:11,System.DateTime Domain.Identidade.Agregacao.AutoCadastro::get_DataNascimento()
+FNDA:0,System.DateTime Domain.Identidade.Agregacao.AutoCadastro::get_DataNascimento()
+DA:12,0
+FN:12,System.String Domain.Identidade.Agregacao.AutoCadastro::get_CEP()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_CEP()
+DA:13,0
+FN:13,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Logradouro()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Logradouro()
+DA:14,0
+FN:14,System.Int32 Domain.Identidade.Agregacao.AutoCadastro::get_Numero()
+FNDA:0,System.Int32 Domain.Identidade.Agregacao.AutoCadastro::get_Numero()
+DA:15,0
+FN:15,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Complemento()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Complemento()
+DA:16,0
+FN:16,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Bairro()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Bairro()
+DA:17,0
+FN:17,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Cidade()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Cidade()
+DA:18,0
+FN:18,System.String Domain.Identidade.Agregacao.AutoCadastro::get_UF()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_UF()
+DA:19,0
+FN:19,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Telefone()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Telefone()
+DA:20,0
+FN:20,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Contato()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Contato()
+DA:21,0
+FN:21,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Email()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Email()
+DA:22,0
+FN:22,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Observacao()
+FNDA:0,System.String Domain.Identidade.Agregacao.AutoCadastro::get_Observacao()
+DA:23,0
+FN:25,Domain.Identidade.Agregacao.Usuario Domain.Identidade.Agregacao.AutoCadastro::ToUsuario()
+FNDA:0,Domain.Identidade.Agregacao.Usuario Domain.Identidade.Agregacao.AutoCadastro::ToUsuario()
+DA:26,0
+DA:27,0
+DA:28,0
+FN:29,Domain.Clientes.Agrecacao.Cliente Domain.Identidade.Agregacao.AutoCadastro::ToCliente()
+FNDA:0,Domain.Clientes.Agrecacao.Cliente Domain.Identidade.Agregacao.AutoCadastro::ToCliente()
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+FN:39,System.Void Domain.Identidade.Agregacao.AutoCadastroValidacao::.ctor()
+FNDA:0,System.Void Domain.Identidade.Agregacao.AutoCadastroValidacao::.ctor()
+DA:40,0
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+LF:38
+LH:0
+BRF:0
+BRH:0
+FNF:17
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Identidade\Agregacao\Usuario.cs
+FN:7,System.String Domain.Identidade.Agregacao.Usuario::get_Nome()
+FNDA:0,System.String Domain.Identidade.Agregacao.Usuario::get_Nome()
+DA:8,0
+FN:8,System.String Domain.Identidade.Agregacao.Usuario::get_Email()
+FNDA:0,System.String Domain.Identidade.Agregacao.Usuario::get_Email()
+DA:9,0
+FN:9,System.String Domain.Identidade.Agregacao.Usuario::get_Senha()
+FNDA:0,System.String Domain.Identidade.Agregacao.Usuario::get_Senha()
+DA:10,0
+FN:10,System.Boolean Domain.Identidade.Agregacao.Usuario::get_Ativo()
+FNDA:0,System.Boolean Domain.Identidade.Agregacao.Usuario::get_Ativo()
+DA:11,0
+FN:11,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Agregacao.Usuario::get_Funcao()
+FNDA:0,Domain.Identidade.Enumeraveis.Funcao Domain.Identidade.Agregacao.Usuario::get_Funcao()
+DA:12,0
+FN:23,System.Void Domain.Identidade.Agregacao.Usuario::TrocarNome(System.String)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::TrocarNome(System.String)
+DA:24,0
+FN:24,System.Void Domain.Identidade.Agregacao.Usuario::TrocarEmail(System.String)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::TrocarEmail(System.String)
+DA:25,0
+FN:25,System.Void Domain.Identidade.Agregacao.Usuario::AlterarSenha(System.String)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::AlterarSenha(System.String)
+DA:26,0
+FN:26,System.Void Domain.Identidade.Agregacao.Usuario::AlterarAtividade(System.Boolean)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::AlterarAtividade(System.Boolean)
+DA:27,0
+FN:27,System.Void Domain.Identidade.Agregacao.Usuario::AlterarFuncao(Domain.Identidade.Enumeraveis.Funcao)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::AlterarFuncao(Domain.Identidade.Enumeraveis.Funcao)
+DA:28,0
+FN:13,System.Void Domain.Identidade.Agregacao.Usuario::.ctor(System.String,System.String,Domain.Identidade.Enumeraveis.Funcao)
+FNDA:0,System.Void Domain.Identidade.Agregacao.Usuario::.ctor(System.String,System.String,Domain.Identidade.Enumeraveis.Funcao)
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:22,0
+LF:18
+LH:0
+BRF:0
+BRH:0
+FNF:11
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Compartilhado\Entidade.cs
+FN:4,System.Int32 Domain.Compartilhado.Entidade::get_Id()
+FNDA:0,System.Int32 Domain.Compartilhado.Entidade::get_Id()
+DA:5,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Compartilhado\MD5Hash.cs
+FN:5,System.String Domain.Compartilhado.MD5Hash::Encrypt(System.String)
+FNDA:0,System.String Domain.Compartilhado.MD5Hash::Encrypt(System.String)
+DA:6,0
+DA:8,0
+DA:9,0
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:23,0
+BRDA:13,83,1,0
+BRDA:13,83,0,0
+LF:15
+LH:0
+BRF:2
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Compartilhado\Paginacao.cs
+FN:4,System.Int32 Domain.Compartilhado.Paginacao`1::get_PageIndex()
+FNDA:0,System.Int32 Domain.Compartilhado.Paginacao`1::get_PageIndex()
+DA:5,0
+FN:5,System.Int32 Domain.Compartilhado.Paginacao`1::get_PageSize()
+FNDA:0,System.Int32 Domain.Compartilhado.Paginacao`1::get_PageSize()
+DA:6,0
+FN:6,System.Int32 Domain.Compartilhado.Paginacao`1::get_TotalCount()
+FNDA:0,System.Int32 Domain.Compartilhado.Paginacao`1::get_TotalCount()
+DA:7,0
+FN:7,System.Int32 Domain.Compartilhado.Paginacao`1::get_TotalPages()
+FNDA:0,System.Int32 Domain.Compartilhado.Paginacao`1::get_TotalPages()
+DA:8,0
+FN:8,System.Collections.Generic.List`1<T> Domain.Compartilhado.Paginacao`1::get_Data()
+FNDA:0,System.Collections.Generic.List`1<T> Domain.Compartilhado.Paginacao`1::get_Data()
+DA:9,0
+FN:21,System.Boolean Domain.Compartilhado.Paginacao`1::get_HasPreviousPage()
+FNDA:0,System.Boolean Domain.Compartilhado.Paginacao`1::get_HasPreviousPage()
+DA:22,0
+DA:23,0
+DA:24,0
+FN:28,System.Boolean Domain.Compartilhado.Paginacao`1::get_HasNextPage()
+FNDA:0,System.Boolean Domain.Compartilhado.Paginacao`1::get_HasNextPage()
+DA:29,0
+DA:30,0
+DA:31,0
+FN:9,System.Void Domain.Compartilhado.Paginacao`1::.ctor(System.Linq.IQueryable`1<T>,System.Int32,System.Int32)
+FNDA:0,System.Void Domain.Compartilhado.Paginacao`1::.ctor(System.Linq.IQueryable`1<T>,System.Int32,System.Int32)
+DA:10,0
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:17,0
+DA:18,0
+LF:19
+LH:0
+BRF:0
+BRH:0
+FNF:8
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Compartilhado\Resposta.cs
+FN:2,System.String Domain.Compartilhado.Resposta::get_Mensagem()
+FNDA:0,System.String Domain.Compartilhado.Resposta::get_Mensagem()
+DA:3,0
+LF:1
+LH:0
+BRF:0
+BRH:0
+FNF:1
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Visualizacoes\VisualizarCliente.cs
+FN:9,System.Int32 Domain.Clientes.Visualizacoes.VisualizarCliente::get_Id()
+FNDA:0,System.Int32 Domain.Clientes.Visualizacoes.VisualizarCliente::get_Id()
+DA:10,0
+FN:10,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Nome()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Nome()
+DA:11,0
+FN:11,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Documento()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Documento()
+DA:12,0
+FN:12,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoDocumento> Domain.Clientes.Visualizacoes.VisualizarCliente::get_TipoDocumento()
+FNDA:0,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoDocumento> Domain.Clientes.Visualizacoes.VisualizarCliente::get_TipoDocumento()
+DA:13,0
+FN:13,System.Nullable`1<System.DateTime> Domain.Clientes.Visualizacoes.VisualizarCliente::get_DataNascimento()
+FNDA:0,System.Nullable`1<System.DateTime> Domain.Clientes.Visualizacoes.VisualizarCliente::get_DataNascimento()
+DA:14,0
+FN:14,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Telefone()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Telefone()
+DA:15,0
+FN:15,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_NomeContato()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_NomeContato()
+DA:16,0
+FN:16,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Email()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Email()
+DA:17,0
+FN:17,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Observacao()
+FNDA:0,System.String Domain.Clientes.Visualizacoes.VisualizarCliente::get_Observacao()
+DA:18,0
+FN:18,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco> Domain.Clientes.Visualizacoes.VisualizarCliente::get_Enderecos()
+FNDA:0,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco> Domain.Clientes.Visualizacoes.VisualizarCliente::get_Enderecos()
+DA:19,0
+FN:19,System.Collections.Generic.List`1<Domain.TabelaPrecos.Agregacao.TabelaPreco> Domain.Clientes.Visualizacoes.VisualizarCliente::get_TabelaPrecos()
+FNDA:0,System.Collections.Generic.List`1<Domain.TabelaPrecos.Agregacao.TabelaPreco> Domain.Clientes.Visualizacoes.VisualizarCliente::get_TabelaPrecos()
+DA:20,0
+FN:20,System.Double Domain.Clientes.Visualizacoes.VisualizarCliente::get_PrecoVigente()
+FNDA:0,System.Double Domain.Clientes.Visualizacoes.VisualizarCliente::get_PrecoVigente()
+DA:21,0
+FN:26,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Clientes.Agrecacao.Cliente,Domain.Clientes.Visualizacoes.VisualizarCliente>> Domain.Clientes.Visualizacoes.VisualizarClienteExtensao::ToView()
+FNDA:0,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Clientes.Agrecacao.Cliente,Domain.Clientes.Visualizacoes.VisualizarCliente>> Domain.Clientes.Visualizacoes.VisualizarClienteExtensao::ToView()
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+LF:27
+LH:0
+BRF:0
+BRH:0
+FNF:13
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Consultas\IClienteConsulta.cs
+FN:11,System.Int32 Domain.Clientes.Consultas.ConsultarClientes::get_PageIndex()
+FNDA:0,System.Int32 Domain.Clientes.Consultas.ConsultarClientes::get_PageIndex()
+DA:12,0
+FN:12,System.Int32 Domain.Clientes.Consultas.ConsultarClientes::get_PageSize()
+FNDA:0,System.Int32 Domain.Clientes.Consultas.ConsultarClientes::get_PageSize()
+DA:13,0
+FN:13,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Endereco()
+FNDA:0,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Endereco()
+DA:14,0
+FN:14,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Documento()
+FNDA:0,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Documento()
+DA:15,0
+FN:15,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Nome()
+FNDA:0,System.String Domain.Clientes.Consultas.ConsultarClientes::get_Nome()
+DA:16,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Comandos\AtualizarCliente.cs
+FN:10,System.Int32 Domain.Clientes.Comandos.AtualizarClienteComando::get_Id()
+FNDA:0,System.Int32 Domain.Clientes.Comandos.AtualizarClienteComando::get_Id()
+DA:11,0
+FN:11,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Nome()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Nome()
+DA:12,0
+FN:12,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Documento()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Documento()
+DA:13,0
+FN:13,Domain.Clientes.Enumeraveis.TipoDocumento Domain.Clientes.Comandos.AtualizarClienteComando::get_TipoDocumento()
+FNDA:0,Domain.Clientes.Enumeraveis.TipoDocumento Domain.Clientes.Comandos.AtualizarClienteComando::get_TipoDocumento()
+DA:14,0
+FN:14,System.DateTime Domain.Clientes.Comandos.AtualizarClienteComando::get_DataNascimento()
+FNDA:0,System.DateTime Domain.Clientes.Comandos.AtualizarClienteComando::get_DataNascimento()
+DA:15,0
+FN:15,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Telefone()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Telefone()
+DA:16,0
+FN:16,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_NomeContato()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_NomeContato()
+DA:17,0
+FN:17,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Email()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Email()
+DA:18,0
+FN:18,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Observacao()
+FNDA:0,System.String Domain.Clientes.Comandos.AtualizarClienteComando::get_Observacao()
+DA:19,0
+FN:19,System.Collections.Generic.List`1<Domain.Clientes.Comandos.AlterarEndereco> Domain.Clientes.Comandos.AtualizarClienteComando::get_Enderecos()
+FNDA:0,System.Collections.Generic.List`1<Domain.Clientes.Comandos.AlterarEndereco> Domain.Clientes.Comandos.AtualizarClienteComando::get_Enderecos()
+DA:20,0
+FN:9,System.Void Domain.Clientes.Comandos.AtualizarClienteComando::.ctor(System.Int32,System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Comandos.AlterarEndereco>)
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarClienteComando::.ctor(System.Int32,System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Comandos.AlterarEndereco>)
+DA:10,0
+FN:22,System.Int32 Domain.Clientes.Comandos.AlterarEndereco::get_Id()
+FNDA:0,System.Int32 Domain.Clientes.Comandos.AlterarEndereco::get_Id()
+DA:23,0
+FN:23,System.String Domain.Clientes.Comandos.AlterarEndereco::get_CEP()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_CEP()
+DA:24,0
+FN:24,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Logradouro()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Logradouro()
+DA:25,0
+FN:25,System.Int32 Domain.Clientes.Comandos.AlterarEndereco::get_Numero()
+FNDA:0,System.Int32 Domain.Clientes.Comandos.AlterarEndereco::get_Numero()
+DA:26,0
+FN:26,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Complemento()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Complemento()
+DA:27,0
+FN:27,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Bairro()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Bairro()
+DA:28,0
+FN:28,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Cidade()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_Cidade()
+DA:29,0
+FN:29,System.String Domain.Clientes.Comandos.AlterarEndereco::get_UF()
+FNDA:0,System.String Domain.Clientes.Comandos.AlterarEndereco::get_UF()
+DA:30,0
+FN:30,Domain.Clientes.Enumeraveis.TipoEndereco Domain.Clientes.Comandos.AlterarEndereco::get_TipoEndereco()
+FNDA:0,Domain.Clientes.Enumeraveis.TipoEndereco Domain.Clientes.Comandos.AlterarEndereco::get_TipoEndereco()
+DA:31,0
+FN:21,System.Void Domain.Clientes.Comandos.AlterarEndereco::.ctor(System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+FNDA:0,System.Void Domain.Clientes.Comandos.AlterarEndereco::.ctor(System.Int32,System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+DA:22,0
+FN:33,System.Void Domain.Clientes.Comandos.AtualizarClienteValidacao::.ctor()
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarClienteValidacao::.ctor()
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:50,0
+FN:55,System.Void Domain.Clientes.Comandos.AtualizarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+FN:67,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_0(Domain.Clientes.Comandos.AlterarEndereco)
+FNDA:0,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_0(Domain.Clientes.Comandos.AlterarEndereco)
+DA:68,0
+FN:68,Domain.Clientes.Agrecacao.Endereco Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_1(Domain.Clientes.Comandos.AlterarEndereco)
+FNDA:0,Domain.Clientes.Agrecacao.Endereco Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_1(Domain.Clientes.Comandos.AlterarEndereco)
+DA:69,0
+FN:75,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_4(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_4(Domain.Clientes.Agrecacao.Endereco)
+DA:76,0
+FN:81,System.Int32 Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_10(Domain.Clientes.Comandos.AlterarEndereco)
+FNDA:0,System.Int32 Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_10(Domain.Clientes.Comandos.AlterarEndereco)
+DA:82,0
+FN:82,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_7(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c::<Handle>b__2_7(Domain.Clientes.Agrecacao.Endereco)
+DA:83,0
+FN:70,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__2(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__2(Domain.Clientes.Agrecacao.Endereco)
+DA:71,0
+FN:74,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__3(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Boolean Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__3(Domain.Clientes.Agrecacao.Endereco)
+DA:75,0
+FN:77,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__5(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__5(Domain.Clientes.Agrecacao.Endereco)
+DA:78,0
+FN:85,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__8(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarCliente/<>c__DisplayClass2_0::<Handle>b__8(Domain.Clientes.Agrecacao.Endereco)
+DA:86,0
+DA:87,0
+DA:88,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:98,0
+FN:61,System.Void Domain.Clientes.Comandos.AtualizarCliente/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Clientes.Comandos.AtualizarCliente/<Handle>d__2::MoveNext()
+DA:62,0
+DA:63,0
+DA:64,0
+DA:66,0
+DA:67,0
+DA:70,0
+DA:73,0
+DA:74,0
+DA:77,0
+DA:80,0
+DA:81,0
+DA:84,0
+DA:85,0
+DA:100,0
+DA:101,0
+DA:102,0
+DA:103,0
+DA:104,0
+DA:105,0
+DA:106,0
+DA:107,0
+DA:109,0
+DA:110,0
+DA:111,0
+BRDA:64,105,0,0
+BRDA:64,105,1,0
+BRDA:73,271,0,0
+BRDA:73,271,1,0
+BRDA:78,352,0,0
+BRDA:78,352,1,0
+BRDA:80,398,0,0
+BRDA:80,398,1,0
+BRDA:85,479,0,0
+BRDA:85,479,1,0
+LF:85
+LH:0
+BRF:10
+BRH:0
+FNF:33
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Comandos\CriarCliente.cs
+FN:10,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Nome()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Nome()
+DA:11,0
+FN:11,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Documento()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Documento()
+DA:12,0
+FN:12,Domain.Clientes.Enumeraveis.TipoDocumento Domain.Clientes.Comandos.CriarClienteComando::get_TipoDocumento()
+FNDA:0,Domain.Clientes.Enumeraveis.TipoDocumento Domain.Clientes.Comandos.CriarClienteComando::get_TipoDocumento()
+DA:13,0
+FN:13,System.DateTime Domain.Clientes.Comandos.CriarClienteComando::get_DataNascimento()
+FNDA:0,System.DateTime Domain.Clientes.Comandos.CriarClienteComando::get_DataNascimento()
+DA:14,0
+FN:14,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Telefone()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Telefone()
+DA:15,0
+FN:15,System.String Domain.Clientes.Comandos.CriarClienteComando::get_NomeContato()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_NomeContato()
+DA:16,0
+FN:16,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Email()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Email()
+DA:17,0
+FN:17,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Observacao()
+FNDA:0,System.String Domain.Clientes.Comandos.CriarClienteComando::get_Observacao()
+DA:18,0
+FN:18,System.Collections.Generic.List`1<Domain.Clientes.Comandos.NovoEndereco> Domain.Clientes.Comandos.CriarClienteComando::get_Enderecos()
+FNDA:0,System.Collections.Generic.List`1<Domain.Clientes.Comandos.NovoEndereco> Domain.Clientes.Comandos.CriarClienteComando::get_Enderecos()
+DA:19,0
+FN:9,System.Void Domain.Clientes.Comandos.CriarClienteComando::.ctor(System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Comandos.NovoEndereco>)
+FNDA:0,System.Void Domain.Clientes.Comandos.CriarClienteComando::.ctor(System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Comandos.NovoEndereco>)
+DA:10,0
+FN:21,System.String Domain.Clientes.Comandos.NovoEndereco::get_CEP()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_CEP()
+DA:22,0
+FN:22,System.String Domain.Clientes.Comandos.NovoEndereco::get_Logradouro()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_Logradouro()
+DA:23,0
+FN:23,System.Int32 Domain.Clientes.Comandos.NovoEndereco::get_Numero()
+FNDA:0,System.Int32 Domain.Clientes.Comandos.NovoEndereco::get_Numero()
+DA:24,0
+FN:24,System.String Domain.Clientes.Comandos.NovoEndereco::get_Complemento()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_Complemento()
+DA:25,0
+FN:25,System.String Domain.Clientes.Comandos.NovoEndereco::get_Bairro()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_Bairro()
+DA:26,0
+FN:26,System.String Domain.Clientes.Comandos.NovoEndereco::get_Cidade()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_Cidade()
+DA:27,0
+FN:27,System.String Domain.Clientes.Comandos.NovoEndereco::get_UF()
+FNDA:0,System.String Domain.Clientes.Comandos.NovoEndereco::get_UF()
+DA:28,0
+FN:28,Domain.Clientes.Enumeraveis.TipoEndereco Domain.Clientes.Comandos.NovoEndereco::get_TipoEndereco()
+FNDA:0,Domain.Clientes.Enumeraveis.TipoEndereco Domain.Clientes.Comandos.NovoEndereco::get_TipoEndereco()
+DA:29,0
+FN:20,System.Void Domain.Clientes.Comandos.NovoEndereco::.ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+FNDA:0,System.Void Domain.Clientes.Comandos.NovoEndereco::.ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+DA:21,0
+FN:34,System.Void Domain.Clientes.Comandos.CriarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+FNDA:0,System.Void Domain.Clientes.Comandos.CriarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+FN:41,System.Void Domain.Clientes.Comandos.CriarCliente/CriarClienteValidacao::.ctor()
+FNDA:0,System.Void Domain.Clientes.Comandos.CriarCliente/CriarClienteValidacao::.ctor()
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+DA:47,0
+DA:48,0
+DA:49,0
+DA:51,0
+DA:52,0
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:57,0
+DA:58,0
+DA:59,0
+DA:60,0
+DA:61,0
+DA:62,0
+DA:64,0
+DA:65,0
+DA:66,0
+DA:67,0
+DA:68,0
+DA:69,0
+DA:70,0
+DA:71,0
+FN:77,Domain.Clientes.Agrecacao.Endereco Domain.Clientes.Comandos.CriarCliente/<>c::<Handle>b__3_0(Domain.Clientes.Comandos.NovoEndereco)
+FNDA:0,Domain.Clientes.Agrecacao.Endereco Domain.Clientes.Comandos.CriarCliente/<>c::<Handle>b__3_0(Domain.Clientes.Comandos.NovoEndereco)
+DA:78,0
+DA:79,0
+DA:80,0
+DA:81,0
+DA:82,0
+DA:83,0
+DA:84,0
+DA:85,0
+DA:86,0
+FN:73,System.Void Domain.Clientes.Comandos.CriarCliente/<Handle>d__3::MoveNext()
+FNDA:0,System.Void Domain.Clientes.Comandos.CriarCliente/<Handle>d__3::MoveNext()
+DA:74,0
+DA:75,0
+DA:76,0
+DA:77,0
+DA:87,0
+DA:89,0
+DA:90,0
+DA:91,0
+DA:92,0
+DA:93,0
+DA:94,0
+DA:95,0
+DA:96,0
+DA:97,0
+DA:99,0
+DA:100,0
+DA:101,0
+BRDA:76,170,0,0
+BRDA:76,170,1,0
+LF:76
+LH:0
+BRF:2
+BRH:0
+FNF:23
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Comandos\DeletarCliente.cs
+FN:7,System.Int32 Domain.Clientes.Comandos.DeletarClienteComando::get_Id()
+FNDA:0,System.Int32 Domain.Clientes.Comandos.DeletarClienteComando::get_Id()
+DA:8,0
+FN:10,System.Void Domain.Clientes.Comandos.DeletarClienteValidacao::.ctor()
+FNDA:0,System.Void Domain.Clientes.Comandos.DeletarClienteValidacao::.ctor()
+DA:11,0
+DA:12,0
+DA:13,0
+DA:14,0
+FN:19,System.Void Domain.Clientes.Comandos.DeletarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+FNDA:0,System.Void Domain.Clientes.Comandos.DeletarCliente::.ctor(Domain.Clientes.Interface.IClienteRepositorio)
+DA:20,0
+DA:21,0
+DA:22,0
+DA:23,0
+FN:25,System.Void Domain.Clientes.Comandos.DeletarCliente/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Clientes.Comandos.DeletarCliente/<Handle>d__2::MoveNext()
+DA:26,0
+DA:27,0
+DA:28,0
+DA:30,0
+DA:31,0
+DA:32,0
+BRDA:28,62,0,0
+BRDA:28,62,1,0
+LF:15
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Agregacao\Cliente.cs
+FN:8,System.String Domain.Clientes.Agrecacao.Cliente::get_Nome()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_Nome()
+DA:9,6
+FN:9,System.String Domain.Clientes.Agrecacao.Cliente::get_Documento()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_Documento()
+DA:10,6
+FN:10,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoDocumento> Domain.Clientes.Agrecacao.Cliente::get_TipoDocumento()
+FNDA:6,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoDocumento> Domain.Clientes.Agrecacao.Cliente::get_TipoDocumento()
+DA:11,6
+FN:11,System.Nullable`1<System.DateTime> Domain.Clientes.Agrecacao.Cliente::get_DataNascimento()
+FNDA:6,System.Nullable`1<System.DateTime> Domain.Clientes.Agrecacao.Cliente::get_DataNascimento()
+DA:12,6
+FN:12,System.String Domain.Clientes.Agrecacao.Cliente::get_Telefone()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_Telefone()
+DA:13,6
+FN:13,System.String Domain.Clientes.Agrecacao.Cliente::get_NomeContato()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_NomeContato()
+DA:14,6
+FN:14,System.String Domain.Clientes.Agrecacao.Cliente::get_Email()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_Email()
+DA:15,6
+FN:15,System.String Domain.Clientes.Agrecacao.Cliente::get_Observacao()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Cliente::get_Observacao()
+DA:16,6
+FN:16,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco> Domain.Clientes.Agrecacao.Cliente::get_Enderecos()
+FNDA:6,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco> Domain.Clientes.Agrecacao.Cliente::get_Enderecos()
+DA:17,6
+FN:17,System.Collections.Generic.List`1<Domain.TabelaPrecos.Agregacao.TabelaPreco> Domain.Clientes.Agrecacao.Cliente::get_TabelaPrecos()
+FNDA:0,System.Collections.Generic.List`1<Domain.TabelaPrecos.Agregacao.TabelaPreco> Domain.Clientes.Agrecacao.Cliente::get_TabelaPrecos()
+DA:18,0
+FN:35,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarNome(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarNome(System.String)
+DA:36,0
+FN:36,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarDocumento(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarDocumento(System.String)
+DA:37,0
+FN:37,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarTipoDocumento(Domain.Clientes.Enumeraveis.TipoDocumento)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarTipoDocumento(Domain.Clientes.Enumeraveis.TipoDocumento)
+DA:38,0
+FN:38,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarDataNascimento(System.DateTime)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarDataNascimento(System.DateTime)
+DA:39,0
+FN:39,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarTelefone(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarTelefone(System.String)
+DA:40,0
+FN:40,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarNomeContato(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarNomeContato(System.String)
+DA:41,0
+FN:41,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarEmail(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarEmail(System.String)
+DA:42,0
+FN:42,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarObservacao(System.String)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarObservacao(System.String)
+DA:43,0
+FN:44,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarEndereco(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AlterarEndereco(Domain.Clientes.Agrecacao.Endereco)
+DA:45,0
+DA:46,0
+DA:47,0
+DA:48,0
+BRDA:46,21,0,0
+BRDA:46,21,1,0
+FN:49,System.Void Domain.Clientes.Agrecacao.Cliente::AdicionarEndereco(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::AdicionarEndereco(Domain.Clientes.Agrecacao.Endereco)
+DA:50,0
+BRDA:50,7,0,0
+BRDA:50,7,1,0
+FN:50,System.Void Domain.Clientes.Agrecacao.Cliente::RemoverEndereco(Domain.Clientes.Agrecacao.Endereco)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::RemoverEndereco(Domain.Clientes.Agrecacao.Endereco)
+DA:51,0
+BRDA:51,7,0,0
+BRDA:51,7,1,0
+FN:52,System.Double Domain.Clientes.Agrecacao.Cliente::PrecoVigente()
+FNDA:0,System.Double Domain.Clientes.Agrecacao.Cliente::PrecoVigente()
+DA:53,0
+DA:54,0
+DA:55,0
+DA:56,0
+DA:58,0
+DA:59,0
+BRDA:54,12,0,0
+BRDA:54,12,1,0
+FN:19,System.Void Domain.Clientes.Agrecacao.Cliente::.ctor(System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco>)
+FNDA:6,System.Void Domain.Clientes.Agrecacao.Cliente::.ctor(System.String,System.String,Domain.Clientes.Enumeraveis.TipoDocumento,System.DateTime,System.String,System.String,System.String,System.String,System.Collections.Generic.List`1<Domain.Clientes.Agrecacao.Endereco>)
+DA:20,6
+DA:21,6
+DA:22,6
+DA:23,6
+DA:24,6
+DA:25,6
+DA:26,6
+DA:27,6
+DA:28,6
+DA:29,6
+DA:30,6
+DA:31,6
+FN:31,System.Void Domain.Clientes.Agrecacao.Cliente::.ctor()
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Cliente::.ctor()
+DA:32,0
+DA:33,0
+DA:35,0
+LF:45
+LH:21
+BRF:12
+BRH:0
+FNF:24
+FNH:10
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Clientes\Agregacao\Endereco.cs
+FN:7,System.String Domain.Clientes.Agrecacao.Endereco::get_CEP()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_CEP()
+DA:8,6
+FN:8,System.String Domain.Clientes.Agrecacao.Endereco::get_Logradouro()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_Logradouro()
+DA:9,6
+FN:9,System.Nullable`1<System.Int32> Domain.Clientes.Agrecacao.Endereco::get_Numero()
+FNDA:6,System.Nullable`1<System.Int32> Domain.Clientes.Agrecacao.Endereco::get_Numero()
+DA:10,6
+FN:10,System.String Domain.Clientes.Agrecacao.Endereco::get_Complemento()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_Complemento()
+DA:11,6
+FN:11,System.String Domain.Clientes.Agrecacao.Endereco::get_Bairro()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_Bairro()
+DA:12,6
+FN:12,System.String Domain.Clientes.Agrecacao.Endereco::get_Cidade()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_Cidade()
+DA:13,6
+FN:13,System.String Domain.Clientes.Agrecacao.Endereco::get_UF()
+FNDA:6,System.String Domain.Clientes.Agrecacao.Endereco::get_UF()
+DA:14,6
+FN:14,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoEndereco> Domain.Clientes.Agrecacao.Endereco::get_TipoEndereco()
+FNDA:6,System.Nullable`1<Domain.Clientes.Enumeraveis.TipoEndereco> Domain.Clientes.Agrecacao.Endereco::get_TipoEndereco()
+DA:15,6
+FN:32,System.Void Domain.Clientes.Agrecacao.Endereco::Atualizar(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Endereco::Atualizar(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+DA:33,0
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+FN:15,System.Void Domain.Clientes.Agrecacao.Endereco::.ctor()
+FNDA:0,System.Void Domain.Clientes.Agrecacao.Endereco::.ctor()
+DA:16,0
+DA:17,0
+DA:19,0
+FN:19,System.Void Domain.Clientes.Agrecacao.Endereco::.ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+FNDA:6,System.Void Domain.Clientes.Agrecacao.Endereco::.ctor(System.String,System.String,System.Int32,System.String,System.String,System.String,System.String,Domain.Clientes.Enumeraveis.TipoEndereco)
+DA:20,6
+DA:21,6
+DA:22,6
+DA:23,6
+DA:24,6
+DA:25,6
+DA:26,6
+DA:27,6
+DA:28,6
+DA:29,6
+DA:30,6
+LF:32
+LH:19
+BRF:0
+BRH:0
+FNF:11
+FNH:9
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Visualizacoes\VisualizarCacamba.cs
+FN:8,System.Int32 Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Id()
+FNDA:0,System.Int32 Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Id()
+DA:9,0
+FN:9,System.String Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Numero()
+FNDA:0,System.String Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Numero()
+DA:10,0
+FN:10,System.String Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Volume()
+FNDA:0,System.String Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Volume()
+DA:11,0
+FN:11,Domain.Cacambas.Enumeraveis.Status Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Status()
+FNDA:0,Domain.Cacambas.Enumeraveis.Status Domain.Cacambas.Visualizacoes.VisualizarCacamba::get_Status()
+DA:12,0
+FN:15,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Cacambas.Agregacao.Cacamba,Domain.Cacambas.Visualizacoes.VisualizarCacamba>> Domain.Cacambas.Visualizacoes.VisualizarCacambaExtensao::ToViewm()
+FNDA:0,System.Linq.Expressions.Expression`1<System.Func`2<Domain.Cacambas.Agregacao.Cacamba,Domain.Cacambas.Visualizacoes.VisualizarCacamba>> Domain.Cacambas.Visualizacoes.VisualizarCacambaExtensao::ToViewm()
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+LF:11
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Consultas\ConsultarCacamba.cs
+FN:4,System.Int32 Domain.Cacambas.Consultas.ConsultarCacamba::get_PageIndex()
+FNDA:0,System.Int32 Domain.Cacambas.Consultas.ConsultarCacamba::get_PageIndex()
+DA:5,0
+FN:5,System.Int32 Domain.Cacambas.Consultas.ConsultarCacamba::get_PageSize()
+FNDA:0,System.Int32 Domain.Cacambas.Consultas.ConsultarCacamba::get_PageSize()
+DA:6,0
+FN:6,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Volume()
+FNDA:0,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Volume()
+DA:7,0
+FN:7,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Numero()
+FNDA:0,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Numero()
+DA:8,0
+FN:8,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Sort()
+FNDA:0,System.String Domain.Cacambas.Consultas.ConsultarCacamba::get_Sort()
+DA:9,0
+LF:5
+LH:0
+BRF:0
+BRH:0
+FNF:5
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Comandos\AtualizarCacamba.cs
+FN:8,System.Int32 Domain.Cacambas.Comandos.AtualizarCacambaComando::get_Id()
+FNDA:0,System.Int32 Domain.Cacambas.Comandos.AtualizarCacambaComando::get_Id()
+DA:9,0
+FN:12,System.Void Domain.Cacambas.Comandos.AtualizarCacambaValidacao::.ctor()
+FNDA:0,System.Void Domain.Cacambas.Comandos.AtualizarCacambaValidacao::.ctor()
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+DA:18,0
+DA:19,0
+DA:20,0
+DA:21,0
+DA:22,0
+FN:27,System.Void Domain.Cacambas.Comandos.AtualizarCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+FNDA:0,System.Void Domain.Cacambas.Comandos.AtualizarCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+FN:33,System.Void Domain.Cacambas.Comandos.AtualizarCacamba/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Cacambas.Comandos.AtualizarCacamba/<Handle>d__2::MoveNext()
+DA:34,0
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+DA:39,0
+DA:40,0
+DA:41,0
+DA:42,0
+BRDA:36,62,0,0
+BRDA:36,62,1,0
+LF:24
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Comandos\DeletarCacamba.cs
+FN:7,System.Int32 Domain.Cacambas.Comandos.DeletarCacambaComando::get_Id()
+FNDA:0,System.Int32 Domain.Cacambas.Comandos.DeletarCacambaComando::get_Id()
+DA:8,0
+FN:11,System.Void Domain.Cacambas.Comandos.DeletarCacambaValidacao::.ctor()
+FNDA:0,System.Void Domain.Cacambas.Comandos.DeletarCacambaValidacao::.ctor()
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+FN:20,System.Void Domain.Cacambas.Comandos.DeletarCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+FNDA:0,System.Void Domain.Cacambas.Comandos.DeletarCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+DA:21,0
+DA:22,0
+DA:23,0
+DA:24,0
+FN:26,System.Void Domain.Cacambas.Comandos.DeletarCacamba/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Cacambas.Comandos.DeletarCacamba/<Handle>d__2::MoveNext()
+DA:27,0
+DA:28,0
+DA:29,0
+DA:30,0
+DA:31,0
+DA:32,0
+BRDA:29,62,0,0
+BRDA:29,62,1,0
+LF:15
+LH:0
+BRF:2
+BRH:0
+FNF:4
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Comandos\NovaCacamba.cs
+FN:10,System.String Domain.Cacambas.Comandos.NovaCacambaComando::get_Numero()
+FNDA:0,System.String Domain.Cacambas.Comandos.NovaCacambaComando::get_Numero()
+DA:11,0
+FN:11,System.String Domain.Cacambas.Comandos.NovaCacambaComando::get_Volume()
+FNDA:0,System.String Domain.Cacambas.Comandos.NovaCacambaComando::get_Volume()
+DA:12,0
+FN:12,System.Collections.Generic.List`1<Domain.Cacambas.Comandos.NovoStatus> Domain.Cacambas.Comandos.NovaCacambaComando::get_Status()
+FNDA:0,System.Collections.Generic.List`1<Domain.Cacambas.Comandos.NovoStatus> Domain.Cacambas.Comandos.NovaCacambaComando::get_Status()
+DA:13,0
+FN:8,System.Void Domain.Cacambas.Comandos.NovaCacambaComando::.ctor(System.String,System.String,System.Collections.Generic.List`1<Domain.Cacambas.Comandos.NovoStatus>)
+FNDA:0,System.Void Domain.Cacambas.Comandos.NovaCacambaComando::.ctor(System.String,System.String,System.Collections.Generic.List`1<Domain.Cacambas.Comandos.NovoStatus>)
+DA:9,0
+DA:10,0
+DA:14,0
+FN:23,System.Void Domain.Cacambas.Comandos.NovaCacambaValidacao::.ctor()
+FNDA:0,System.Void Domain.Cacambas.Comandos.NovaCacambaValidacao::.ctor()
+DA:24,0
+DA:25,0
+DA:26,0
+DA:27,0
+DA:28,0
+FN:34,System.Void Domain.Cacambas.Comandos.NovaCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+FNDA:0,System.Void Domain.Cacambas.Comandos.NovaCacamba::.ctor(Domain.Cacambas.Interface.ICacambaRepositorio)
+DA:35,0
+DA:36,0
+DA:37,0
+DA:38,0
+FN:40,System.Void Domain.Cacambas.Comandos.NovaCacamba/<Handle>d__2::MoveNext()
+FNDA:0,System.Void Domain.Cacambas.Comandos.NovaCacamba/<Handle>d__2::MoveNext()
+DA:41,0
+DA:42,0
+DA:43,0
+DA:44,0
+DA:45,0
+LF:20
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record
+SF:C:\work\clouddata\projects\customers\NovoConceito\Cacambex\servicos\domain\Cacambas\Agregacao\Cacamba.cs
+FN:7,System.String Domain.Cacambas.Agregacao.Cacamba::get_Numero()
+FNDA:0,System.String Domain.Cacambas.Agregacao.Cacamba::get_Numero()
+DA:8,0
+FN:8,System.String Domain.Cacambas.Agregacao.Cacamba::get_Volume()
+FNDA:0,System.String Domain.Cacambas.Agregacao.Cacamba::get_Volume()
+DA:9,0
+FN:9,Domain.Cacambas.Enumeraveis.Status Domain.Cacambas.Agregacao.Cacamba::get_Status()
+FNDA:0,Domain.Cacambas.Enumeraveis.Status Domain.Cacambas.Agregacao.Cacamba::get_Status()
+DA:10,0
+FN:18,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarNumero(System.String)
+FNDA:0,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarNumero(System.String)
+DA:19,0
+FN:19,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarVolume(System.String)
+FNDA:0,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarVolume(System.String)
+DA:20,0
+FN:20,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarStatus(Domain.Cacambas.Enumeraveis.Status)
+FNDA:0,System.Void Domain.Cacambas.Agregacao.Cacamba::AlterarStatus(Domain.Cacambas.Enumeraveis.Status)
+DA:21,0
+FN:11,System.Void Domain.Cacambas.Agregacao.Cacamba::.ctor(System.String,System.String)
+FNDA:0,System.Void Domain.Cacambas.Agregacao.Cacamba::.ctor(System.String,System.String)
+DA:12,0
+DA:13,0
+DA:14,0
+DA:15,0
+DA:16,0
+DA:17,0
+LF:12
+LH:0
+BRF:0
+BRH:0
+FNF:7
+FNH:0
+end_of_record

@@ -1,0 +1,9 @@
+<h1 mat-dialog-title>Excluir {{this.dados.titulo}} {{ dados.identificador }}?</h1>
+<div mat-dialog-content>
+  Essa ação não poderá ser revertida. Confirme apenas se você tiver certeza.
+  Deseja realmente excluir {{this.dados.titulo}}?
+</div>
+<div mat-dialog-actions align="end">
+  <button mat-button [mat-dialog-close]="true">Sim</button>
+  <button mat-button mat-dialog-close cdkFocusInitial>Não</button>
+</div>

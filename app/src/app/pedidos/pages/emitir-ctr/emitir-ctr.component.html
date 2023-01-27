@@ -1,0 +1,79 @@
+<div class="principal">
+
+  <ng-container *ngIf="pedido.numeroCTR == ''">
+
+    <form #form="ngForm">
+      <h1>Solicitar CTR</h1>
+      <mat-radio-group [(ngModel)]="solicitarCtr.classificacao" name="classificacao" required
+        [disabled]="pedidoItem.ctr.status == 0">
+        <mat-label>Classificação</mat-label>
+        <mat-radio-button [value]="1">I - Entulho Limpo (Dispensa Triagem)</mat-radio-button>
+        <mat-radio-button [value]="2">II - Entulho Sujo (Com necessidade de triagem)</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-radio-group [(ngModel)]="solicitarCtr.classeResiduo" name="classeResiduo" required
+        [disabled]="pedidoItem.ctr.status == 0">
+        <mat-label>Classe Residuo</mat-label>
+        <mat-radio-button [value]="1">Classe A - Concreto, Argamassa, Alvenaria, Cerâmicos, Solos</mat-radio-button>
+        <mat-radio-button [value]="2">Classe B - Madeira, Gesso, Emb. Lata de Tinta, Plástico, Papel, Papelão,
+          Metal,
+          Vidro,
+          Poda de árvore, Emb. Lata de Solvente</mat-radio-button>
+      </mat-radio-group>
+
+    </form>
+
+    <button mat-raised-button class="btn-primario" (click)="solicitarCTR()"
+      [disabled]="!form.valid || pedidoItem.ctr.status == 1">
+      {{ pedidoItem.ctr.status == 0 ? 'CTR emitido' : pedidoItem.ctr.status == 1 ? 'Aguardando CTR..' :
+      pedidoItem.ctr.status == 2 ? 'CTR com falhas' : 'Solicitar CTR'}}
+    </button>
+
+  </ng-container>
+
+  <ng-container *ngIf="pedido.numeroCTR != '' && visualizarRecolher$.value.status == 3">
+
+    <form #formEnviar="ngForm">
+      <h1>Enviar caçamba a obra</h1>
+      <mat-radio-group [(ngModel)]="enviarCacambaObra.localEstacionado" name="localEstacionado" required
+        [disabled]="pedidoItem.ctr.status != 0">
+        <mat-label>Local estacionamento</mat-label>
+        <mat-radio-button [value]="'viapublica'">Via pública</mat-radio-button>
+        <mat-radio-button [value]="'canteirodeobra'">Canteiro de obra</mat-radio-button>
+      </mat-radio-group>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Placa do veículo</mat-label>
+        <input type="text" mask="AAA-0A00" matInput [(ngModel)]="enviarCacambaObra.placaVeiculo" name="placaVeiculo"
+          [disabled]="pedidoItem.ctr.status != 0" required />
+      </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button class="btn-primario" (click)="enviarCacamba()"
+      [disabled]="!formEnviar.valid || pedidoItem.ctr.status != 0">
+      Enviar caçamba
+    </button>
+
+  </ng-container>
+
+  <ng-container *ngIf="visualizarRecolher$.value.status == 1">
+
+    <form #formEnviar="ngForm">
+      <h1>Recolher caçamba da obra</h1>
+
+      <mat-form-field appearance="legacy">
+        <mat-label>Placa do veículo</mat-label>
+        <input type="text" mask="AAA-0A00" matInput [(ngModel)]="recolherCacambaObra.placaVeiculo" name="placaVeiculo"
+          [disabled]="pedidoItem.ctr.status != 0" required />
+      </mat-form-field>
+
+    </form>
+
+    <button mat-raised-button class="btn-primario" (click)="recolherCacamba()"
+      [disabled]="!formEnviar.valid || pedidoItem.ctr.status != 0">
+      Recolher caçamba
+    </button>
+
+  </ng-container>
+</div>

@@ -1,0 +1,8 @@
+<div class="principal">
+  <div class="cabecalho">
+    <span>{{ titulo }}</span>
+    <button mat-button class="btn-primario" [mat-dialog-close]="data()">Salvar</button>
+  </div>
+  <ca-endereco-form (onEnderecoFormGroupChange)="onEnderecoFormGroupChange($event)"
+    [enderecoForm]="this.enderecoForm.value"></ca-endereco-form>
+</div>

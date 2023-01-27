@@ -1,0 +1,13 @@
+<form [formGroup]="clienteForm">
+  <mat-form-field appearance="outline">
+    <mat-label>Procure por um cliente</mat-label>
+    <input matInput maxlength="255" type="text" formControlName="nome" placeholder="Nome" [formControl]="myControl"
+      [matAutocomplete]="auto" />
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn(dataSource.data)"
+      (optionSelected)="popularForm($event.option.value)">
+      <mat-option *ngFor="let cliente of clientesFiltrados | async " [value]="cliente.id">
+        {{ cliente.nome }}
+      </mat-option>
+    </mat-autocomplete>
+  </mat-form-field>
+</form>

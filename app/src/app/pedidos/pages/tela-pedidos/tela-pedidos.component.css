@@ -1,0 +1,31 @@
+.principal {
+  padding-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-template-rows: 5vh 90vh 5vh;
+  grid-template-areas: ". c"
+    "ce cd"
+    ". f"
+}
+
+.cabecalho {
+  grid-area: c;
+}
+
+.container-esquerdo {
+  grid-area: ce;
+  position: fixed;
+  margin-top: 40px;
+}
+
+.container-direito {
+  grid-area: cd;
+}
+
+mat-paginator {
+  background-color: #FAFAFA;
+}
+
+mat-spinner {
+  margin: auto;
+}

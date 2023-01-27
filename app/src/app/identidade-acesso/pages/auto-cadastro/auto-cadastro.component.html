@@ -1,0 +1,61 @@
+<img id="clouddata" src="assets/clouddata.png" alt="" srcset="" />
+<div class="principal">
+  <div class="cabecalho">
+    <img src="assets/cacambex.jpeg" />
+    <span>Cadastro</span>
+  </div>
+  <form [formGroup]="autoCadastroForm">
+    <ca-cliente-form (onClienteFormGroupChange)="onClienteFormGroupChange($event)"
+      [clienteForm]="this.autoCadastroForm.get('cliente')?.value"></ca-cliente-form>
+    <ca-endereco-form (onEnderecoFormGroupChange)="onEnderecoFormGroupChange($event)"
+      [enderecoForm]="this.autoCadastroForm.get('cliente.enderecoCobranca')?.value"></ca-endereco-form>
+    <div class="linha-senhas">
+      <mat-form-field appearance="legacy" class="input-menor">
+        <mat-label>Senha</mat-label>
+        <input matInput maxlength="6" type="password" formControlName="senha" [type]="hide ? 'password' : 'text'"
+          placeholder="Senha de 6 dígitos" />
+        <mat-error *ngIf="senha.hasError('required')">
+          Campo obrigatório
+        </mat-error>
+        <mat-error *ngIf="senha.hasError('minlength')">
+          Mínimo de 6 dígitos exigidos
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+
+      <mat-form-field appearance="legacy" class="input-menor">
+        <input matInput maxlength="6" type="password" pattern="{{senha.value}}" formControlName="confirmarSenha"
+          [type]="hide ? 'password' : 'text'" required placeholder="Confirmar senha" />
+        <mat-error *ngIf="senha.value!=confirmarSenha.value">
+          Senhas não conferem
+        </mat-error>
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+    </div>
+    <div class="acoes">
+      <button mat-raised-button class="btn-secondary" type="button" (click)="voltar()">
+        Voltar
+      </button>
+      <ng-container *ngIf="!enviando;else load">
+        <button mat-raised-button class="btn-primario" type="button" (click)="submit()"
+          [disabled]="autoCadastroForm.invalid">
+          {{nomeBotao}}
+        </button>
+      </ng-container>
+      <ng-template #load>
+        <button mat-raised-button [disabled]="true">
+          <mat-icon>
+            <mat-spinner color="primary" diameter="20">
+            </mat-spinner>
+          </mat-icon>
+        </button>
+      </ng-template>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d45f9214-f553-4f9f-9a4c-08a8a1a74f23/AppServices/subscriptions/d45f9214-f553-4f9f-9a4c-08a8a1a74f23/resourceGroups/app-cacambex/providers/Microsoft.Web/sites/cacambex",
+    "appService.deploySubpath": "dist"
+}

@@ -1,0 +1,79 @@
+.toolbar {
+  height: 46px;
+  padding: 10px 30px 10px 30px;
+  gap: 10px;
+  background-color: #FAFAFA;
+}
+
+.icon-truck {
+  color: #e5b034;
+  margin-left: 10px;
+}
+
+.icon-notification {
+  color: #e5b034;
+  font-size: 20px;
+}
+
+.icon-search {
+  color: #e5b034;
+  font-size: 25px;
+}
+
+.text {
+  color: #e5b034;
+  margin-right: 20px;
+  font-size: small;
+}
+
+.search,
+.user,
+.toolbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.user>button,
+.toolbar>div {
+  margin-right: 10px;
+}
+
+.logo>img {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+}
+
+.iniciais-do-usuario {
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--text-color-1);
+  color: white;
+
+}
+
+.search {
+  border-radius: 100px;
+  padding-left: 10px;
+  background-color: #f2f2f2;
+  width: 300px;
+}
+
+.search input {
+  outline: 0;
+  border-radius: 100px;
+  width: 300px;
+  height: 30px;
+  background-color: #f2f2f2;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

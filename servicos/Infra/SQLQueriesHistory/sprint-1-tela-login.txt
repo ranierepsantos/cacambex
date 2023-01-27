@@ -1,0 +1,37 @@
+CREATE TABLE Clientes (
+    Id int PRIMARY KEY,
+    Codigo_cliente_integracao varchar(255),
+    Codigo_cliente_omie varchar(255),
+    Nome varchar(255) NOT NULL,
+    Documento varchar(255) NOT NULL,
+    DataNascimento datetime NOT NULL,
+    Telefone varchar(15) NOT NULL,
+    NomeContato varchar(50),
+    Email varchar(255) NOT NULL,
+    Contribuinte varchar(1) NOT NULL,
+    Observacao varchar(255)
+    TipoDocumento bit NOT NULL,
+    Pessoa_fisica varchar(1) NOT NULL,
+    EnderecoId int FOREIGN KEY NOT NULL,
+);
+
+CREATE TABLE Enderecos (
+    Id int PRIMARY KEY,
+    CEP varchar(20) NOT NULL,
+    Logradouro varchar(255) NOT NULL,
+    Numero varchar(50) NOT NULL,
+    Complemento varchar(255) NULL,
+    Bairro varchar(255) NOT NULL,
+    Cidade varchar(255) NOT NULL,
+    UF varchar(2) NOT NULL,
+    ClienteId int FOREIGN KEY
+);
+
+CREATE TABLE Usuarios (
+    Id int PRIMARY KEY,
+    Nome varchar(255) NOT NULL,
+    Email varchar(255) NOT NULL,
+    Senha varchar(255) NOT NULL,
+    Ativo bit NOT NULL,
+    Funcao int NOT NULL
+);

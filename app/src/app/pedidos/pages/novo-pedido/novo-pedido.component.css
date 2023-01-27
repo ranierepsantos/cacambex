@@ -1,0 +1,55 @@
+mat-stepper {
+  display: flex;
+  justify-content: center;
+  margin-top: 5px;
+  background-color: #FAFAFA;
+}
+
+::ng-deep .mat-step-header .mat-step-icon-selected {
+  background-color: var(--text-color-1);
+}
+
+button {
+  margin-right: 10px;
+}
+
+mat-card button {
+  margin-top: 8px;
+  margin-left: auto;
+}
+
+.item-card {
+  margin-bottom: 8px;
+}
+
+.observacao {
+  margin-top: 8px;
+  width: 100%;
+}
+
+.enderecoId {
+  width: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.item-card-revisar {
+  margin: 5px;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+h3,
+h2 {
+  padding: 0px;
+  margin: 0px;
+}

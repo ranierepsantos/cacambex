@@ -1,0 +1,11 @@
+.nota-fiscal {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+span {
+  font-size: medium;
+  margin-right: 8px;
+}

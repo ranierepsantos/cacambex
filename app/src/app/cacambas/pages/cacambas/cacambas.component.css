@@ -1,0 +1,25 @@
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: calc(100% - 100px);
+  padding: 20px 0px 10px 0px;
+}
+
+.cabecalho {
+  width: 100%;
+}
+
+.conteudo-tabela {
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+.mat-title {
+  display: flex;
+  justify-content: center;
+}

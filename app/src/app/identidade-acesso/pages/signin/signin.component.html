@@ -1,0 +1,38 @@
+<img id="clouddata" src="assets/clouddata.png" alt="" srcset="" />
+
+<div class="container-out">
+  <div class="banner">
+    <img [height]="500" src="assets/BANNER_APP_JAN22.png" alt="" srcset="">
+  </div>
+  <div class="linha-vertical"></div>
+  <div class="container-in">
+    <form (ngSubmit)="login()" #form="ngForm">
+      <img src="assets/cacambex.jpeg" />
+      <mat-form-field appearance="standard">
+        <mat-label>E-mail</mat-label>
+        <input matInput name="email" [(ngModel)]="autorizacaoUsuario.email" required />
+      </mat-form-field>
+      <mat-form-field appearance="standard">
+        <mat-label>Senha</mat-label>
+        <input maxlength="6" minlength="6" type="password" matInput [(ngModel)]="autorizacaoUsuario.senha"
+          name="password" required />
+      </mat-form-field>
+
+      <ng-container *ngIf="!acessando;else load">
+        <button class="btn-primario" mat-raised-button type="submit" [disabled]="!form.valid">
+          Acessar
+        </button>
+      </ng-container>
+      <ng-template #load>
+        <button mat-raised-button [disabled]="true">
+          <mat-icon>
+            <mat-spinner color="primary" diameter="20">
+            </mat-spinner>
+          </mat-icon>
+        </button>
+      </ng-template>
+      <a routerLink="/identidade-acesso/auto-cadastro">Cadastre-se</a>
+      <a routerLink="/identidade-acesso/solicitar-nova-senha">Esqueci minha senha</a>
+    </form>
+  </div>
+</div>

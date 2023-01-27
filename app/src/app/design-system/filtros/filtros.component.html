@@ -1,0 +1,64 @@
+<mat-card class="container mat-elevation-z3">
+  <div class="container">
+    <form #form="ngForm">
+      <mat-card-title class="cabecalho">
+        <span>{{ titulo }}</span>
+      </mat-card-title>
+      <div class="conteudo">
+
+        <ng-container *ngIf="isAdmin">
+
+          <span>Nome do cliente</span>
+          <mat-form-field appearance="legacy">
+            <input matInput [(ngModel)]="nomeCliente" name="nomeCliente"
+              (ngModelChange)="nomeClienteChange.emit($event)">
+          </mat-form-field>
+
+          <span>Documento do cliente</span>
+          <mat-form-field appearance="legacy">
+            <input matInput [(ngModel)]="documentoCliente" name="documentoCliente"
+              (ngModelChange)="documentoClienteChange.emit($event)">
+          </mat-form-field>
+
+        </ng-container>
+
+        <span>Número da nota fiscal</span>
+        <mat-form-field appearance="legacy">
+          <input matInput [(ngModel)]="notaFiscal" name="notaFiscal" (ngModelChange)="notaFiscalChange.emit($event)"
+            disabled>
+        </mat-form-field>
+
+        <span>Número do CTR</span>
+        <mat-form-field appearance="legacy">
+          <input matInput [(ngModel)]="numeroCTR" name="numeroCTR" (ngModelChange)="numeroCTRChange.emit($event)"
+            disabled>
+        </mat-form-field>
+
+        <span>Filtrar por data</span>
+        <mat-form-field appearance="legacy">
+          <mat-date-range-input [rangePicker]="picker" [disabled]="!filtroPorData">
+            <input matStartDate placeholder="Data início" [(ngModel)]="dataInicio" name="dataInicio" disabled
+              (ngModelChange)="dataInicioChange.emit($event)">
+            <input matEndDate placeholder="Data final" [(ngModel)]="dataFim" name="dataFim" disabled
+              (ngModelChange)="dataFimChange.emit($event)">
+          </mat-date-range-input>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+
+        <mat-checkbox type="checkbox" [(ngModel)]="filtroPorData" name="filtroPorData" disabled
+          (ngModelChange)="filtroPorDataChange.emit($event)">Aplicar data</mat-checkbox>
+
+        <mat-radio-group [(ngModel)]="sort" name="sort" (ngModelChange)="sortChange.emit($event)">
+          <mat-label>Ordem: </mat-label>
+          <mat-radio-button [value]="'asc'">Crescente</mat-radio-button>
+          <mat-radio-button [value]="'desc'">Decrescente</mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </form>
+    <mat-card-actions>
+      <button mat-raised-button class="btn-primario" (click)="aplicarFiltros()">Aplicar</button>
+    </mat-card-actions>
+  </div>
+
+</mat-card>

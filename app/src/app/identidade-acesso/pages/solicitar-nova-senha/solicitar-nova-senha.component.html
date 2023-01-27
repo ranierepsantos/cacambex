@@ -1,0 +1,41 @@
+<img id="clouddata" src="assets/clouddata.png" alt="" srcset="" />
+<div class="container-in">
+  <form [formGroup]="recuperarSenhaForm">
+    <img src="assets/cacambex.jpeg" />
+    <h4>Recuperar senha</h4>
+    <mat-form-field appearance="standard">
+      <mat-label>Digite seu e-mail</mat-label>
+      <input matInput placeholder="rui@rui.com" formControlName="email" required>
+      <mat-error *ngIf="email.hasError('required')">
+        Necessário preencher o campo
+      </mat-error>
+      <mat-error *ngIf="email.hasError('email')">
+        E-mail inválido
+      </mat-error>
+    </mat-form-field>
+
+    <div class="botoes">
+
+      <button mat-raised-button routerLink="/">
+        Voltar
+      </button>
+
+      <ng-container *ngIf="!enviando;else load">
+
+        <button class="btn-primario" mat-raised-button (click)="submit()" [disabled]="recuperarSenhaForm.invalid">
+          Solicitar Nova Senha
+        </button>
+
+      </ng-container>
+    </div>
+  </form>
+</div>
+
+<ng-template #load>
+  <button mat-raised-button [disabled]="true">
+    <mat-icon>
+      <mat-spinner color="primary" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+</ng-template>

@@ -1,0 +1,23 @@
+mat-sidenav-container {
+  height: 100%;
+}
+.sidenav {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 240px;
+  background-color: var(--text-color-5);
+}
+mat-nav-list mat-icon {
+  margin-right: 20px;
+  color: var(--text-color-1);
+}
+mat-nav-list img {
+  padding: 10px 15px 0px 15px;
+  width: 190px;
+}
+mat-nav-list a{
+  color: var(--text-color-2);
+
+}

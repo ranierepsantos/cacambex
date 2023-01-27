@@ -1,0 +1,13 @@
+<div class="cabecalho">
+  <div class="esquerda">
+    <ng-container *ngIf="mostrarSetaVoltar">
+      <a mat-icon-button (click)="acaoVoltar.emit()"><mat-icon>arrow_back</mat-icon></a>
+    </ng-container>
+    <span>{{ titulo }}</span>
+  </div>
+  <ng-container *ngIf="mostrarBotao">
+    <div [matTooltip]="desabilitado ? 'Necessário preencher todos os campos.' : ''">
+      <button mat-raised-button type="button" class="btn-primario" (click)="novoEventoAbrir.emit()" [disabled]="desabilitado" >{{ nomeBotao }}</button>
+    </div>
+  </ng-container>
+</div>

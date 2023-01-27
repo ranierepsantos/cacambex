@@ -1,0 +1,47 @@
+<form #form="ngForm" class="principal">
+  <h3>{{ titulo }}</h3>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Número</mat-label>
+    <input type="text" matInput placeholder="Ex. 99" [(ngModel)]="visualizarCacamba.numero" name="numero" required />
+  </mat-form-field>
+
+  <mat-radio-group [(ngModel)]="visualizarCacamba.volume" name="volume" required [disabled]="desabilitarVolume">
+    <mat-label>Volume</mat-label>
+    <mat-radio-button value="3M³">
+
+      <mat-card class="mat-elevation-z2">
+        <mat-card-title-group>
+          <img mat-card-sm-image src="assets/cacamba.png">
+          <mat-card-subtitle>Caçamba pequena</mat-card-subtitle>
+          <mat-card-subtitle>Volume: 3M³</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+
+    </mat-radio-button>
+
+    <mat-radio-button value="5M³">
+
+      <mat-card class="mat-elevation-z2">
+        <mat-card-title-group>
+          <img mat-card-sm-image src="assets/cacamba.png">
+          <mat-card-subtitle>Caçamba pequena</mat-card-subtitle>
+          <mat-card-subtitle>Volume: 5M³</mat-card-subtitle>
+        </mat-card-title-group>
+      </mat-card>
+
+    </mat-radio-button>
+  </mat-radio-group>
+
+
+  <mat-form-field appearance="legacy">
+    <mat-label>Preço</mat-label>
+    <input type="number" matInput placeholder="Utilize virgura para separa centavos."
+      [(ngModel)]="visualizarCacamba.preco" name="preco" required />
+    <span matPrefix>R$ &nbsp;</span>
+  </mat-form-field>
+
+  <button mat-raised-button [mat-dialog-close]="data()" [disabled]="!form.valid" type="submit" class="btn-primario">
+    Salvar
+  </button>
+</form>

@@ -1,0 +1,60 @@
+.container-out {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.container-out img {
+  display: flex;
+  height: 100px;
+}
+
+.container-in {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.container-in form {
+  width: 300px;
+  height: 100%;
+  background: var(--background-color-1);
+  border: 1px solid var(--text-color-1);
+  border-radius: 30px;
+}
+
+.container-in a {
+  width: 50%;
+  margin: 20px;
+}
+
+.container-in span {
+  color: var(--text-color-2);
+  width: 250px;
+  height: 180px;
+  font-size: 150%;
+  line-height: 25px;
+}
+
+.container-in mat-icon {
+  font-size: 70px;
+  width: 70px;
+  height: 30px;
+  margin-bottom: 50px;
+}
+
+.h1 {
+  font-size: 24px;
+  color: var(--text-color-4);
+}
+
+#clouddata {
+  position: fixed;
+  bottom: 30px;
+  width: 100px;
+  left: 40px;
+}

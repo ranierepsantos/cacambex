@@ -1,0 +1,11 @@
+namespace Domain.Identidade.Consultas;
+public interface IConsultarUsuario
+{
+
+}
+public class ConsultarUsuario
+{
+    public int PageIndex { get; set; } = 0;
+    public int PageSize { get; set; } = 10;
+    public string Sort { get; set; } = "desc";
+}

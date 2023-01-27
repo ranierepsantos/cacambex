@@ -1,0 +1,55 @@
+<form [formGroup]="endereco">
+  <div class="primeira-linha">
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="9" type="text" mask="00000-000" formControlName="cep" placeholder="CEP"
+        (blur)="encontrarEndereco(cep.value)" />
+      <mat-error *ngIf="cep.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-maior">
+      <input matInput maxlength="255" type="text" formControlName="logradouro" placeholder="Logradouro" />
+      <mat-error *ngIf="logradouro.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="10" type="text" formControlName="numero" placeholder="Número" />
+      <mat-error *ngIf="numero.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <div class="segunda-linha">
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="50" type="text" formControlName="bairro" placeholder="Bairro" />
+      <mat-error *ngIf="bairro.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="50" type="text" formControlName="cidade" placeholder="Cidade" />
+      <mat-error *ngIf="cidade.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="2" type="text" formControlName="uf" placeholder="UF" />
+      <mat-error *ngIf="uf.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+      <mat-error *ngIf="uf.hasError('pattern')">
+        UF inválido. Exemplo válido: sp, mg, rj
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-medio">
+      <input matInput maxlength="255" type="text" formControlName="complemento" placeholder="Complemento" />
+    </mat-form-field>
+  </div>
+</form>

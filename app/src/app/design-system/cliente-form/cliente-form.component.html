@@ -1,0 +1,65 @@
+<form [formGroup]="cliente">
+  <div class="primeira-linha">
+    <mat-form-field appearance="legacy" class="input-maior">
+      <input matInput maxlength="255" type="text" formControlName="nome" placeholder="Nome" />
+      <mat-error *ngIf="nome.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-medio">
+      <input matInput maxlength="18" (change)="mudarValidatorDocumento(documento)" (click)="desabilitarDocumento()"
+        (keyup)="mudarValidatorDocumento(documento)" mask="000.000.000-00||00.000.000/0000-00" type="text"
+        formControlName="documento" placeholder="CPF ou CNPJ" />
+      <mat-error *ngIf="documento.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+      <mat-error *ngIf="documento.value.length > 0 && documento.value.length < 11">
+        CPF inválido
+      </mat-error>
+      <mat-error *ngIf="documento.value.length < 15">
+        CNPJ inválido
+      </mat-error>
+    </mat-form-field>
+
+    <ng-container *ngIf="mostrarCampoContribuinte">
+      <div class="contribuinte" *ngIf="mostrarCampoContribuinte">
+        <mat-label class="label-contribuinte">É contribuinte?</mat-label>
+        <mat-radio-group formControlName="contribuinte">
+          <mat-radio-button value="S"> Sim </mat-radio-button>
+          <mat-radio-button value="N" class="radio-direito"> Não </mat-radio-button>
+        </mat-radio-group>
+      </div>
+    </ng-container>
+
+    <mat-form-field appearance="legacy" class="input-menor">
+      <mat-label>Data de nascimento</mat-label>
+      <input matInput [matDatepicker]="picker" (dateInput)="verificarAnoNascimento($event)"
+        (dateChange)="verificarAnoNascimento($event)" formControlName="dataNascimento">
+      <mat-error *ngIf="dataNascimento.hasError('menorIdade') && documento.value.length <= 11">
+        Menor de idade
+      </mat-error>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  </div>
+  <div class="primeira-linha">
+    <mat-form-field appearance="legacy" class="input-menor">
+      <input matInput maxlength="16" type="text" mask="(00) 00000-0000" formControlName="telefone"
+        placeholder="Telefone" />
+      <mat-error *ngIf="telefone.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="legacy" class="input-maior">
+      <input matInput maxlength="255" type="email" formControlName="email" placeholder="E-mail" />
+      <mat-error *ngIf="email.hasError('email') && !email.hasError('required')">
+        Insira um e-mail válido.
+      </mat-error>
+      <mat-error *ngIf="email.hasError('required')">
+        Campo obrigatório
+      </mat-error>
+    </mat-form-field>
+  </div>
+</form>

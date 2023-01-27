@@ -1,0 +1,19 @@
+CREATE TABLE Pedidos(
+    Id int PRIMARY KEY AUTOINCREMENT,
+    ClienteId int NOT NULL,
+    EnderecoEntregaId int NOT NULL,
+    DataEmissao datetime,
+    DataEntrega datetime,
+    NumeroNotaFiscal varchar(max),
+    StatusPedido int NOT NULL,
+    TipoPagamento int NOT NULL,
+    Total decimal(7,2) NOT NULL
+);
+CREATE TABLE PedidoItens(
+    Id int PRIMARY KEY AUTOINCREMENT,
+    PedidoId int NOT NULL,
+    CacambaId int NOT NULL,
+    ValorUnitario decimal(6,2) NOT NULL,
+    Quantidade int NOT NULL,
+    ValorTotal decimal(7,2) NOT NULL
+);

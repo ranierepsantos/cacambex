@@ -1,0 +1,50 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+}
+
+.gerenciar-pedido {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  margin: 10px;
+  width: 100%;
+  min-width: 350px;
+}
+
+.first {
+  display: flex;
+  flex-direction: column;
+}
+
+span {
+  font-weight: bold;
+  font-size: medium;
+}
+
+.acao {
+  display: flex;
+  padding: 8px;
+}
+
+.acao button {
+  width: 150px;
+  margin-left: auto;
+}
+
+footer {
+  margin-top: 16px;
+}
+
+h3,
+span {
+  margin-right: 8px;
+}
+
+span {
+  font-weight: bold;
+}

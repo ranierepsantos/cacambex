@@ -1,0 +1,51 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.primeira-linha,
+.segunda-linha {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.linha-do-formulario {
+  gap: 20px;
+}
+
+.input-menor {
+  width: 19%;
+}
+
+.input-maior {
+  width: 85%;
+}
+
+.input-nome {
+  width: 50%;
+}
+
+.input-medio {
+  width: 49%;
+}
+
+.radio-direito {
+  padding: 8px;
+}
+
+.contribuinte {
+  /* display: grid; */
+  display: none;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+
+.label-contribuinte {
+  color: #878787;
+}
+
+mat-form-field {
+  font-size: 18px;
+}

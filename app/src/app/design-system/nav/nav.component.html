@@ -1,0 +1,32 @@
+<div class="toolbar mat-elevation-z3">
+  <button mat-icon-button (click)="toggleMenu.emit()">
+    <mat-icon color="waiting">menu</mat-icon>
+  </button>
+  <div class="spacer"></div>
+
+  <!-- (falta implementar parte lógica) <div class="search">
+    <mat-icon class="icon-search">search</mat-icon>
+    <input
+      type="text"
+      name=""
+      id=""
+      placeholder="Search..."
+      style="border: 1px"
+    />
+  </div> -->
+
+  <!-- (falta implementar parte lógica) <a class="logo">
+    <img src="assets/pedro.jpg" alt="" srcset="" />
+  </a> -->
+
+  <div class="iniciais-do-usuario mat-elevation-z3">
+    <span [matTooltip]="usuario.email">
+      {{usuario.name | slice : 0: 2}}
+    </span>
+  </div>
+
+  <a class="text">{{usuario.role}}</a>
+  <button mat-icon-button matTooltip="Sair" (click)="sair()">
+    <mat-icon>logout</mat-icon>
+  </button>
+</div>

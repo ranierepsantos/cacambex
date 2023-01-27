@@ -1,0 +1,131 @@
+<div class="content">
+  <div class="pedido">
+
+    <div>
+
+      <h3>
+        <span style="font-weight: bold;">
+          Editar pedido n°
+        </span>
+        {{ visualizarPedido.id }}
+      </h3>
+      <h3>
+        <span style="font-weight: bold;">
+          Cliente:
+        </span>
+        {{ visualizarPedido.nomeCliente }}
+      </h3>
+
+    </div>
+
+    <div>
+
+      <form [formGroup]="editarPedidoForm">
+
+        <div>
+
+          <mat-radio-group formControlName="volumeCacamba">
+            <mat-radio-button value="3M³">
+
+              <ca-add-primeiro-item *ngFor="let cacamba of cacamba3m$ | async" [cacamba]="cacamba"
+                (click)="definirPrecoPedido(cacamba.preco)">
+
+              </ca-add-primeiro-item>
+
+            </mat-radio-button>
+            <mat-radio-button value="5M³">
+
+              <ca-add-segundo-item *ngFor="let cacamba of cacamba5m$ | async" [cacamba]="cacamba"
+                (click)="definirPrecoPedido(cacamba.preco)">
+
+              </ca-add-segundo-item>
+
+            </mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field appearance="outline" class="enderecoId">
+            <mat-label>{{
+              this.enderecoFiltrado
+              }}</mat-label>
+            <mat-select [formControl]="enderecoId" required (selectionChange)="onSelectEnderecoChange($event)">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let endereco of enderecosDoCliente" [value]="endereco">
+                {{endereco.logradouro}},
+                {{endereco.numero}},
+                {{endereco.bairro}},
+                {{endereco.cidade}}
+              </mat-option>
+              <button type="button" (click)="novoEndereco()" mat-button>Adicionar novo endereço</button>
+            </mat-select>
+          </mat-form-field>
+
+        </div>
+
+        <div>
+
+          <h3>
+            <span style="font-weight: bold;">
+              Total:
+            </span>
+            {{ valorPedido | currency }}
+          </h3>
+
+          <h3>
+            <span style="font-weight: bold;">
+              Forma de pagamento:
+            </span>
+          </h3>
+          <div>
+
+            <mat-button-toggle-group appearance="legacy" formControlName="tipoDePagamento">
+              <mat-button-toggle [value]="0" matTooltip="Pix" matTooltipPosition="below">
+                <mat-icon style="color: #37b4aa;">pix</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle [value]="1" matTooltip="Transferência TED" matTooltipPosition="below">
+                <mat-icon>account_balance</mat-icon>
+              </mat-button-toggle>
+              <mat-button-toggle [value]="2" matTooltip="Boleto" matTooltipPosition="below">
+                <img src="assets/barcode.png" alt="" />
+              </mat-button-toggle>
+              <mat-button-toggle [value]="3" matTooltip="Pagar ao motorista" matTooltipPosition="below">
+                <mat-icon>
+                  emoji_people
+                </mat-icon>
+              </mat-button-toggle>
+            </mat-button-toggle-group>
+          </div>
+
+          <mat-form-field appearance="outline" class="observacao">
+            <textarea matInput maxlength="255" type="text" formControlName="observacao" placeholder="Observação">
+              </textarea>
+            <mat-hint align="end">{{this.observacao.value.length || 0}}/255</mat-hint>
+          </mat-form-field>
+
+        </div>
+      </form>
+
+    </div>
+
+    <footer align="end">
+
+      <button mat-raised-button type="button" color="secondary" routerLink="/pedidos">Voltar</button>
+
+      <ng-container *ngIf="!enviando;else load">
+        <button mat-raised-button type="button" class="btn-primario" (click)="onSubmit()"
+          [disabled]="!editarPedidoForm.valid">Alterar pedido</button>
+      </ng-container>
+
+    </footer>
+
+  </div>
+
+</div>
+
+<ng-template #load>
+  <button mat-raised-button class="btn-primario" [disabled]="true">
+    <mat-icon>
+      <mat-spinner color="primary" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+</ng-template>

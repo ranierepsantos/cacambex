@@ -1,0 +1,4 @@
+.conector{
+    border-left: 1px solid var(--text-color-2);
+    height: 100px;
+}

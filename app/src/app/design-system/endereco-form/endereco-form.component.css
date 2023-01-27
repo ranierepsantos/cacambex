@@ -1,0 +1,25 @@
+form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.primeira-linha, .segunda-linha, .terceira-linha{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+.linha-do-formulario {
+  gap: 20px;
+}
+.input-menor {
+  width: 20%;
+}
+.input-maior {
+  width: 80%;
+}
+.input-medio {
+  width: 49%;
+}
+mat-form-field{
+  font-size: 18px;
+}

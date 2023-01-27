@@ -1,0 +1,19 @@
+.principal {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+.conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 100%;
+}
+.selecionar {
+  border: 1px solid var(--text-color-1);
+}
+table {
+  margin-top: 10px;
+  overflow-y: auto;
+}

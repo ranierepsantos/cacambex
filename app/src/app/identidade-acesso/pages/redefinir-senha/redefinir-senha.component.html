@@ -1,0 +1,39 @@
+<div class="container">
+
+  <mat-card class="mat-elevation-z3">
+
+    <mat-card-content>
+
+      <form [formGroup]="mudarSenhaForm">
+
+        <mat-form-field appearance="legacy" class="input-menor">
+          <mat-label>Senha atual</mat-label>
+          <input matInput maxlength="6" type="password" formControlName="novaSenha" [type]="hide ? 'password' : 'text'"
+            placeholder="Senha de 6 dígitos" />
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+            [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+        </mat-form-field>
+
+        <ng-container *ngIf="!enviando;else load">
+          <button class="btn-primario" mat-raised-button [disabled]="mudarSenhaForm.invalid" (click)="proximo()">
+            Proximo
+          </button>
+        </ng-container>
+
+      </form>
+
+    </mat-card-content>
+
+  </mat-card>
+
+</div>
+<ng-template #load>
+  <button mat-raised-button [disabled]="true">
+    <mat-icon>
+      <mat-spinner color="primary" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+</ng-template>

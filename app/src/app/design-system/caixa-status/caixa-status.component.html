@@ -1,0 +1,29 @@
+<div [ngSwitch]="visualizarEvento.status">
+  <div class="stage" *ngSwitchCase="0">
+    <mat-icon color="success">check_circle</mat-icon>
+    <span>{{ visualizarEvento.descricao }}</span>
+    <span>{{ visualizarEvento.quando | date : 'dd/MM/yyyy' }}</span>
+  </div>
+  <div class="stage" *ngSwitchCase="1">
+    <mat-icon color="waiting">hourglass_empty</mat-icon>
+    <span>{{ visualizarEvento.descricao }}</span>
+    <span>{{ visualizarEvento.quando | date : 'dd/MM/yyyy' }}</span>
+  </div>
+  <div class="stage" *ngSwitchCase="2">
+    <mat-icon color="failure">error_outline</mat-icon>
+    <span>{{ visualizarEvento.descricao }}</span>
+    <span>{{ visualizarEvento.quando | date : 'dd/MM/yyyy' }}</span>
+  </div>
+  <div class="stage" *ngSwitchCase="3">
+    <mat-icon color="primary">pending</mat-icon>
+    <span>{{ visualizarEvento.descricao }}</span>
+    <span>{{ visualizarEvento.status != 3 ?
+      (visualizarEvento.quando | date : 'dd/MM/yyyy')
+      : '---' }}</span>
+  </div>
+  <div class="stage" *ngSwitchDefault>
+    <mat-icon color="waiting">report_problem</mat-icon>
+    <span>Ocorreu um erro</span>
+    <span>...</span>
+  </div>
+</div>

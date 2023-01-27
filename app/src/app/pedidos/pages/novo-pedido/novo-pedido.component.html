@@ -1,0 +1,174 @@
+<mat-stepper labelPosition="bottom" #stepper [formGroup]="pedidoForm">
+
+  <mat-step [editable]="this.usuarioDecodificado.role == 'Cliente' ? false : true">
+
+    <mat-card class="mat-elevation-z3">
+
+      <mat-card-content>
+
+        <ca-procurar-cliente (onClienteFormGroupChange)="onClienteFormGroupChangeEvent($event)">
+
+        </ca-procurar-cliente>
+
+      </mat-card-content>
+
+      <mat-card-actions align="end">
+
+        <button mat-raised-button type="button" color="secondary" routerLink="/pedidos">Cancelar</button>
+        <button mat-raised-button type="button" class="btn-primario" matStepperNext
+          [disabled]="pedidoForm.get('clienteId')?.value == null">Proximo</button>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+  </mat-step>
+
+  <mat-step>
+
+    <div>
+
+      <mat-card class="mat-elevation-z3">
+
+        <mat-card-content>
+
+          <mat-radio-group formControlName="volumeCacamba">
+            <mat-radio-button value="3M³">
+
+              <ca-add-primeiro-item *ngFor="let cacamba of cacamba3m$ | async" [cacamba]="cacamba"
+                (click)="definirPrecoPedido(cacamba.preco)">
+
+              </ca-add-primeiro-item>
+
+            </mat-radio-button>
+            <mat-radio-button value="5M³">
+
+              <ca-add-segundo-item *ngFor="let cacamba of cacamba5m$ | async" [cacamba]="cacamba"
+                (click)="definirPrecoPedido(cacamba.preco)">
+
+              </ca-add-segundo-item>
+
+            </mat-radio-button>
+          </mat-radio-group>
+
+          <mat-form-field appearance="outline" class="enderecoId">
+            <mat-label>Selecione um endereço de entrega:</mat-label>
+            <mat-select [formControl]="enderecoId" required (selectionChange)="onSelectEnderecoChange($event)"
+              (selectionChange)="filtrarEndereco()">
+              <mat-option>--</mat-option>
+              <mat-option *ngFor="let endereco of enderecosDoCliente" [value]="endereco">
+                {{endereco.logradouro}},
+                {{endereco.numero}},
+                {{endereco.bairro}},
+                {{endereco.cidade}}
+              </mat-option>
+              <button type="button" (click)="novoEndereco()" mat-button>Adicionar novo endereço</button>
+            </mat-select>
+          </mat-form-field>
+
+        </mat-card-content>
+
+        <mat-card-actions align="end">
+
+          <ng-container *ngIf="this.usuarioDecodificado.role == 'Administrador';else cliente">
+            <button mat-raised-button type="button" color="secondary" matStepperPrevious>Voltar</button>
+          </ng-container>
+          <ng-template #cliente>
+            <button mat-raised-button type="button" color="secondary" routerLink="/pedidos">Cancelar</button>
+          </ng-template>
+          <button mat-raised-button type="button" class="btn-primario" matStepperNext
+            [disabled]="pedidoForm.get('enderecoId')?.value == 0">Proximo</button>
+
+        </mat-card-actions>
+
+      </mat-card>
+
+    </div>
+
+  </mat-step>
+
+  <mat-step>
+
+    <mat-card>
+
+      <mat-card-content class="finalizar">
+
+        <h3>
+          <span style="font-weight: bold;">
+            Total:
+          </span>
+          {{ totalPedido | currency }}
+        </h3>
+
+        <h3>
+          <span style="font-weight: bold;">
+            Tamanho caçamba:
+          </span>
+          {{ pedidoForm.get('volumeCacamba')?.value == '3M³' ?
+          'pequena/3M³'
+          : 'grande/5M³' }}
+        </h3>
+
+        <h3>
+          <span style="font-weight: bold;">
+            Endereço de entrega:
+          </span>
+          {{enderecoFiltrado}}
+        </h3>
+
+        <h3>
+          <span style="font-weight: bold;">
+            Forma de pagamento:
+          </span>
+        </h3>
+        <div>
+
+          <mat-button-toggle-group appearance="legacy" formControlName="tipoDePagamento">
+            <mat-button-toggle [value]="0" matTooltip="Pix" matTooltipPosition="below">
+              <mat-icon style="color: #37b4aa;">pix</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle [value]="1" matTooltip="Transferência TED" matTooltipPosition="below">
+              <mat-icon>account_balance</mat-icon>
+            </mat-button-toggle>
+            <mat-button-toggle [value]="2" matTooltip="Boleto" matTooltipPosition="below">
+              <img src="assets/barcode.png" alt="" />
+            </mat-button-toggle>
+            <mat-button-toggle [value]="3" matTooltip="Pagar ao motorista" matTooltipPosition="below">
+              <mat-icon>
+                emoji_people
+              </mat-icon>
+            </mat-button-toggle>
+          </mat-button-toggle-group>
+        </div>
+
+        <mat-form-field appearance="outline" class="observacao">
+          <textarea matInput maxlength="255" type="text" formControlName="observacao" placeholder="Observação">
+          </textarea>
+          <mat-hint align="end">{{this.observacao.value.length || 0}}/255</mat-hint>
+        </mat-form-field>
+
+      </mat-card-content>
+      <mat-card-actions align="end">
+
+        <button mat-raised-button type="button" color="secondary" matStepperPrevious>Voltar</button>
+
+        <ng-container *ngIf="!enviando;else load">
+          <button mat-raised-button type="button" class="btn-primario" (click)="onSubmit()"
+            [disabled]="pedidoForm.get('tipoDePagamento')?.value === '' ">Finalizar pedido</button>
+        </ng-container>
+
+        <ng-template #load>
+          <button mat-raised-button class="btn-primario" [disabled]="true">
+            <mat-icon>
+              <mat-spinner color="primary" diameter="20">
+              </mat-spinner>
+            </mat-icon>
+          </button>
+        </ng-template>
+
+      </mat-card-actions>
+
+    </mat-card>
+
+  </mat-step>
+</mat-stepper>

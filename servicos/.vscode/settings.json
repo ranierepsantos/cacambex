@@ -1,0 +1,11 @@
+{
+    "dotnet-test-explorer.testProjectPath":"**/*tests.@(csproj|vbproj|fsproj)",
+    "dotnet-test-explorer.testArguments":"/p:CollectCoverage=true /p:CoverletOutputFormat=lcov /p:CoverletOutput=./lcov.info ./",
+    "azureFunctions.deploySubpath": "OuvirFila/bin/Release/net6.0/publish",
+    "azureFunctions.projectLanguage": "C#",
+    "azureFunctions.projectRuntime": "~4",
+    "debug.internalConsoleOptions": "neverOpen",
+    "azureFunctions.preDeployTask": "publish (functions)",
+    "appService.defaultWebAppToDeploy": "/subscriptions/d45f9214-f553-4f9f-9a4c-08a8a1a74f23/AppServices/subscriptions/d45f9214-f553-4f9f-9a4c-08a8a1a74f23/resourceGroups/api-cacambex/providers/Microsoft.Web/sites/apicacambex",
+    "appService.deploySubpath": "Api"
+}

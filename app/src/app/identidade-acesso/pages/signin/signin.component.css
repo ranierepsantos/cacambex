@@ -1,0 +1,66 @@
+.container-out {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.banner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 45%;
+  height: 80%;
+}
+
+.container-in {
+  width: 45%;
+  height: 80%;
+}
+
+.linha-vertical {
+  border-right: 1px solid var(--text-color-1);
+  height: 80%;
+}
+
+.container-in form,
+.container-in {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-in form {
+  height: 80%;
+  position: relative;
+}
+.container-in form mat-progress-bar {
+  position: absolute;
+  bottom: 0;
+}
+.container-in form button {
+  width: 80%;
+  margin: 30px;
+}
+.container-in form mat-form-field {
+  width: 80%;
+}
+.container-in img {
+  width: 300px;
+}
+
+a {
+  color: var(--text-color-2);
+  text-decoration: none;
+}
+
+#clouddata {
+  position: fixed;
+  bottom: 30px;
+  width: 100px;
+  left: 40px;
+}

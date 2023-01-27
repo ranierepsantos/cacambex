@@ -1,0 +1,55 @@
+<div class="conteudo">
+  <div class="cabecalho">
+    <ca-cabecalho [desabilitado]="false" titulo="Clientes" (novoEventoAbrir)="novoCliente()">
+    </ca-cabecalho>
+  </div>
+  <div class="conteudo-tabela mat-elevation-z1">
+    <table mat-table [dataSource]="dataSource.data">
+
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element"> {{element.nome}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="documento">
+        <th mat-header-cell *matHeaderCellDef>Documento</th>
+        <td mat-cell *matCellDef="let element"> {{element.documento}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="telefone">
+        <th mat-header-cell *matHeaderCellDef>Telefone</th>
+        <td mat-cell *matCellDef="let element"> {{element.telefone}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef>E-mail</th>
+        <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="acao">
+        <th mat-header-cell *matHeaderCellDef></th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+          </button>
+          <mat-menu #menu="matMenu">
+            <button mat-menu-item type="button" (click)="editarCliente(element.id)">
+              <mat-icon color="primary">edit</mat-icon>
+              <span>Alterar</span>
+            </button>
+            <button mat-menu-item type="button" (click)="excluirCliente(element)">
+              <mat-icon color="warn">delete</mat-icon>
+              <span>Excluir</span>
+            </button>
+          </mat-menu>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [length]="dataSource.totalCount" [pageSize]="dataSource.pageSize" [pageIndex]="dataSource.pageIndex"
+      [pageSizeOptions]="[5, 10, 25, 100]" (page)="mudarPagina($event)" aria-label="Select page">
+    </mat-paginator>
+  </div>
+</div>

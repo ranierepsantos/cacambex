@@ -1,0 +1,51 @@
+.principal {
+  height: 100%;
+  width: 100%;
+}
+.principal,
+.container-form{
+  display: flex;
+  flex-direction: column;
+}
+.container-form{
+  padding: 20px 0px 10px 0px;
+}
+.cabecalho span {
+  color: var(--text-color-2);
+  margin-bottom: 15px;
+}
+.cabecalho{
+  width: 100%;
+}
+/* .linha-do-formulario {
+  display: flex;
+  gap: 20px;
+} */
+/* form{
+  width: 100%;
+}
+.input-menor {
+  width: 20%;
+}
+.input-maior {
+  width: 80%;
+}
+.input-medio {
+  width: 49%;
+}
+mat-form-field{
+  font-size: 18px;
+} */
+table {
+  width: 100%;
+}
+.cadastrar-endereco > span {
+  margin-right: 40px;
+}
+.cadastrar-endereco {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+  margin-bottom: 10px;
+}

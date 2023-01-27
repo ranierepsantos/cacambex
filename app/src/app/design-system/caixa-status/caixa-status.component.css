@@ -1,0 +1,12 @@
+.stage {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+span {
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+}

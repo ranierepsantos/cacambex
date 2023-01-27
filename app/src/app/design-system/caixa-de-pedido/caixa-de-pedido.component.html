@@ -1,0 +1,76 @@
+<mat-card class="card mat-elevation-z3">
+  <div class="container">
+    <div>
+      <h2>Pedido {{pedidoVisualizar.id}}</h2>
+      <div class="info-pedido">
+        <ng-container *ngIf="isAdmin">
+          <h3>
+            <span style="font-weight: bold;">
+              Cliente:
+            </span>
+            {{ pedidoVisualizar.nomeCliente }}
+          </h3>
+        </ng-container>
+        <h3>
+          <span style="font-weight: bold;">
+            Endereço de entrega:
+          </span>{{ concatenandoEndereco() }}
+        </h3>
+        <h3>
+          <span style="font-weight: bold;">
+            Observação:
+          </span>
+          {{ pedidoVisualizar.observacao }}
+        </h3>
+        <h3>
+          <span style="font-weight: bold;">
+            Total:
+          </span>
+          {{ pedidoVisualizar.valorPedido | currency:'BRL'}}
+        </h3>
+      </div>
+      <div class="fluxo">
+        <ng-container *ngFor="let item of pedidoVisualizar.eventos; let i = index">
+          <ca-caixa-status [visualizarEvento]="item"></ca-caixa-status>
+          <ca-conector-horizontal *ngIf="i != pedidoVisualizar.eventos.length -1"></ca-conector-horizontal>
+        </ng-container>
+      </div>
+    </div>
+
+    <div class="container-direito">
+      <div>
+        <h3>
+          Nota fiscal: {{ pedidoVisualizar.numeroNotaFiscal }}
+        </h3>
+      </div>
+      <h3 style="flex: 1 1 auto;"></h3>
+
+      <ng-container *ngIf="isAdmin">
+
+        <button class="btn-menu" mat-button (click)="gerenciarPedido.emit()" type="button">
+          Gerenciar Pedido
+        </button>
+
+        <ng-container>
+          <div [matTooltip]="pedidoVisualizar.numeroNotaFiscal != ''? mensagemEditar: ''">
+            <button class="btn-menu" mat-button [disabled]="pedidoVisualizar.numeroNotaFiscal != ''"
+              (click)="editar.emit()" type="button">
+              Editar
+            </button>
+          </div>
+        </ng-container>
+
+      </ng-container>
+
+      <ng-container>
+        <div [matTooltip]="pedidoVisualizar.numeroNotaFiscal != ''? mensagemExcluir: ''">
+          <button class="btn-menu" mat-button type="button" [disabled]="pedidoVisualizar.numeroNotaFiscal != ''"
+            (click)="this.excluir.emit()">
+            Excluir
+          </button>
+        </div>
+      </ng-container>
+
+    </div>
+  </div>
+</mat-card>

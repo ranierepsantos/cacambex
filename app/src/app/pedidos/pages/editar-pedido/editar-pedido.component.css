@@ -1,0 +1,39 @@
+.content {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  grid-template-areas:
+    ". a a ."
+    ". a a .";
+}
+
+.pedido {
+  grid-area: a;
+  align-self: center;
+  justify-self: center;
+  margin: 10px;
+}
+
+.item-card {
+  margin: 8px 0px 8px 0px;
+}
+
+.enderecoId {
+  width: 100%;
+}
+
+.observacao {
+  margin-top: 8px;
+  width: 100%;
+}
+
+button {
+  margin-left: 8px;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}

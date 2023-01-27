@@ -1,0 +1,64 @@
+CREATE TABLE Clientes (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    Codigo_cliente_integracao varchar(max),
+    Codigo_cliente_omie bigint,
+    Nome varchar(max) NOT NULL,
+    Documento varchar(max) NOT NULL,
+    DataNascimento datetime,
+    Telefone varchar(max) NOT NULL,
+    Email varchar(max) NOT NULL,
+    Contribuinte varchar(max),
+    TipoDocumento bit NOT NULL,
+    Pessoa_fisica varchar(1) NOT NULL,
+    Ativo bit NOT NULL,
+    EnderecoCobrancaId int NOT NULL,
+    CONSTRAINT FK_EnderecoCobranca_Cliente FOREIGN KEY(EnderecoCobrancaId) REFERENCES EnderecoCobranca(Id)
+);
+CREATE TABLE Usuarios (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    Nome varchar(max) NOT NULL,
+    Email varchar(max) NOT NULL,
+    Senha varchar(max) NOT NULL,
+    Ativo bit NOT NULL,
+    Funcao int NOT NULL
+);
+CREATE TABLE EnderecoCobranca (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    CEP varchar(max) NOT NULL,
+    Logradouro varchar(max) NOT NULL,
+    Numero varchar(max) NOT NULL,
+    Complemento varchar(max),
+    Bairro varchar(max) NOT NULL,
+    Cidade varchar(max) NOT NULL,
+    UF varchar(max) NOT NULL,
+    Ativo bit NOT NULL,
+);
+CREATE TABLE EnderecosEntrega (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    CEP varchar(max) NOT NULL,
+    Logradouro varchar(max) NOT NULL,
+    Numero varchar(max) NOT NULL,
+    Complemento varchar(max),
+    Bairro varchar(max) NOT NULL,
+    Cidade varchar(max) NOT NULL,
+    UF varchar(max) NOT NULL,
+    NomeContato varchar(max),
+    Observacao varchar(max),
+    Ativo bit NOT NULL,
+    ClienteID int NOT NULL,
+    CONSTRAINT FK_Cliente_EnderecoEntrega FOREIGN KEY(ClienteId) REFERENCES Cliente(Id)
+);
+CREATE TABLE Cacambas (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    Numero varchar(max) NOT NULL,
+    Volume varchar(max) NOT NULL,
+    Preco decimal(6,2) NOT NULL,
+    nCodServ bigint NOT NULL,
+    Ativo bit NOT NULL,
+    StatusId int NOT NULL,
+    CONSTRAINT FK_Status FOREIGN KEY(StatusId) REFERENCES Status(Id)
+);
+CREATE TABLE Status (
+    Id int PRIMARY KEY AUTOINCREMENT,
+    Nome varchar(max) NOT NULL,
+);

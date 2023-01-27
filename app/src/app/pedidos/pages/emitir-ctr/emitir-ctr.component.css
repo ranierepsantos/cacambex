@@ -1,0 +1,30 @@
+.principal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+}
+
+mat-form-field,
+button {
+  width: 150px;
+}
+
+button {
+  margin-left: auto;
+}
+
+mat-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+mat-icon {
+  color: var(--text-color-1);
+}
+
+mat-label {
+  font-weight: bold;
+}

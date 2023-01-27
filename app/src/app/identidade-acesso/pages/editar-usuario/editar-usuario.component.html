@@ -1,0 +1,26 @@
+<form #form="ngForm" class="principal">
+  <h3>{{ titulo }}</h3>
+  <mat-form-field appearance="legacy">
+    <mat-label>Nome</mat-label>
+    <input type="text" matInput placeholder="Nome completo" [(ngModel)]="usuario.nome" name="nome" required/>
+    <mat-icon matSuffix>people</mat-icon>
+  </mat-form-field>
+
+  <mat-form-field appearance="legacy">
+    <mat-label>E-mail</mat-label>
+    <input type="email" matInput placeholder="Insira um e-mail válido" [(ngModel)]="usuario.email" name="email" required/>
+    <mat-icon matSuffix>email</mat-icon>
+  </mat-form-field>
+
+  <mat-radio-group [(ngModel)]="usuario.funcao" name="funcao" required>
+    <mat-label>Função</mat-label>
+    <mat-radio-button [value]="0">Administrador</mat-radio-button>
+    <mat-radio-button [value]="1">Cliente</mat-radio-button>
+  </mat-radio-group>
+
+  <mat-slide-toggle *ngIf="x" [(ngModel)]="usuario.ativo" name="ativo">Ativo</mat-slide-toggle>
+
+  <button mat-raised-button class="btn-primario" [mat-dialog-close]="data()" [disabled]="!form.valid">
+    Salvar
+  </button>
+</form>

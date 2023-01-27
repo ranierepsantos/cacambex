@@ -1,0 +1,83 @@
+<div class="principal">
+  <div class="container-form">
+    <div class="cabecalho">
+      <ca-cabecalho [titulo]="titulo" [nomeBotao]="enviando == true ? 'Aguarde..' : 'Salvar' "
+        [desabilitado]="!clienteForm.valid" [mostrarSetaVoltar]="urlAtual === '/pedidos' ? false :true"
+        (acaoVoltar)="voltar()" (novoEventoAbrir)="submit()">
+      </ca-cabecalho>
+    </div>
+    <form [formGroup]="clienteForm">
+      <ca-cliente-form (onClienteFormGroupChange)="onClienteFormGroupChange($event)"
+        [clienteForm]="this.clienteForm.value" [editarCliente]="editarCliente"></ca-cliente-form>
+      <ca-endereco-form (onEnderecoFormGroupChange)="onEnderecoFormGroupChange($event)"
+        [enderecoForm]="this.clienteForm.get('enderecoCobranca')?.value"></ca-endereco-form>
+    </form>
+
+    <div class="cadastrar-endereco">
+      <span>Endereços de entrega</span>
+      <button mat-button class="btn-primario" type="button" (click)="novoEndereco()" [disabled]="">
+        Novo endereço
+      </button>
+    </div>
+    <div class="enderecos-cadastrados mat-elevation-z1">
+      <table mat-table [dataSource]="enderecosDeEntrega">
+
+        <ng-container matColumnDef="logradouro">
+          <th mat-header-cell *matHeaderCellDef>Logradouro</th>
+          <td mat-cell *matCellDef="let element"> {{element.logradouro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="numero">
+          <th mat-header-cell *matHeaderCellDef>Número</th>
+          <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="bairro">
+          <th mat-header-cell *matHeaderCellDef>Bairro</th>
+          <td mat-cell *matCellDef="let element"> {{element.bairro}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cep">
+          <th mat-header-cell *matHeaderCellDef>CEP</th>
+          <td mat-cell *matCellDef="let element"> {{element.cep}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="cidade">
+          <th mat-header-cell *matHeaderCellDef>Cidade</th>
+          <td mat-cell *matCellDef="let element"> {{element.cidade}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="uf">
+          <th mat-header-cell *matHeaderCellDef>UF</th>
+          <td mat-cell *matCellDef="let element"> {{element.uf}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="complemento">
+          <th mat-header-cell *matHeaderCellDef>Complemento</th>
+          <td mat-cell *matCellDef="let element"> {{element.complemento}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="acao">
+          <th mat-header-cell *matHeaderCellDef></th>
+          <td mat-cell *matCellDef="let element">
+            <button mat-icon-button [matMenuTriggerFor]="menu">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item type="button" (click)="alterarEndereco(element)">
+                <mat-icon color="primary">edit</mat-icon>
+                <span>Alterar</span>
+              </button>
+              <button mat-menu-item type="button" (click)="excluirEndereco(element)">
+                <mat-icon color="warn">delete</mat-icon>
+                <span>Excluir</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    </div>
+  </div>
+</div>

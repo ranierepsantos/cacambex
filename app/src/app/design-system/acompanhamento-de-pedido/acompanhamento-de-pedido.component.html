@@ -1,0 +1,34 @@
+<mat-card class="card mat-elevation-z3">
+  <div>
+    <div class="info">
+      <div class="cliente">
+        <mat-icon color="waiting">business</mat-icon><span>{{ infoPedido.nomeCliente }}</span>
+      </div>
+      <div class="endereco"><span>Endereço: {{ concatenandoEndereco() }}</span></div>
+      //TODO: Corrigir
+      <!-- <div class="preco"><mat-icon color="success">attach_money</mat-icon><span>R${{ infoPedido.precoLocacao }}</span></div> -->
+    </div>
+
+    <!-- <div class="caixa-status-vertical">
+        <div class="status-conector-first">
+          <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+          <ca-conector-vertical></ca-conector-vertical>
+        </div>
+          <div class="caixa-status-horizontal">
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+            <ca-conector-horizontal></ca-conector-horizontal>
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+            <ca-conector-horizontal></ca-conector-horizontal>
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+            <ca-conector-horizontal></ca-conector-horizontal>
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+          </div>
+          <div class="status-conector">
+            <ca-conector-vertical></ca-conector-vertical>
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+            <ca-conector-vertical></ca-conector-vertical>
+            <ca-caixa-status [caixaStatusVisualizar]="fasesDoPedido"></ca-caixa-status>
+          </div>
+      </div> -->
+  </div>
+</mat-card>

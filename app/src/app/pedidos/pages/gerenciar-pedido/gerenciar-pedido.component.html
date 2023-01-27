@@ -1,0 +1,140 @@
+<div class="content">
+  <div class="gerenciar-pedido">
+
+    <div *ngIf="visualizarPedido$ | async as pedido">
+
+      <h3>
+        <span style="font-weight: bold;">
+          Gerenciar pedido n°
+        </span>
+        {{ pedido.id }}
+      </h3>
+
+      <section class="first">
+
+        <section class="cliente">
+
+          <h3>
+            <span>
+              Cliente:
+            </span>
+            {{ pedido.nomeCliente }}
+          </h3>
+
+        </section>
+
+        <ca-nota-fiscal (atualizarStatusPedido)="statusPedido()" [pedidoItem$]="pedidoItem$" [enviando]="enviando"
+          [pedido$]="visualizarPedido$" [notaFiscal$]="visualizarNotaFiscal$" (emitirNfe)="emitirNotaFiscal()">
+        </ca-nota-fiscal>
+      </section>
+
+      <mat-card>
+
+        <mat-card-title-group>
+          <mat-card-subtitle>
+            <h3>
+              Informações caçamba
+            </h3>
+          </mat-card-subtitle>
+        </mat-card-title-group>
+
+        <mat-card-content>
+
+          <ng-container *ngIf="pedidoItem$ | async as pedidoItem">
+
+            <div class="acao">
+              Tamanho caçamba
+              <button mat-raised-button>
+                {{pedidoItem.volumeCacamba == '3M³' ?
+                '3M³/pequena'
+                : '5M³/grande'
+                }}
+              </button>
+            </div>
+
+            <div class="acao">
+              Caçamba vinculada
+              <ng-container *ngIf="pedidoItem.cacamba == null;else cacambaVinculada">
+                <button mat-raised-button type="button" class="btn-primario" (click)="escolherCacamba()">
+                  {{pedidoItem.cacamba == null ?
+                  'Vincular caçamba'
+                  : '{{pedidoItem.cacamba.numero}}'
+                  }}
+                </button>
+
+              </ng-container>
+
+              <ng-template #cacambaVinculada>
+                <button mat-raised-button type="button">
+                  {{pedidoItem.cacamba.numero}}
+                </button>
+              </ng-template>
+
+            </div>
+
+            <div class="acao" [style.color]="(visualizarCTR$.value.status == 2 ? 'red': 'black')">
+              {{visualizarCTR$.value.status == 2 ?
+              ('Erro: ' + visualizarCTR$.value.mensagem)
+              :'CTR'}}
+              <ng-container *ngIf="pedido.numeroCTR == '';else numeroCTR">
+                <button mat-raised-button type="button" class="btn-primario" [disabled]="pedido.numeroNotaFiscal == '' "
+                  (click)="emitirCTR()">
+                  Solicitar CTR
+                </button>
+              </ng-container>
+
+              <ng-template #numeroCTR>
+                <button mat-raised-button type="button">
+                  {{pedido.numeroCTR}}
+                </button>
+              </ng-template>
+
+            </div>
+
+            <div class="acao" [style.color]="visualizarCTR$.value.status == 2 ? 'red': 'black'">
+              {{visualizarCTR$.value.status == 2 ?
+              ('Erro: ' + visualizarCTR$.value.mensagem)
+              :'Enviar caçamba'}}
+
+              <ng-container *ngIf="visualizarRecolher$.value.status != 1;else cacambaEmObra">
+                <button mat-raised-button type="button" class="btn-primario" [disabled]="pedido.numeroCTR == ''"
+                  (click)="emitirCTR()">
+                  Enviar caçamba
+                </button>
+              </ng-container>
+
+              <ng-template #cacambaEmObra>
+                <button mat-raised-button type="button">
+                  Caçamba na obra
+                </button>
+              </ng-template>
+            </div>
+
+            <div class="acao">
+              {{visualizarRecolher$.value.status == 2 ?
+              ('Erro: ' + visualizarRecolher$.value.mensagem)
+              :'Recolher caçamba'}}
+              <button mat-raised-button type="button" class="btn-primario"
+                [disabled]="visualizarRecolher$.value.status != 1 || visualizarConcluido$.value.status ==0"
+                (click)="recolherCacamba()">
+                Recolher caçamba
+              </button>
+            </div>
+
+          </ng-container>
+        </mat-card-content>
+
+      </mat-card>
+
+    </div>
+
+    <footer align="end">
+
+      <button style="margin-right: 8px;" mat-raised-button type="button" routerLink="/pedidos">Voltar</button>
+
+      <button mat-raised-button type="button" class="btn-primario" routerLink="/pedidos">Concluir</button>
+    </footer>
+
+  </div>
+
+</div>

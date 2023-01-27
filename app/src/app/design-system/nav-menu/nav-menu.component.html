@@ -1,0 +1,31 @@
+<mat-sidenav-container>
+  <mat-sidenav class="sidenav" #sidenav mode="side" [opened]="open">
+    <mat-nav-list>
+      <img src="assets/cacambex.jpeg" alt="" srcset="" />
+      <a routerLink="/pedidos" mat-list-item>
+        <mat-icon>list_alt</mat-icon>Pedidos
+      </a>
+      <ng-container *ngIf="usuario.role === 'Administrador'">
+        <a routerLink="/identidade-acesso/usuarios" mat-list-item>
+          <mat-icon>person</mat-icon>Usuários
+        </a>
+        <a routerLink="/clientes" mat-list-item>
+          <mat-icon>people</mat-icon>Clientes
+        </a>
+        <a routerLink="/cacambas" mat-list-item>
+          <mat-icon>local_shipping</mat-icon>Caçambas
+        </a>
+      </ng-container>
+      <ng-container *ngIf="usuario.role === 'Cliente'">
+        <a mat-list-item [matMenuTriggerFor]="meusDados">
+          <mat-icon>account_circle</mat-icon>Meus dados
+        </a>
+      </ng-container>
+    </mat-nav-list>
+  </mat-sidenav>
+  <ng-content #main></ng-content>
+</mat-sidenav-container>
+<mat-menu #meusDados="matMenu" xPosition="before">
+  <button mat-menu-item (click)="editarCliente()">Alterar meus dados</button>
+  <a mat-menu-item routerLink="/identidade-acesso/redefinir-senha">Alterar minha senha</a>
+</mat-menu>

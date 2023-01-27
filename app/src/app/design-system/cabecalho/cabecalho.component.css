@@ -1,0 +1,13 @@
+.cabecalho {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  font-size: x-large;
+}
+.esquerda {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

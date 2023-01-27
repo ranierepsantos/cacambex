@@ -1,0 +1,7 @@
+<div class="stage">
+  <mat-icon color="{{ caixaStatus.status == 1 ? 'success' :caixaStatus.status == 2 ? 'waiting' : 'failure'}}">
+    {{ caixaStatus.status == 1 ? 'check_circle' :caixaStatus.status == 2 ? 'hourglass_empty' :
+    'settings_backup_restore'}}
+  </mat-icon>
+  <span>{{ caixaStatus.info }}</span>
+</div>

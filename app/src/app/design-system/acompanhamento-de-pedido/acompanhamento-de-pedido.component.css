@@ -1,0 +1,56 @@
+.card {
+  border-radius: 30px;
+  border: 1px solid var(--text-color-1);
+  background-color: var(--background-color-1);
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.mat-icon {
+  vertical-align: middle;
+  padding: 0px 10px 0px 0px;
+}
+.cliente, .endereco, .preco{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.info span {
+  color: var(--text-color-2);
+  font-size: 20px;
+}
+.caixa-status-vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 5px;
+}
+.caixa-status-horizontal {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100%;
+  gap: 5px;
+  margin-left: 20px;
+}
+.status-conector, .status-conector-first {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 25px;
+}
+.status-conector-first{
+  margin-left: 5px;
+}
+
+
+
+

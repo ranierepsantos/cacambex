@@ -1,0 +1,57 @@
+<section class="nota-fiscal">
+
+  <span matTooltip="Necessário vincular caçamba pata emitir Nota Fiscal" style="font-weight: bold;">
+    Nota Fiscal:
+  </span>
+
+  <div [ngSwitch]="(notaFiscal$ | async)?.status">
+
+    <div *ngSwitchCase="0">
+      <span *ngIf="pedido$ | async as pedido">{{ pedido.numeroNotaFiscal }}</span>
+    </div>
+
+    <div *ngSwitchCase="1">
+      <button disabled mat-raised-button>
+        <mat-icon color="waiting">hourglass_empty</mat-icon>
+        Aguardando
+      </button>
+      <ng-container *ngIf="!loading;else load">
+        <button style="margin-left: 5px;" mat-raised-button type="button" (click)="atualizarStatusPedido.emit()">
+          <mat-icon color="primary">refresh</mat-icon>
+          Atualizar
+        </button>
+      </ng-container>
+    </div>
+
+    <div *ngSwitchCase="2">
+      <button mat-raised-button disabled type="button">
+        <mat-icon color="failure">error_outline</mat-icon> Erro
+      </button>
+      <button style="margin-left: 5px;" mat-raised-button type="button">
+        <mat-icon color="primary">info</mat-icon>+ info
+      </button>
+    </div>
+
+    <div *ngSwitchCase="3">
+      <ng-container *ngIf="pedidoItem$ | async as pedidoItem">
+        <ng-container *ngIf="!loading;else load">
+          <button mat-raised-button type="button" class="btn-primario" [disabled]="pedidoItem.cacamba == null"
+            (click)="emitirNfe.emit()">
+            Emitir Nota Fiscal
+          </button>
+        </ng-container>
+      </ng-container>
+    </div>
+
+  </div>
+
+</section>
+
+<ng-template #load>
+  <button mat-raised-button class="btn-primario" [disabled]="true">
+    <mat-icon>
+      <mat-spinner color="primary" diameter="20">
+      </mat-spinner>
+    </mat-icon>
+  </button>
+</ng-template>

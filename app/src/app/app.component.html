@@ -1,0 +1,16 @@
+<ng-container *ngIf="tokenServico.token; else naoAutorizado">
+  <ca-nav-menu #menu>
+    <ca-nav (toggleMenu)="menu.open = !menu.open"></ca-nav>
+
+    <div class="filtros">
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </ca-nav-menu>
+
+</ng-container>
+<ng-template #naoAutorizado>
+  <router-outlet></router-outlet>
+</ng-template>

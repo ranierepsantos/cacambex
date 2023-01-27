@@ -1,0 +1,40 @@
+:root {
+  --text-color-1: #e5b034;
+  --text-color-2: #666666;
+  --text-color-3: rgb(243, 9, 9);
+  --text-color-4: #000000;
+  --text-color-5: #ffffff;
+  --text-color-6: #4caf50;
+  --background-color-1: #fffdfa;
+}
+
+.btn-primario {
+  background-color: var(--text-color-1);
+  font-weight: bold;
+}
+.btn-secondary {
+  background-color: var(--text-color-5);
+  font-weight: bold;
+}
+
+.snackContainer {
+  background-color: white;
+  color: var(--text-color-1);
+  border: none;
+}
+.snackContainer button {
+  color: var(--text-color-1);
+}
+.snackError {
+  background-color: var(--text-color-3);
+  color: var(--text-color-5);
+  border: none;
+  font-size: 42px !important;
+
+}
+.snackError button {
+  color: var(--text-color-5);
+}
+.snackError > .mat-simple-snackbar {
+  justify-content: center;
+}
