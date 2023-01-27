@@ -22,9 +22,6 @@ jobs:
           dotnet-version: '7.x'
           include-prerelease: true
           
-      - name : Enter folder /servicos
-        run: cd servicos
-
       - name: Build with dotnet
         run: dotnet build --configuration Release
 
@@ -35,7 +32,7 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: .net-app
-          path: ${{env.DOTNET_ROOT}}/myapp
+          path: ${{env.DOTNET_ROOT}}/servicos
 
   deploy:
     runs-on: windows-latest
