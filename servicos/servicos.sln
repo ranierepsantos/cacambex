@@ -11,7 +11,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UnitTests", "UnitTests\Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IntegrationTests", "IntegrationTests\IntegrationTests.csproj", "{6F280113-AE21-4CBE-8BCE-4243AD53FE3C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\api.csproj", "{3D474A1C-A280-4C67-A313-1ADCC7B5B193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Api", "Api\Api.csproj", "{3D474A1C-A280-4C67-A313-1ADCC7B5B193}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTRs", "CTRs\CTRs.csproj", "{FCB5E45D-665C-4582-8F96-5A6B0FAA671B}"
 EndProject
