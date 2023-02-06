@@ -1,20 +1,15 @@
-using System.Linq;
+using Domain.Cacambas.Comandos;
+using Domain.Cacambas.Consultas;
+using Domain.Cacambas.Enumeraveis;
+using Domain.Cacambas.Visualizacoes;
+using Domain.Compartilhado;
+using Infra.Dados;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using FluentValidation;
-using System.Collections.Generic;
-using Infra.Dados;
-using Domain.Compartilhado;
-using Domain.Cacambas.Interface;
-using MediatR;
-using Domain.Cacambas.Comandos;
-using System.Threading.Tasks;
-using Domain.Cacambas.Enumeraveis;
-using Domain.Cacambas.Consultas;
-using Domain.Cacambas.Visualizacoes;
 
-namespace Api.Cacambas;
+namespace Api.Controllers;
 
 [Authorize]
 [ApiController]

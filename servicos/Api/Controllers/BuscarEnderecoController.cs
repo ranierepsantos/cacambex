@@ -1,9 +1,8 @@
-using System.Threading.Tasks;
 using Domain.ViaCep.Interface;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Api.ViaCep;
+namespace Api.Controllers;
 [ApiController]
 [Route("buscar-endereco")]
 public class BuscarEnderecoController : ControllerBase

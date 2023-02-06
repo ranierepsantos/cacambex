@@ -31,7 +31,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddControllers();
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("Policy",
@@ -42,8 +42,6 @@ builder.Services.AddCors(options =>
                                 .AllowAnyMethod();
         });
 });
-
-builder.Services.AddControllers();
 builder.Services.AddSingleton((Func<IServiceProvider, StorageContext>)(x =>
 {
     string connectionString = builder.Configuration.GetSection("StorageContext:AzureConnString").Value;
@@ -65,8 +63,6 @@ builder.Services.AddSingleton((Func<IServiceProvider, OmieInformacoesAdicionais>
     long conta_corrente = builder.Configuration.GetSection("OmieInformacoesAdicionais:ContaCorrente").Get<long>();
     return new(conta_corrente, codigo_categoria);
 }));
-
-builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "api", Version = "v1" });
@@ -136,19 +132,21 @@ builder.Services.AddAuthentication(x =>
         ValidateAudience = false
     };
 });
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
 // Configure the HTTP request pipeline.
-app.UseHttpsRedirection();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-app.UseCors(x => x.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader());
-app.UseCors();
-app.UseRouting();
-app.UseAuthentication();
+
+app.UseHttpsRedirection();
+
 app.UseAuthorization();
 
 app.MapControllers();
