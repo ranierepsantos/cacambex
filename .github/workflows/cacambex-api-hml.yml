@@ -1,8 +1,8 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - cacambex-api-hom
 env:
   AZURE_WEBAPP_NAME: cacambex-api-hom
-  AZURE_WEBAPP_PACKAGE_PATH: "/servicos/Api/Api.csproj"
-  SOLUTION: "/servicos/servicos.sln"
+  AZURE_WEBAPP_PACKAGE_PATH: "./servicos/Api/Api.csproj"
+  SOLUTION: "./"
 
 on:
   push:
@@ -24,10 +24,11 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ${{env.SOLUTION}} --configuration Release
+        run: cd servicos
+          dotnet build --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{env.AZURE_WEBAPP_PACKAGE_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ${{env.AZURE_WEBAPP_PACKAGE_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/servicos
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
