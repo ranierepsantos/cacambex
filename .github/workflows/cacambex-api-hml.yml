@@ -1,8 +1,8 @@
 name: Build and deploy ASP.Net Core app to Azure Web App - cacambex-api-hom
 env:
   AZURE_WEBAPP_NAME: cacambex-api-hom
-  AZURE_WEBAPP_PACKAGE_PATH: "../../servicos/Api/api.csproj"
-  SOLUTION: "../../servicos/servicos.sln"
+  AZURE_WEBAPP_PACKAGE_PATH: "./servicos/Api/api.csproj"
+  SOLUTION: "./servicos/servicos.sln"
 
 on:
   push:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v1
+        uses: actions/setup-dotnet@v3
         with:
           dotnet-version: "6.0.x"
           include-prerelease: true
