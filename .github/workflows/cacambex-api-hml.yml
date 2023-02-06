@@ -2,7 +2,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - cacambex-api-hom
 env:
   AZURE_WEBAPP_NAME: cacambex-api-hom
   AZURE_WEBAPP_PACKAGE_PATH: "./servicos/Api/Api.csproj"
-  SOLUTION: "./servicos/servicos.sln"
+  SOLUTION: "*/servicos/servicos.sln"
 
 on:
   push:
