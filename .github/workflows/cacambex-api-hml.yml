@@ -24,7 +24,7 @@ jobs:
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build ./servicos --configuration Release
+        run: dotnet build **/servicos.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ${{env.AZURE_WEBAPP_PACKAGE_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
