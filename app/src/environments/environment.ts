@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  urlApi: 'https://localhost:54758',
+  urlApi: 'https://localhost:7098',
 };
 export const TOKEN_STORAGE = 'TOKEN';
 /*
