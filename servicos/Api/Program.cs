@@ -115,7 +115,7 @@ var builder = WebApplication.CreateBuilder(args);
     builder.Services.AddScoped<IFilaEnviarCacambaRepositorio, FilaEnviarCacambaRepositorio>();
     builder.Services.AddFluentValidationAutoValidation().AddFluentValidationClientsideAdapters();
 
-    var key = Encoding.ASCII.GetBytes(builder.Configuration["Auth:Secret"]);
+    var key = Encoding.ASCII.GetBytes(builder.Configuration.GetSection("Auth:Secret").Value);
     builder.Services.AddAuthentication(x =>
     {
         x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
