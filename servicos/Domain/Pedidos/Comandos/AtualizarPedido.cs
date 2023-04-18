@@ -8,6 +8,7 @@ using Domain.Pedidos.Interface;
 using Domain.Pedidos.Validacoes;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Domain.Pedidos.Comandos;
 
@@ -24,16 +25,20 @@ public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
     private readonly IPedidoRepositorio _repositorio;
     private readonly IMediator _mediator;
     private ILogger<AtualizarPedido> _logger;
-
     private readonly OmieInformacoesAdicionais _informacoesAdicionais;
 
-    public AtualizarPedido(IPedidoRepositorio repositorio, ILogger<AtualizarPedido> logger, IClienteRepositorio clienteRepositorio, ICacambaRepositorio cacambaRepositorio, OmieInformacoesAdicionais informacoesAdicionais, IMediator mediator)
+    public AtualizarPedido(IPedidoRepositorio repositorio,
+                           ILogger<AtualizarPedido> logger,
+                           IClienteRepositorio clienteRepositorio,
+                           ICacambaRepositorio cacambaRepositorio,
+                           IOptions<OmieInformacoesAdicionais> informacoesAdicionais,
+                           IMediator mediator)
     {
         _repositorio = repositorio;
         _logger = logger;
         _clienteRepositorio = clienteRepositorio;
         _cacambaRepositorio = cacambaRepositorio;
-        _informacoesAdicionais = informacoesAdicionais;
+        _informacoesAdicionais = informacoesAdicionais.Value;
         _mediator = mediator;
     }
 

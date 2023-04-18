@@ -8,7 +8,6 @@ import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE, ThemePalette } from '@a
 import { MatDialog } from '@angular/material/dialog';
 import { PageEvent } from '@angular/material/paginator';
 import { Router } from '@angular/router';
-import { EMPTY } from 'rxjs';
 import { PopupConfirmacaoComponent } from 'src/app/design-system/popup-confirmacao/popup-confirmacao.component';
 import { SnackResponseService } from 'src/app/design-system/snack-response.service';
 import { Paginacao } from 'src/app/identidade-acesso/interfaces/paginacao';
@@ -87,7 +86,7 @@ export class TelaPedidosComponent implements OnInit {
         this.dataSource = x;
         this.load = true;
       }, (e) => {
-        this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente novamente em 1 minuto.", true);
+        this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente contato com o suporte.", true);
       });
   }
   private obterPedidosPorClienteId(
@@ -102,7 +101,11 @@ export class TelaPedidosComponent implements OnInit {
       this.sort).subscribe((x) => {
         this.dataSource = x;
         this.load = true;
-      });
+      },
+        (e) => {
+          this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente recarregar a página. Em caso de dúvidas contatar o suporte.", true);
+          this.snackBar.mostrarMensagem(`${e.message}`, true);
+        });
   }
   private obterPedidosComFiltros(
     pageIndex = 0,

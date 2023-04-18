@@ -3,15 +3,19 @@ using Azure.Storage.Queues;
 using Domain.AzureStorage;
 using Domain.ColetasOnline;
 using Infra.Dados;
+using Microsoft.Extensions.Options;
 
 namespace Infra.Repositorios;
 public class FilaEnviarCacambaRepositorio : IFilaEnviarCacambaRepositorio
 {
     private readonly QueueClient _queueClient;
+    private readonly StorageContext _storageContext;
 
-    public FilaEnviarCacambaRepositorio(StorageContext _storageContext)
+    public FilaEnviarCacambaRepositorio(IOptions<StorageContext> storageContext)
     {
-        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba, new QueueClientOptions
+        _storageContext = storageContext.Value;
+        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba,
+        new QueueClientOptions
         {
             MessageEncoding = QueueMessageEncoding.Base64
         });

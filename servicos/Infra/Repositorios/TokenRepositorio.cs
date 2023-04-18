@@ -1,25 +1,26 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using Domain.Autorizacao;
 using Domain.Autorizacao.Interfaces;
 using Domain.Identidade.Agregacao;
-using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 
 namespace Infra.Repositorios;
-public class JwtRepositorio : IJwtRepositorio
+public class TokenRepositorio : ITokenRepositorio
 {
-    private readonly IConfiguration _configuration;
+    private readonly TokenConfiguracao _tokenConfiguracao;
 
-    public JwtRepositorio(IConfiguration configuration)
+    public TokenRepositorio(IOptions<TokenConfiguracao> tokenConfiguracao)
     {
-        _configuration = configuration;
+        _tokenConfiguracao = tokenConfiguracao.Value;
     }
 
     public string GerarToken(Usuario usuario, int clienteId)
     {
         var tokenHandler = new JwtSecurityTokenHandler();
-        var key = Encoding.ASCII.GetBytes(_configuration["Auth:Secret"]);
+        var key = Encoding.ASCII.GetBytes(_tokenConfiguracao.Segredo);
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(new Claim[]
@@ -29,7 +30,7 @@ public class JwtRepositorio : IJwtRepositorio
                     new Claim(ClaimTypes.Role, usuario.Funcao.ToString()),
                     new Claim(ClaimTypes.NameIdentifier, clienteId.ToString()),
             }),
-            Expires = DateTime.UtcNow.AddHours(2),
+            Expires = DateTime.UtcNow.AddHours(24),
             SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
         };
 

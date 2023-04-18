@@ -31,6 +31,7 @@ export class SigninComponent implements OnInit {
         this.router.navigateByUrl("/pedidos");
       }, (e: any) => {
         this.snackBar.mostrarMensagem(e.error.mensagem, true)
+        this.snackBar.mostrarMensagem(e.message, true)
         this.acessando = false
       });
   }

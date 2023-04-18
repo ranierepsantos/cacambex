@@ -13,10 +13,10 @@ public class AutenticacaoUsuarioHandler : IRequestHandler<AutenticacaoUsuarioCom
     private readonly IUsuarioRepositorio _usuarioRepositorio;
     private readonly IClienteRepositorio _clienteRepositorio;
     private readonly IAutenticacaoRepositorio _autenticacaoRepositorio;
-    private readonly IJwtRepositorio _jwtRepositorio;
+    private readonly ITokenRepositorio _jwtRepositorio;
     private readonly ILogger<AutenticacaoUsuarioHandler> _logger;
 
-    public AutenticacaoUsuarioHandler(IUsuarioRepositorio usuarioRepositorio, IAutenticacaoRepositorio autorizacaoRepositorio, IJwtRepositorio jwtRepositorio, ILogger<AutenticacaoUsuarioHandler> logger, IClienteRepositorio clienteRepositorio)
+    public AutenticacaoUsuarioHandler(IUsuarioRepositorio usuarioRepositorio, IAutenticacaoRepositorio autorizacaoRepositorio, ITokenRepositorio jwtRepositorio, ILogger<AutenticacaoUsuarioHandler> logger, IClienteRepositorio clienteRepositorio)
     {
         _usuarioRepositorio = usuarioRepositorio;
         _autenticacaoRepositorio = autorizacaoRepositorio;

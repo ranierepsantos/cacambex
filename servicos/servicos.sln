@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infra", "Infra\Infra.csproj
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CTRs", "CTRs\CTRs.csproj", "{FCB5E45D-665C-4582-8F96-5A6B0FAA671B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{F7EF4A9B-3286-48A9-8758-E357CDF5BFE2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api", "Api\Api.csproj", "{80E51158-8E99-460A-95ED-CF766BADE8D9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{FCB5E45D-665C-4582-8F96-5A6B0FAA671B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCB5E45D-665C-4582-8F96-5A6B0FAA671B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCB5E45D-665C-4582-8F96-5A6B0FAA671B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F7EF4A9B-3286-48A9-8758-E357CDF5BFE2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F7EF4A9B-3286-48A9-8758-E357CDF5BFE2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F7EF4A9B-3286-48A9-8758-E357CDF5BFE2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F7EF4A9B-3286-48A9-8758-E357CDF5BFE2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{80E51158-8E99-460A-95ED-CF766BADE8D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80E51158-8E99-460A-95ED-CF766BADE8D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80E51158-8E99-460A-95ED-CF766BADE8D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80E51158-8E99-460A-95ED-CF766BADE8D9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

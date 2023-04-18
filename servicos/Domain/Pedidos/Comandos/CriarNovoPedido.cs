@@ -5,11 +5,11 @@ using Domain.Omie;
 using Domain.Omie.Pedidos.OmiePedidoRequests;
 using Domain.Pedidos.Agregacao;
 using Domain.Pedidos.Enumeraveis;
-using Domain.Pedidos.Fila;
 using Domain.Pedidos.Interface;
 using Domain.Pedidos.Validacoes;
 using MediatR;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Options;
 
 namespace Domain.Pedidos.Comandos;
 
@@ -28,22 +28,20 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
     private readonly OmieInformacoesAdicionais _informacoesAdicionais;
     private readonly ILogger<NovoPedidoManipulador> _logger;
     private readonly IMediator _mediator;
-    private readonly IMensagem _mensagem;
 
-    public NovoPedidoManipulador(IMensagem mensagem,
+    public NovoPedidoManipulador(
                                  IPedidoRepositorio pedidoRepositorio,
                                  IClienteRepositorio clienteRepositorio,
                                  ICacambaRepositorio cacambaRepositorio,
                                  ILogger<NovoPedidoManipulador> logger,
-                                 OmieInformacoesAdicionais informacoesAdicionais,
+                                IOptions<OmieInformacoesAdicionais> informacoesAdicionais,
                                  IMediator mediator)
     {
-        _mensagem = mensagem;
         _pedidoRepositorio = pedidoRepositorio;
         _clienteRepositorio = clienteRepositorio;
         _cacambaRepositorio = cacambaRepositorio;
         _logger = logger;
-        _informacoesAdicionais = informacoesAdicionais;
+        _informacoesAdicionais = informacoesAdicionais.Value;
         _mediator = mediator;
     }
 

@@ -5,6 +5,7 @@ using Domain.Clientes.Agrecacao;
 using Domain.Clientes.Enumeraveis;
 using Domain.Pedidos.Agregacao;
 using Domain.Pedidos.Enumeraveis;
+using Domain.Pedidos.Execoes;
 using Xunit;
 
 namespace UnitTests.Pedidos.Agregacao;

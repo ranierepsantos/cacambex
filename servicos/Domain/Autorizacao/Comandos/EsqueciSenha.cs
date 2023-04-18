@@ -10,11 +10,11 @@ public record EsqueciSenhaRequest(string Email);
 public record EsqueciSenhaComando(string Email, string Origin) : IRequest<Resposta>;
 public class EsqueciSenhaHandler : IRequestHandler<EsqueciSenhaComando, Resposta>
 {
-    private readonly IJwtRepositorio _jwtRepositorio;
+    private readonly ITokenRepositorio _jwtRepositorio;
     private readonly IUsuarioRepositorio _usuarioRepositorio;
     private readonly IEmailRepositorio _emailRepositorio;
     private readonly ILogger<EsqueciSenhaHandler> _logger;
-    public EsqueciSenhaHandler(IUsuarioRepositorio usuarioRepositorio, ILogger<EsqueciSenhaHandler> logger, IEmailRepositorio emailRepositorio, IJwtRepositorio jwtRepositorio)
+    public EsqueciSenhaHandler(IUsuarioRepositorio usuarioRepositorio, ILogger<EsqueciSenhaHandler> logger, IEmailRepositorio emailRepositorio, ITokenRepositorio jwtRepositorio)
     {
         _usuarioRepositorio = usuarioRepositorio;
         _logger = logger;

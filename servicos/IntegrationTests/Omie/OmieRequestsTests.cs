@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System.Threading;
 using Domain.Omie;
 using Domain.Omie.Clientes.Interfaces;
 using Domain.Omie.Clientes.OmieClienteRequests;

@@ -1,33 +1,34 @@
-name: Build and deploy ASP.Net Core app to Azure Web App - cacambex-api-hom
+name: Build and deploy ASP.Net Core app to Azure Web App - cacambex-api-hom-w
+
 env:
-  AZURE_WEBAPP_NAME: cacambex-api-hom
-  AZURE_WEBAPP_PACKAGE_PATH: "./servicos/Api/Api.csproj"
-  SOLUTION: "./servicos"
+  AZURE_WEBAPP_NAME: cacambex-api-hom-w
+  AZURE_WEBAPP_PACKAGE_PATH: "servicos/Api/Api.csproj"
+  SOLUTION: "servicos/servicos.sln"
 
 on:
   push:
     branches:
-      - main #mudar para main
+      - master # mudar para main
   workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
       - uses: actions/checkout@v2
 
       - name: Set up .NET Core
-        uses: actions/setup-dotnet@v2
+        uses: actions/setup-dotnet@v1
         with:
           dotnet-version: "6.0.x"
           include-prerelease: true
 
       - name: Build with dotnet
-        run: dotnet build **/servicos.sln --configuration Release
+        run: dotnet build ${{ env.SOLUTION }} --configuration Release
 
       - name: dotnet publish
-        run: dotnet publish ${{env.AZURE_WEBAPP_PACKAGE_PATH}} -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        run: dotnet publish ${{ env.AZURE_WEBAPP_PACKAGE_PATH }} -c Release -o ${{env.DOTNET_ROOT}}/myapp
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v2
@@ -36,7 +37,7 @@ jobs:
           path: ${{env.DOTNET_ROOT}}/myapp
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: "production"
@@ -52,7 +53,7 @@ jobs:
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v2
         with:
-          app-name: "${{ env.AZURE_WEBAPP_NAME }}"
+          app-name: "cacambex-api-hom-w"
           slot-name: "production"
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_F5F0D6EE444F4561846CB201C9137DC6 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_EAE8232AECB1419BBE88EBBCE821C146 }}
           package: .

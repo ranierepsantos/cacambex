@@ -33,7 +33,7 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
   enderecoFiltrado = "";
   totalPedido = 0;
   valorPedido$!: Observable<number>;
-  enderecoId = new FormControl<VisualizarEndereco | null>({ value: null, disabled: true }, Validators.required);
+  enderecoId = new FormControl<VisualizarEndereco | number>(0, Validators.required);
   usuarioDecodificado: UsuarioDecodificado = {} as UsuarioDecodificado;
   pedidoForm = this.fb.group({
     clienteId: [this.clienteId, [Validators.required]],
@@ -109,16 +109,21 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
     this.stepper.next();
   }
   onSubmit() {
-    this.snackBar.mostrarMensagem("Registrando seu pedido, aguarde.")
-    this.enviando = true;
-    this.pedidoServico.criarPedido(this.pedidoForm.value).subscribe((result: any) => {
-      this.router.navigate(['/pedidos']);
-      this.snackBar.mostrarMensagem("Pedido registrado com sucesso!");
-    }, (err: any) => {
+    if (this.enderecoId.value == 0) {
+      this.snackBar.mostrarMensagem("Necessário selecionar um endereço.")
+    }
+    else {
+      this.snackBar.mostrarMensagem("Registrando seu pedido, aguarde.")
+      this.enviando = true;
+      this.pedidoServico.criarPedido(this.pedidoForm.value).subscribe((result: any) => {
+        this.router.navigate(['/pedidos']);
+        this.snackBar.mostrarMensagem("Pedido registrado com sucesso!");
+      }, (err: any) => {
+        this.enviando = false;
+        this.snackBar.mostrarMensagem(err.error.errosOmie.errosOmie, true)
+      })
       this.enviando = false;
-      this.snackBar.mostrarMensagem(err.error.errosOmie.errosOmie, true)
-    })
-    this.enviando = false;
+    }
   }
 
   novoEndereco() {
