@@ -112,12 +112,16 @@ export class TelaPedidosComponent implements OnInit {
     pageSize = 10,
     documentoCliente: string = "",
     nomeCliente: string = "",
+    notaFiscal: string ="",
+    numeroCTR: string =""
   ) {
     this.servicoPedido.obterPedidoComFiltro(
       pageIndex,
       pageSize,
       documentoCliente,
       nomeCliente,
+      notaFiscal,
+      numeroCTR
     ).subscribe((x) => {
       this.dataSource = x;
       this.load = true;
@@ -144,7 +148,7 @@ export class TelaPedidosComponent implements OnInit {
     this.filtroDataInicio = this.filtroDataInicio;
     this.filtroDataFim = this.filtroDataFim;
     this.filtrarPorData = this.filtrarPorData;
-    this.obterPedidosComFiltros(0, 10, this.filtroDocumentoCliente, this.filtroNomeCliente);
+    this.obterPedidosComFiltros(0, 10, this.filtroDocumentoCliente, this.filtroNomeCliente, this.filtroNumeroNotaFiscal, this.filtroNumeroCTR);
   }
 
   excluirPedido(visualizarPedido: VisualizarPedido) {

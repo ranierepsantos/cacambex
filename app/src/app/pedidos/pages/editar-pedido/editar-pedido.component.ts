@@ -64,6 +64,8 @@ export class EditarPedidoComponent implements OnInit {
     })
 
     const cacambas$ = this.cacambaService.obterApenasCacambas();
+    
+    console.log('caçambas:', cacambas$);
 
     this.cacamba3m$ = cacambas$.pipe(
       map((x: any) => {
@@ -80,6 +82,7 @@ export class EditarPedidoComponent implements OnInit {
   onSubmit() {
     this.snackBar.mostrarMensagem("Processando..")
     this.enviando = true;
+    console.log("form", this.editarPedidoForm.value)
     this.pedidoService.alterarPedido(this.editarPedidoForm.value).subscribe(() => {
       this.snackBar.mostrarMensagem("Pedido alterado com sucesso!")
       this.router.navigate(['/pedidos']);
@@ -127,7 +130,10 @@ export class EditarPedidoComponent implements OnInit {
     })
   }
   definirPrecoPedido(preco: number) {
+    console.log("valorPedido - antes:", this.valorPedido);
     this.valorPedido = preco;
+    console.log("valorPedido - depois:", this.valorPedido);
+    
     this.enderecoId.enable();
   }
   onSelectEnderecoChange(endereco: any) {

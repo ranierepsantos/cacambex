@@ -111,6 +111,8 @@ export class PedidoService {
     pageSize: number = 10,
     documentoCliente: string = "",
     nomeCliente: string = "",
+    notaFiscal: string = "",
+    numeroCTR: string = "",
     sort: string = "desc"
   ): Observable<Paginacao<VisualizarPedido>> {
 
@@ -119,6 +121,8 @@ export class PedidoService {
       .append('pageSize', pageSize)
       .append('documentoCliente', documentoCliente)
       .append('nomeCliente', nomeCliente)
+      .append('notaFiscal', notaFiscal)
+      .append('numeroCTR', numeroCTR)
       .append('sort', sort);
 
     let params = this.removeParametrosVaziosOuNulos(params_);

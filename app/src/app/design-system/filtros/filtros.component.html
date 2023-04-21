@@ -24,14 +24,14 @@
 
         <span>Número da nota fiscal</span>
         <mat-form-field appearance="legacy">
-          <input matInput [(ngModel)]="notaFiscal" name="notaFiscal" (ngModelChange)="notaFiscalChange.emit($event)"
-            disabled>
+          <input matInput [(ngModel)]="notaFiscal" name="notaFiscal" 
+          (ngModelChange)="notaFiscalChange.emit($event)">
         </mat-form-field>
 
         <span>Número do CTR</span>
         <mat-form-field appearance="legacy">
-          <input matInput [(ngModel)]="numeroCTR" name="numeroCTR" (ngModelChange)="numeroCTRChange.emit($event)"
-            disabled>
+          <input matInput [(ngModel)]="numeroCTR" name="numeroCTR" 
+          (ngModelChange)="numeroCTRChange.emit($event)">
         </mat-form-field>
 
         <span>Filtrar por data</span>

@@ -33,7 +33,6 @@ export class FiltrosComponent implements OnInit {
   }
 
   aplicarFiltros() {
-    this.filtrar.emit(
-    );
+    this.filtrar.emit();
   }
 }
