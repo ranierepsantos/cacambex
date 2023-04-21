@@ -94,6 +94,13 @@ public class PedidoController : Controller
         if (!string.IsNullOrEmpty(consulta.NomeCliente))
             query = query.Where(x => x.NomeCliente.ToUpper().Contains(consulta.NomeCliente.ToUpper()));
 
+        if (!string.IsNullOrEmpty(consulta.NotaFiscal))
+            query = query.Where(x => x.NumeroNotaFiscal.Equals(consulta.NotaFiscal));
+        
+        if (!string.IsNullOrEmpty(consulta.NumeroCTR))
+            query = query.Where(x => x.NumeroCTR.Equals(consulta.NumeroCTR));
+
+
         //IMPLANTAR
         // if (consulta.FiltrarPorData)
         // {

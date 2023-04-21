@@ -11,12 +11,12 @@ namespace Domain.Pedidos.Consultas
 
         public int PageSize { get; set; } = 10;
 
-        // public string NumeroCTR { get; set; } = "";
+        public string NumeroCTR { get; set; } = "";
 
         public string DocumentoCliente { get; set; } = "";
         public string NomeCliente { get; set; } = "";
         //IMPLANTAR
-        // public string NotaFiscal { get; set; } = "";
+        public string NotaFiscal { get; set; } = "";
         // public DateTime? DataInicio { get; set; } = null;
         // public DateTime? DataFim { get; set; } = null;
         // public bool FiltrarPorData { get; set; } = false;
