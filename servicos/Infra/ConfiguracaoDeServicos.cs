@@ -12,6 +12,7 @@ using Domain.Omie.Clientes.Interfaces;
 using Domain.Omie.Pedidos.Interface;
 using Domain.Pedidos.Consultas;
 using Domain.Pedidos.Interface;
+using Domain.TipoCacambas.Interface;
 using Domain.ViaCep.Interface;
 using infra.Omie.Cacambas;
 using infra.Omie.Clientes;
@@ -59,6 +60,7 @@ public static class ConfiguracaoDeServicos
         services.AddScoped<IFilaSolicitaCacambaRepositorio, FilaSolicitaCacambaRepositorio>();
         services.AddScoped<IFilaRetirarCacambaRepositorio, FilaRetirarCacambaRepositorio>();
         services.AddScoped<IFilaEnviarCacambaRepositorio, FilaEnviarCacambaRepositorio>();
+        services.AddScoped<ITipoCacambaRepositorio, TipoCacambaRepositorio>();
 
         return services;
     }

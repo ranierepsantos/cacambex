@@ -1,22 +1,20 @@
-import { AfterViewInit, ChangeDetectorRef, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectorRef, Component, Input, OnInit, ViewChild } from '@angular/core';
 import { FormControl, NonNullableFormBuilder, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { MatStepper } from '@angular/material/stepper';
 import { Router } from '@angular/router';
 import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { CacambaServico } from 'src/app/cacambas/servicos/cacamba.service';
 import { VisualizarCliente } from 'src/app/clientes/interfaces/icliente';
 import { EditarEnderecoComponent } from 'src/app/clientes/pages/editar-endereco/editar-endereco.component';
 import { ClienteService } from 'src/app/clientes/servicos/cliente.service';
 import { SnackResponseService } from 'src/app/design-system/snack-response.service';
-import { Paginacao } from 'src/app/identidade-acesso/interfaces/paginacao';
 import { UsuarioDecodificado } from 'src/app/identidade-acesso/interfaces/usuario-decodificado';
 import { TokenServico } from 'src/app/identidade-acesso/servicos/token.servico';
 
-import { VisualizarCacamba } from './../../../cacambas/interfaces/icacamba';
 import { NovoEndereco, NovoEnderecoComClienteId, VisualizarEndereco } from './../../../clientes/interfaces/ienderecos';
 import { PedidoService } from './../../servicos/pedido.service';
+import { TipoCacambaServico } from 'src/app/tipo-cacamba/servicos/tipo-cacamba.service';
+import { VisualizarTipoCacamba } from 'src/app/tipo-cacamba/interfaces/itipo-cacamba';
 
 
 @Component({
@@ -41,11 +39,10 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
     enderecoId: [this.endId],
     tipoDePagamento: [''],
     observacao: [''],
+    valorPedido: ['']
   })
-  cacamba3m$!: Observable<VisualizarCacamba[]>;
-  cacamba5m$!: Observable<VisualizarCacamba[]>;
-  CacambaDataSource: Paginacao<VisualizarCacamba> = {} as Paginacao<VisualizarCacamba>;
-
+  listCacambas: VisualizarTipoCacamba[] = [];
+  
   constructor(
     private clienteService: ClienteService,
     private fb: NonNullableFormBuilder,
@@ -53,8 +50,8 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
     private router: Router,
     private dialog: MatDialog,
     private pedidoServico: PedidoService,
-    private cacambaService: CacambaServico,
     private tokenService: TokenServico,
+    private tipoCacambaService: TipoCacambaServico,
     private cdf: ChangeDetectorRef
   ) {
     this.tokenService.usuario.subscribe((x => {
@@ -71,19 +68,8 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const cacambas$ = this.cacambaService.obterApenasCacambas();
-
-    this.cacamba3m$ = cacambas$.pipe(
-      map((x: any) => {
-        return [x.filter((cacamba: any) => cacamba.volume == "3M³")[0]]
-      })
-    );
-
-    this.cacamba5m$ = cacambas$.pipe(
-      map((x: any) => {
-        return [x.filter((cacamba: any) => cacamba.volume == "5M³")[0]]
-      })
-    );
+    const tipos$ = this.tipoCacambaService.obter(0,9999, "asc");
+    tipos$.subscribe((x) => x.data.forEach(x => this.listCacambas.push(x)));
   }
 
   filtrarEndereco() {
@@ -161,7 +147,7 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
   }
 
   definirPrecoPedido(preco: number) {
-    this.totalPedido = preco;
+    this.pedidoForm.get('valorPedido')?.setValue(preco.toFixed(2));
     this.enderecoId.enable();
   }
   get cliente() { return this.pedidoForm.get('clienteId') as FormControl; }

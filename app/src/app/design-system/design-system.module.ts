@@ -45,6 +45,7 @@ import { PopupConfirmacaoComponent } from './popup-confirmacao/popup-confirmacao
 import { PopupInformativoComponent } from './popup-informativo/popup-informativo.component';
 import { ProcurarClienteComponent } from './procurar-cliente/procurar-cliente.component';
 import { VerItemPedidoComponent } from './ver-item-pedido/ver-item-pedido.component';
+import { TipoCacambaItem } from './tipo-cacamba-item/tipo-cacamba-item.component';
 
 registerLocaleData(ptBr)
 
@@ -72,6 +73,7 @@ const maskConfig: Partial<IConfig> = {
     VerItemPedidoComponent,
     PopupInformativoComponent,
     NotaFiscalComponent,
+    TipoCacambaItem,
   ],
   imports: [
     CommonModule,
@@ -119,7 +121,8 @@ const maskConfig: Partial<IConfig> = {
     AddPrimeiroItemComponent,
     AddSegundoItemComponent,
     VerItemPedidoComponent,
-    NotaFiscalComponent
+    NotaFiscalComponent,
+    TipoCacambaItem
   ],
   providers: [
     { provide: LOCALE_ID, useValue: 'pt-BR' },

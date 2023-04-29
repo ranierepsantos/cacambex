@@ -18,6 +18,7 @@ public record NovoPedidoComando(
         string VolumeCacamba,
         int EnderecoId,
         TipoDePagamento TipoDePagamento,
+        decimal valorPedido,
         string Observacao) : IRequest<Resposta>;
 
 public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta>
@@ -34,7 +35,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
                                  IClienteRepositorio clienteRepositorio,
                                  ICacambaRepositorio cacambaRepositorio,
                                  ILogger<NovoPedidoManipulador> logger,
-                                IOptions<OmieInformacoesAdicionais> informacoesAdicionais,
+                                 IOptions<OmieInformacoesAdicionais> informacoesAdicionais,
                                  IMediator mediator)
     {
         _pedidoRepositorio = pedidoRepositorio;
@@ -101,7 +102,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente);
 
         int sequenciaDoItem = 1;
-        ServicosPrestados servicosPrestados = new(1, cacamba.nCodServ, cacamba.Preco, sequenciaDoItem);
+        ServicosPrestados servicosPrestados = new(1, cacamba.nCodServ, request.valorPedido, sequenciaDoItem);
         string enviarNotaFiscal = "S";
         string enviarBoleto = "S";
         string naoEnviarBoleto = "S";
@@ -124,16 +125,17 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
 
         #region  localRequest
         Int64.TryParse(omieResponse.Mensagem, out long nCodOs);
-        PedidoItem pedidoItem = new(cacamba.Volume, cacamba.Preco);
+
+        PedidoItem pedidoItem = new(cacamba.Volume, request.valorPedido);
         var pedido = new Pedido(cliente,
                                 pedidoItem,
                                 enderecoEntrega,
                                 request.TipoDePagamento,
                                 request.Observacao,
-                                cacamba.Preco,
+                                request.valorPedido,
                                 codigoIntegracaoOmie,
                                 nCodOs);
-
+        
         #endregion
 
         #region enviarPedidoParaFila
@@ -144,5 +146,6 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
 
         _logger.LogInformation("**********Processo de criacao de pedido concluído com sucesso.**********");
         return omieResponse;
+        
     }
 }

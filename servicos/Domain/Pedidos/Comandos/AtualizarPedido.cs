@@ -16,6 +16,7 @@ public record AtualizarPedidoComando(
     int PedidoId,
     int EnderecoId,
     string VolumeCacamba,
+    decimal Preco,
     TipoDePagamento TipoDePagamento,
     string? Observacao) : IRequest<Resposta>;
 public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
@@ -69,7 +70,7 @@ public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
             return new("Pedido nao encontrado.", false);
         }
 
-        var cacamba = _cacambaRepositorio.ObterPorVolume(request.VolumeCacamba);
+        var cacamba = _cacambaRepositorio.ObterPorVolume (request.VolumeCacamba);
         if (cacamba is null)
         {
             _logger.LogError("**********Cacamba nao encontrada.**********");
@@ -98,7 +99,7 @@ public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
 
         int sequenciaDoItem = 1;
         string acaoItem = "A";
-        ServicosPrestados servicosPrestados = new(1, cacamba.nCodServ, cacamba.Preco, sequenciaDoItem, acaoItem);
+        ServicosPrestados servicosPrestados = new(1, cacamba.nCodServ, request.Preco, sequenciaDoItem, acaoItem);
         OmieAlterarPedidoRequest omieAlterarPedido = new(cabecalho, informacoesAdicionais, servicosPrestados);
         var omieResponse = await _mediator.Send(omieAlterarPedido);
         if (!omieResponse.Sucesso)
@@ -110,8 +111,8 @@ public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
         #endregion
 
         #region localRequest
-        pedido.PedidoItem.AtualizarPedidoItem(cacamba.Volume, cacamba.Preco);
-        pedido.AtualizarPedido(request.Observacao, request.TipoDePagamento, enderecoEntrega, cacamba.Preco);
+        pedido.PedidoItem.AtualizarPedidoItem(cacamba.Volume, request.Preco);
+        pedido.AtualizarPedido(request.Observacao, request.TipoDePagamento, enderecoEntrega, request.Preco);
         await _repositorio.AtualizarPedidoAsync(pedido);
 
         #endregion

@@ -2,10 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Observable, of } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { of } from 'rxjs';
 import { VisualizarCacamba } from 'src/app/cacambas/interfaces/icacamba';
-import { CacambaServico } from 'src/app/cacambas/servicos/cacamba.service';
 import { NovoEndereco, NovoEnderecoComClienteId, VisualizarEndereco } from 'src/app/clientes/interfaces/ienderecos';
 import { EditarEnderecoComponent } from 'src/app/clientes/pages/editar-endereco/editar-endereco.component';
 import { ClienteService } from 'src/app/clientes/servicos/cliente.service';
@@ -14,6 +12,8 @@ import { Paginacao } from 'src/app/identidade-acesso/interfaces/paginacao';
 import { VisualizarPedido } from '../../interfaces/ipedido';
 import { SnackResponseService } from './../../../design-system/snack-response.service';
 import { PedidoService } from './../../servicos/pedido.service';
+import { TipoCacambaServico } from 'src/app/tipo-cacamba/servicos/tipo-cacamba.service';
+import { VisualizarTipoCacamba } from 'src/app/tipo-cacamba/interfaces/itipo-cacamba';
 
 @Component({
   templateUrl: './editar-pedido.component.html',
@@ -24,11 +24,9 @@ export class EditarPedidoComponent implements OnInit {
   enderecoFiltrado = "";
   enviando!: boolean;
   enderecosDoCliente!: VisualizarEndereco[];
-  valorPedido = 0;
   pedidoId!: number;
   clienteId!: number;
-  cacamba3m$!: Observable<VisualizarCacamba[]>;
-  cacamba5m$!: Observable<VisualizarCacamba[]>;
+  list: VisualizarTipoCacamba[] = [];
   visualizarPedido: VisualizarPedido = {} as VisualizarPedido;
   CacambaDataSource: Paginacao<VisualizarCacamba> = {} as Paginacao<VisualizarCacamba>;
 
@@ -40,14 +38,13 @@ export class EditarPedidoComponent implements OnInit {
     private route: ActivatedRoute,
     private pedidoService: PedidoService,
     private fb: FormBuilder,
-    private cacambaService: CacambaServico,
-    private clienteService: ClienteService
+    private clienteService: ClienteService,
+    private tipoCacambaService: TipoCacambaServico
   ) { }
 
   ngOnInit(): void {
     const pedido = this.route.snapshot.data['pedido'];
     this.clienteId = pedido.idCliente;
-    this.valorPedido = pedido.valorPedido;
     this.visualizarPedido = pedido;
 
     this.clienteService.ObterClientePorId(pedido.idCliente).subscribe((x) => {
@@ -60,29 +57,20 @@ export class EditarPedidoComponent implements OnInit {
       enderecoId: [pedido.enderecoEntrega.id],
       volumeCacamba: [pedido.pedidoItem.volumeCacamba],
       tipoDePagamento: [pedido.tipoDePagamento],
-      observacao: [pedido.observacao]
+      observacao: [pedido.observacao],
+      preco: [pedido.valorPedido.toFixed(2)]
     })
 
-    const cacambas$ = this.cacambaService.obterApenasCacambas();
     
-    console.log('caçambas:', cacambas$);
-
-    this.cacamba3m$ = cacambas$.pipe(
-      map((x: any) => {
-        return [x.filter((cacamba: any) => cacamba.volume == "3M³")[0]]
-      })
-    );
-
-    this.cacamba5m$ = cacambas$.pipe(
-      map((x: any) => {
-        return [x.filter((cacamba: any) => cacamba.volume == "5M³")[0]]
-      })
-    );
+    const tipos$ = this.tipoCacambaService.obter(0,9999, "asc");
+    tipos$.subscribe((x) => x.data.forEach(x => this.list.push(x)));
+    
+    
   }
   onSubmit() {
     this.snackBar.mostrarMensagem("Processando..")
     this.enviando = true;
-    console.log("form", this.editarPedidoForm.value)
+    
     this.pedidoService.alterarPedido(this.editarPedidoForm.value).subscribe(() => {
       this.snackBar.mostrarMensagem("Pedido alterado com sucesso!")
       this.router.navigate(['/pedidos']);
@@ -130,10 +118,7 @@ export class EditarPedidoComponent implements OnInit {
     })
   }
   definirPrecoPedido(preco: number) {
-    console.log("valorPedido - antes:", this.valorPedido);
-    this.valorPedido = preco;
-    console.log("valorPedido - depois:", this.valorPedido);
-    
+    this.editarPedidoForm.get('preco')?.setValue(preco.toFixed(2));
     this.enderecoId.enable();
   }
   onSelectEnderecoChange(endereco: any) {

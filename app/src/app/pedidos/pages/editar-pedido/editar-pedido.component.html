@@ -21,25 +21,15 @@
     <div>
 
       <form [formGroup]="editarPedidoForm">
-
         <div>
 
           <mat-radio-group formControlName="volumeCacamba">
-            <mat-radio-button value="3M³">
-
-              <ca-add-primeiro-item *ngFor="let cacamba of cacamba3m$ | async" [cacamba]="cacamba"
-                (click)="definirPrecoPedido(cacamba.preco)">
-
-              </ca-add-primeiro-item>
-
-            </mat-radio-button>
-            <mat-radio-button value="5M³">
-
-              <ca-add-segundo-item *ngFor="let cacamba of cacamba5m$ | async" [cacamba]="cacamba"
-                (click)="definirPrecoPedido(cacamba.preco)">
-
-              </ca-add-segundo-item>
-
+            <mat-radio-button *ngFor="let cacamba of list" [value]="cacamba.volume"
+              (click)="definirPrecoPedido(cacamba.preco)"
+            >
+              <tipo-cacamba-item  [cacamba]="cacamba"
+              (click)="definirPrecoPedido(cacamba.preco)">
+              </tipo-cacamba-item>
             </mat-radio-button>
           </mat-radio-group>
 
@@ -63,13 +53,18 @@
 
         <div>
 
-          <h3>
+          <!-- <h3>
             <span style="font-weight: bold;">
               Total:
             </span>
-            {{ valorPedido | currency }}
-          </h3>
-
+            {{ preco | currency }}
+          </h3> -->
+          <mat-form-field appearance="legacy">
+            <mat-label>Total Pedido</mat-label>
+            <input type="number" matInput placeholder="Utilize virgura para separa centavos."
+              formControlName="preco" name="preco" required />
+            <span matPrefix>R$ &nbsp;</span>
+          </mat-form-field>
           <h3>
             <span style="font-weight: bold;">
               Forma de pagamento:

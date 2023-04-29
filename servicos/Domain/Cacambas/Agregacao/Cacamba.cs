@@ -38,7 +38,7 @@ public class Cacamba : Entidade
     public void ExcluirCacamba(Cacamba cacamba)
     {
         if (cacamba.Ativo == false)
-            throw new CacambaExcecao(nameof(cacamba.Ativo), "cacamba já está inativo. Informe um cacamba ativo.");
+            throw new CacambaExcecao(nameof(cacamba.Ativo), "cacamba já está inativo. Informe uma cacamba ativo.");
         cacamba.Ativo = false;
     }
     public void AlterarStatus(Cacamba cacamba)

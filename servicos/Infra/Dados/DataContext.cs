@@ -3,6 +3,7 @@ using Domain.Clientes.Agrecacao;
 using Domain.Identidade.Agregacao;
 using Domain.Pedidos.Agregacao;
 using Domain.Pedidos.Eventos;
+using Domain.TipoCacambas.Agregacao;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infra.Dados;
@@ -17,6 +18,7 @@ public class DataContext : DbContext
     public DbSet<Pedido> Pedidos { get; set; } = null!;
     public DbSet<PedidoItem> PedidoItens { get; set; } = null!;
     public DbSet<Evento> Eventos { get; set; } = null!;
+    public DbSet<TipoCacamba> TipoCacambas { get; set; } = null!;
 
 
 
@@ -87,5 +89,14 @@ public class DataContext : DbContext
         mb.Entity<PedidoItem>().HasKey(p => p.Id);
         mb.Entity<PedidoItem>().Property(p => p.VolumeCacamba).HasColumnType("varchar").HasMaxLength(255).IsRequired();
         mb.Entity<PedidoItem>().Property(p => p.ValorUnitario).HasColumnType("decimal").HasPrecision(12, 2).IsRequired();
+
+        mb.Entity<TipoCacamba>().HasKey(p => p.Id);
+        mb.Entity<TipoCacamba>().Property(p => p.Volume).HasColumnType("varchar").HasMaxLength(255).IsRequired();
+        mb.Entity<TipoCacamba>().Property(p => p.Preco).HasColumnType("decimal").HasPrecision(12,2).IsRequired();
+
+        mb.Entity<TipoCacamba>().HasData(
+            new TipoCacamba(1, "3M³", 100, true),
+            new TipoCacamba(2, "5M³", 200, true)
+        );
     }
 }
