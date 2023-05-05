@@ -1,11 +1,8 @@
 ﻿using Domain.Compartilhado;
-using Domain.TipoCacambas.Comandos;
 using Domain.TipoCacambas.Interface;
 using Domain.TipoCacambas.Visualizacoes;
 using MediatR;
 using Microsoft.Extensions.Logging;
-using System.Net.WebSockets;
-using System.Runtime.InteropServices;
 
 namespace Domain.TipoCacambas.Consultas
 {
@@ -29,19 +26,17 @@ namespace Domain.TipoCacambas.Consultas
         {
             _logger.LogInformation("********* Retornando os tipos de caçamba - paginação ************");
 
-            var query = _repositorio.ListarTodos()
+            var query = _repositorio.ToQueryAsNoTracking()
                         .Select(VisualizarTipoCacambaExtensao.ToView());
 
             if (request.Sort == "desc")
             {
-                query.OrderByDescending(p => p.Volume);
+                query = query.OrderByDescending(p => p.Volume);
             }else
-                query.OrderBy(p => p.Volume);
+                query = query.OrderBy(p => p.Volume);
 
 
             var pagination = new Paginacao<VisualizarTipoCacamba>(query, request.PageIndex, request.PageSize);
-
-            //Task<Resposta> t = Task.Run(() => { return new Resposta("", true, pagination); }) ;
 
             Resposta resposta = await Task.FromResult(new Resposta("", true, pagination));
 

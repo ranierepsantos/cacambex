@@ -15,6 +15,9 @@
         <a routerLink="/cacambas" mat-list-item>
           <mat-icon>local_shipping</mat-icon>Caçambas
         </a>
+        <a routerLink="/tipo-cacambas" mat-list-item>
+          <mat-icon>local_shipping</mat-icon>Tipos de Caçambas
+        </a>
       </ng-container>
       <ng-container *ngIf="usuario.role === 'Cliente'">
         <a mat-list-item [matMenuTriggerFor]="meusDados">

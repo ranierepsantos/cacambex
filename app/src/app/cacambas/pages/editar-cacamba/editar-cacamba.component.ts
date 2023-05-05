@@ -38,7 +38,7 @@ export class EditarCacambaComponent implements OnInit {
 
     this.novaCacamba.numero = this.visualizarCacamba.numero;
     this.novaCacamba.volume = this.visualizarCacamba.volume;
-    this.novaCacamba.preco = this.visualizarCacamba.preco;
+    this.novaCacamba.preco = 1;
     return this.novaCacamba;
   }
 }

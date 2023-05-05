@@ -1,13 +1,5 @@
-﻿using Domain.Pedidos.Agregacao;
-using Domain.Pedidos.Visualizacoes;
-using Domain.TipoCacambas.Agregacao;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Domain.TipoCacambas.Agregacao;
 using System.Linq.Expressions;
-using System.Net.NetworkInformation;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Domain.TipoCacambas.Visualizacoes
 {

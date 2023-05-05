@@ -3,6 +3,7 @@ using Domain.Cacambas.Consultas;
 using Domain.Cacambas.Enumeraveis;
 using Domain.Cacambas.Visualizacoes;
 using Domain.Compartilhado;
+using Domain.TipoCacambas.Agregacao;
 using Domain.TipoCacambas.Comandos;
 using Domain.TipoCacambas.Consultas;
 using Infra.Dados;
@@ -37,6 +38,16 @@ public class TipoCacambaController : ControllerBase
 
     }
 
+
+    [HttpGet("listar-com-preco-faixa-cep")]
+    public async Task<ActionResult<IList<TipoCacamba>>> Get(
+    [FromQuery] ListarComPrecoFaixaCepComando consulta)
+    {
+        Resposta result = await _mediator.Send(consulta);
+
+        return Ok(result.Dados);
+    }
+
     [HttpPut("{id}")]
     public async Task<ActionResult> Atualizar(int id, AtualizarTipoCacambaComando comando)
     {
@@ -48,4 +59,15 @@ public class TipoCacambaController : ControllerBase
         return NoContent();
     }
 
+    [HttpGet("{id}")]
+    public async Task<ActionResult> ObterPorId(int id)
+    {
+        var comando = new ConsultarPorIdComando(id);
+        var result = await _mediator.Send(comando);
+        if (!result.Sucesso)
+            return BadRequest(result);
+        return Ok(result.Dados);
+    }
+
+    //ConsultarPorIdComando
 }

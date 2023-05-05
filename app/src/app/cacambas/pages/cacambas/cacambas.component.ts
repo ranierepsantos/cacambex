@@ -40,6 +40,7 @@ export class CacambasComponent implements OnInit {
     this.servicoCacamba
       .obter(pageIndex, pageSize, numero, volume)
       .subscribe((x) => {
+        
         this.dataSource = x;
         this.carregando = false;
       }, (e) => {

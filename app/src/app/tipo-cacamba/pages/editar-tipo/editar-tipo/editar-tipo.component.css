@@ -1,0 +1,15 @@
+.principal {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  mat-form-field {
+    width: 100%;
+  }
+  
+  mat-icon {
+    color: var(--text-color-1);
+  }
+  
+  

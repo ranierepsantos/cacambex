@@ -4,11 +4,14 @@ using Domain.TipoCacambas.Consultas;
 using Domain.TipoCacambas.Interface;
 using Domain.TipoCacambas.Visualizacoes;
 using Infra.Dados;
+using Microsoft.AspNetCore.Connections.Features;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 
 namespace Infra.Repositorios
@@ -37,9 +40,24 @@ namespace Infra.Repositorios
             throw new NotImplementedException();
         }
 
-        public IQueryable<TipoCacamba> ListarTodos()
+        public IQueryable<TipoCacamba> ToQueryAsNoTracking()
         {
-            return _db.TipoCacambas.AsNoTracking();
+            return _db.Set<TipoCacamba>().AsNoTracking();
+
+        }
+
+        public IQueryable<TipoCacamba> ToQueryWithPrecoFaixaCepAsNoTracking(string cep = "")
+        {
+            var query = _db.TipoCacambas.AsNoTracking();
+
+            if (!string.IsNullOrEmpty(cep))
+                query = query.Include(p => p.PrecoFaixaCep.Where(c => c.CepInicial.CompareTo(cep) <= 0 && c.CepFinal.CompareTo(cep) >= 0));
+            else
+                query = query.Include(ic => ic.PrecoFaixaCep);
+
+            Console.Write(JsonConvert.SerializeObject(query.ToList()));
+
+            return query;
 
         }
 
@@ -48,6 +66,13 @@ namespace Infra.Repositorios
             var data = await _db.TipoCacambas.FirstOrDefaultAsync(x => x.Id == id);
             return data;
 
+        }
+
+
+        public async Task<TipoCacamba?> ObterTipoCacambaPorIdComPrecoFaixaCepAsync(int id)
+        {
+            var data = await _db.TipoCacambas.Include(ic =>  ic.PrecoFaixaCep).FirstOrDefaultAsync(x => x.Id == id);
+            return data;
         }
 
         public async Task<TipoCacamba?> ObterTipoCacambaPorVolumeAsync(string volume)

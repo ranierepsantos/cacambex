@@ -34,12 +34,12 @@
   </mat-radio-group>
 
 
-  <mat-form-field appearance="legacy">
+  <!-- <mat-form-field appearance="legacy">
     <mat-label>Preço</mat-label>
     <input type="number" matInput placeholder="Utilize virgura para separa centavos."
       [(ngModel)]="visualizarCacamba.preco" name="preco" required />
     <span matPrefix>R$ &nbsp;</span>
-  </mat-form-field>
+  </mat-form-field> -->
 
   <button mat-raised-button [mat-dialog-close]="data()" [disabled]="!form.valid" type="submit" class="btn-primario">
     Salvar

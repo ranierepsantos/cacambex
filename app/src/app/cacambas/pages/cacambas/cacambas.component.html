@@ -15,9 +15,9 @@
         <td mat-cell *matCellDef="let element">{{ element.volume }}</td>
       </ng-container>
 
-      <ng-container matColumnDef="preco">
-        <th mat-header-cell *matHeaderCellDef>Preço</th>
-        <td mat-cell *matCellDef="let element">{{ element.preco | currency }}</td>
+      <ng-container matColumnDef="preco" >
+        <th mat-header-cell *matHeaderCellDef [hidden]="true">Preço</th>
+        <td mat-cell *matCellDef="let element" [hidden]="true">{{ element.preco | currency }}</td>
       </ng-container>
 
       <ng-container matColumnDef="status">

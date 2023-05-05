@@ -31,6 +31,12 @@ const routes: Routes = [
       import('./clientes/clientes.module').then((m) => m.ClientesModule),
     canActivate: [FuncaoGuard],
   },
+  {
+    path: 'tipo-cacambas',
+    loadChildren: () =>
+      import('./tipo-cacamba/tipo-cacambas.module').then((m) => m.TipoCacambaModule),
+    canActivate: [FuncaoGuard],
+  },
   { path: '', pathMatch: 'full', redirectTo: 'pedidos' },
 ];
 

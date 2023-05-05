@@ -11,10 +11,12 @@ namespace Domain.TipoCacambas.Interface
         Task AtualizarTipoCacambaAsync(TipoCacamba tipoCacamba);
         Task DeletarTipoCacambaAsync(TipoCacamba tipoCacamba);
         Task<TipoCacamba?> ObterTipoCacambaPorIdAsync(int id);
+        Task<TipoCacamba?> ObterTipoCacambaPorIdComPrecoFaixaCepAsync(int id);
 
         Task<TipoCacamba?> ObterTipoCacambaPorVolumeAsync(string volume);
 
-        IQueryable<TipoCacamba> ListarTodos();
+        IQueryable<TipoCacamba> ToQueryAsNoTracking();
+        IQueryable<TipoCacamba> ToQueryWithPrecoFaixaCepAsNoTracking(string cep = "");
     }
 
             

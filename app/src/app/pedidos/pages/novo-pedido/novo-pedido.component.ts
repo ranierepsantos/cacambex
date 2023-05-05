@@ -68,8 +68,8 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    const tipos$ = this.tipoCacambaService.obter(0,9999, "asc");
-    tipos$.subscribe((x) => x.data.forEach(x => this.listCacambas.push(x)));
+    // const tipos$ = this.tipoCacambaService.obter(0,9999, "asc");
+    // tipos$.subscribe((x) => x.data.forEach(x => this.listCacambas.push(x)));
   }
 
   filtrarEndereco() {
@@ -142,14 +142,29 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
       this.snackBar.mostrarMensagem(e.error.message, true)
     })
   }
-  onSelectEnderecoChange(endereco: any) {
+  async onSelectEnderecoChange(endereco: any) {
     this.pedidoForm.get('enderecoId')?.patchValue(endereco.value.id);
+    console.log(this.pedidoForm.get('volumeCacamba')?.value)
+    this.carregarListaTipoCacambas(endereco.value.cep, this.pedidoForm.get('volumeCacamba')?.value)
   }
 
   definirPrecoPedido(preco: number) {
     this.pedidoForm.get('valorPedido')?.setValue(preco.toFixed(2));
     this.enderecoId.enable();
   }
+
+  async carregarListaTipoCacambas(cep: string, volume: string = "") {
+    this.listCacambas = [];
+    const tipos$ = await this.tipoCacambaService.listarComPrecoFaixaCep(cep);
+    tipos$.subscribe((x) => x.forEach(x => {
+      if (x.precoFaixaCep.length > 0) x.preco = x.precoFaixaCep[0].preco
+      this.listCacambas.push(x)
+      if (x.volume == volume) {
+        this.definirPrecoPedido(x.preco)
+      }
+    }));
+  }
+
   get cliente() { return this.pedidoForm.get('clienteId') as FormControl; }
   get observacao() { return this.pedidoForm.get('observacao') as FormControl; }
   get endereco() { return this.pedidoForm.get('enderecoId') as FormControl; }

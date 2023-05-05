@@ -1,0 +1,94 @@
+<form #form="ngForm" class="principal">
+    <h3>{{ titulo }}</h3>
+        
+        <mat-card class="mat-elevation-z2">
+          <mat-card-title-group>
+            <img mat-card-sm-image src="assets/cacamba.png">
+            <mat-card-subtitle>Caçamba pequena</mat-card-subtitle>
+            <mat-card-subtitle>Volume: <b>{{tipoCacamba.volume}}</b></mat-card-subtitle>
+          </mat-card-title-group>
+        </mat-card>
+  
+        <mat-form-field appearance="legacy">
+          <mat-label>Preço</mat-label>
+          <input type="number" matInput placeholder="Use virgula para separar centavos."
+            [(ngModel)]="tipoCacamba.preco" name="preco" required />
+          <span matPrefix>R$ &nbsp;</span>
+        </mat-form-field>
+
+        <mat-card>
+          <h3>Preços por faixa de CEP</h3>
+          <mat-card-content style="display:flex; justify-content:flex-start; align-item:center; gap:4px;">
+            
+              <mat-form-field appearance="legacy">
+                <mat-label>CEP Inicial</mat-label>
+                <input matInput #input maxlength="9" placeholder="Ex. 00000-000"
+                [(ngModel)]="faixaPreco.cepInicial"  [ngModelOptions]="{standalone: true}">
+              </mat-form-field>
+            
+              <mat-form-field appearance="legacy">
+                <mat-label>CEP Final</mat-label>
+                <input matInput #input maxlength="9" placeholder="Ex. 00000-000"
+                [(ngModel)]="faixaPreco.cepFinal"  [ngModelOptions]="{standalone: true}"
+                >
+              </mat-form-field>
+
+              <mat-form-field appearance="legacy">
+                <mat-label>Preço</mat-label>
+                <input type="number" matInput  placeholder="Use virgula para separar centavos."
+                 name="faixa-cep-preco"  [(ngModel)]="faixaPreco.preco" />
+              </mat-form-field>
+
+              <button mat-icon-button color="warn" title="Salvar/Alterar" (click)="salvarFaixaPreco()">
+                <mat-icon>save</mat-icon>
+              </button>
+            
+          </mat-card-content>
+          <mat-card-content>
+            <table mat-table [dataSource]="dataSource" style="width: 100%;">
+              <ng-container matColumnDef="cepInicial">
+                <th mat-header-cell *matHeaderCellDef>Cep Inicial</th>
+                <td mat-cell *matCellDef="let element">{{ element.cepInicial }}</td>
+              </ng-container>
+              
+              <ng-container matColumnDef="cepFinal">
+                <th mat-header-cell *matHeaderCellDef>Cep Final</th>
+                <td mat-cell *matCellDef="let element">{{ element.cepFinal }}</td>
+              </ng-container>
+    
+              <ng-container matColumnDef="preco" >
+                <th mat-header-cell *matHeaderCellDef>Preço</th>
+                <td mat-cell *matCellDef="let element">{{ element.preco | currency }}</td>
+              </ng-container>
+        
+              <ng-container matColumnDef="acao">
+                <th mat-header-cell *matHeaderCellDef></th>
+                <td mat-cell *matCellDef="let element">
+                  <button type ="button" mat-icon-button [matMenuTriggerFor]="menu">
+                    <mat-icon>more_vert</mat-icon>
+                  </button>
+                  <mat-menu #menu="matMenu">
+                    <button mat-menu-item type="button" (click)="editarFaixaPreco(element)">
+                      <mat-icon color="primary">edit</mat-icon> 
+                      <span>Alterar</span>
+                    </button>
+                    <button mat-menu-item (click)="excluirFaixaPreco(element)">
+                      <mat-icon color="warn">delete</mat-icon>
+                      <span>Excluir</span>
+                    </button>
+                  </mat-menu>
+                </td>
+              </ng-container>
+        
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+            </table>
+    
+          </mat-card-content>
+        </mat-card>
+        
+    <button mat-raised-button [mat-dialog-close]="salvarDados()" [disabled]="!form.valid" type="submit" class="btn-primario">
+      Salvar
+    </button>
+  </form>
+  

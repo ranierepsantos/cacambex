@@ -3,11 +3,9 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
 import { of } from 'rxjs';
-import { VisualizarCacamba } from 'src/app/cacambas/interfaces/icacamba';
 import { NovoEndereco, NovoEnderecoComClienteId, VisualizarEndereco } from 'src/app/clientes/interfaces/ienderecos';
 import { EditarEnderecoComponent } from 'src/app/clientes/pages/editar-endereco/editar-endereco.component';
 import { ClienteService } from 'src/app/clientes/servicos/cliente.service';
-import { Paginacao } from 'src/app/identidade-acesso/interfaces/paginacao';
 
 import { VisualizarPedido } from '../../interfaces/ipedido';
 import { SnackResponseService } from './../../../design-system/snack-response.service';
@@ -28,7 +26,7 @@ export class EditarPedidoComponent implements OnInit {
   clienteId!: number;
   list: VisualizarTipoCacamba[] = [];
   visualizarPedido: VisualizarPedido = {} as VisualizarPedido;
-  CacambaDataSource: Paginacao<VisualizarCacamba> = {} as Paginacao<VisualizarCacamba>;
+  
 
   editarPedidoForm: FormGroup = {} as FormGroup;
   constructor(
@@ -61,11 +59,8 @@ export class EditarPedidoComponent implements OnInit {
       preco: [pedido.valorPedido.toFixed(2)]
     })
 
-    
-    const tipos$ = this.tipoCacambaService.obter(0,9999, "asc");
-    tipos$.subscribe((x) => x.data.forEach(x => this.list.push(x)));
-    
-    
+    this.carregarListaTipoCacambas(pedido.enderecoEntrega.cep);
+
   }
   onSubmit() {
     this.snackBar.mostrarMensagem("Processando..")
@@ -122,7 +117,19 @@ export class EditarPedidoComponent implements OnInit {
     this.enderecoId.enable();
   }
   onSelectEnderecoChange(endereco: any) {
+    console.log(endereco)
     this.editarPedidoForm.get('enderecoId')?.patchValue(endereco.value.id);
+
+    this.carregarListaTipoCacambas(endereco.value.cep);
+   }
+
+  carregarListaTipoCacambas(cep: string) {
+    this.list = [];
+    const tipos$ = this.tipoCacambaService.listarComPrecoFaixaCep(cep);
+    tipos$.subscribe((x) => x.forEach(x => {
+      if (x.precoFaixaCep.length > 0) x.preco = x.precoFaixaCep[0].preco
+      this.list.push(x)
+    }));
   }
 
   get observacao() { return this.editarPedidoForm.get('observacao') as FormControl; }

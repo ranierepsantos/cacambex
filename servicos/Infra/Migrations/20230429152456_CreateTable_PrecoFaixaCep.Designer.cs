@@ -4,6 +4,7 @@ using Infra.Dados;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Infra.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20230429152456_CreateTable_PrecoFaixaCep")]
+    partial class CreateTable_PrecoFaixaCep
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -628,11 +630,13 @@ namespace Infra.Migrations
 
             modelBuilder.Entity("Domain.TipoCacambas.Agregacao.PrecoFaixaCep", b =>
                 {
-                    b.HasOne("Domain.TipoCacambas.Agregacao.TipoCacamba", null)
+                    b.HasOne("Domain.TipoCacambas.Agregacao.TipoCacamba", "TipoCacamba")
                         .WithMany("PrecoFaixaCep")
                         .HasForeignKey("TipoCacambaId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("TipoCacamba");
                 });
 
             modelBuilder.Entity("Domain.Clientes.Agrecacao.Cliente", b =>

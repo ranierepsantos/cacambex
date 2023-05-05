@@ -9,16 +9,9 @@ namespace Domain.TipoCacambas.Agregacao
 
         public Boolean Ativo {  get; private set; } = true;
 
+        public IList<PrecoFaixaCep> PrecoFaixaCep {get; set;} = new List<PrecoFaixaCep>();
+
         public TipoCacamba(string volume, decimal preco, bool ativo = true)
-        {
-            Volume = volume;
-            Preco = preco;
-            Ativo = ativo;
-        }
-
-        public TipoCacamba() { }
-
-        public void AtualizarTipoCacamba(string volume, decimal preco, bool ativo)
         {
             Volume = volume;
             Preco = preco;
@@ -33,5 +26,20 @@ namespace Domain.TipoCacambas.Agregacao
             Ativo = ativo;
         }
 
+        public void AtualizarTipoCacamba(string volume, decimal preco, bool ativo)
+        {
+            Volume = volume;
+            Preco = preco;
+            Ativo = ativo;
+        }
+        
+        public void RemoverPrecoFaixaCep(PrecoFaixaCep data ) => PrecoFaixaCep.Remove(data);
+        public void AdicionarPrecoFaixaCep(PrecoFaixaCep data) => PrecoFaixaCep.Add (data);
+        
+        public void AlterarPrecoFaixaCep(PrecoFaixaCep data)
+        {
+            var preco = PrecoFaixaCep.FirstOrDefault(c => c.Id == data.Id);
+            preco = data;
+        }
     }
 }

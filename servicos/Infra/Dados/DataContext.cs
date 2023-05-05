@@ -19,7 +19,7 @@ public class DataContext : DbContext
     public DbSet<PedidoItem> PedidoItens { get; set; } = null!;
     public DbSet<Evento> Eventos { get; set; } = null!;
     public DbSet<TipoCacamba> TipoCacambas { get; set; } = null!;
-
+    public DbSet<PrecoFaixaCep> PrecoFaixaCeps {get;set;} = null;
 
 
     public DataContext(DbContextOptions<DataContext> options) : base(options)
@@ -95,8 +95,18 @@ public class DataContext : DbContext
         mb.Entity<TipoCacamba>().Property(p => p.Preco).HasColumnType("decimal").HasPrecision(12,2).IsRequired();
 
         mb.Entity<TipoCacamba>().HasData(
-            new TipoCacamba(1, "3M³", 100, true),
-            new TipoCacamba(2, "5M³", 200, true)
+            new TipoCacamba(1, "3MÂ³", 100, true),
+            new TipoCacamba(2, "5MÂ³", 200, true)
         );
+
+        //Tipo CaÃ§amba - PrecoFaixaCep
+        mb.Entity<PrecoFaixaCep>().HasKey(e => e.Id);
+        mb.Entity<PrecoFaixaCep>().Property(e => e.CepInicial).HasColumnType("varchar").HasMaxLength(9);
+        mb.Entity<PrecoFaixaCep>().Property(e => e.CepFinal).HasColumnType("varchar").HasMaxLength(9);
+        mb.Entity<PrecoFaixaCep>().Property(e => e.Preco).HasColumnType("decimal").HasPrecision(12,2);
+        mb.Entity<PrecoFaixaCep>().Property(e => e.TipoCacambaId).HasColumnType("int");
+        mb.Entity<PrecoFaixaCep>()
+          .HasOne<TipoCacamba>()
+          .WithMany(x => x.PrecoFaixaCep);
     }
 }
