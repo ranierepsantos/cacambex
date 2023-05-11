@@ -16,6 +16,7 @@ import { TokenServico } from 'src/app/identidade-acesso/servicos/token.servico';
 
 import { VisualizarPedido } from '../../interfaces/ipedido';
 import { PedidoService } from './../../servicos/pedido.service';
+import { ReciboComponent } from '../recibo/recibo.component';
 
 @Component({
   templateUrl: "./tela-pedidos.component.html",
@@ -134,6 +135,13 @@ export class TelaPedidosComponent implements OnInit {
   }
   gerenciarPedido(visualizarPedido: VisualizarPedido) {
     this.router.navigate(["pedidos/gerenciar-pedido", visualizarPedido.id])
+  }
+  emitirRecibo(pedido: VisualizarPedido) {
+    console.log(pedido)
+    this.dialog.open(ReciboComponent, {
+      width: '750px',
+      data: pedido,
+    });
   }
   mudarPagina(e: PageEvent) {
     this.usuarioDecodificado.role == 'Cliente' ?

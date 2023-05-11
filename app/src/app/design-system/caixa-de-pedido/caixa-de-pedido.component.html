@@ -47,6 +47,12 @@
 
       <ng-container *ngIf="isAdmin">
 
+        <button class="btn-menu" mat-button (click)="emitirRecibo.emit()" type="button"
+        [disabled]="pedidoVisualizar.pedidoItem.cacamba == null"
+        >
+          Emitir Recibo
+        </button>
+
         <button class="btn-menu" mat-button (click)="gerenciarPedido.emit()" type="button">
           Gerenciar Pedido
         </button>

@@ -1,0 +1,32 @@
+.cabecalho {
+  width: 100%;
+}
+
+.conteudo-tabela {
+  margin-top: 10px;
+}
+
+table {
+  width: 100%;
+  overflow-x: scroll;
+}
+
+th {
+  font-size: 16px;
+}
+
+td {
+  font-size: 16px;
+}
+
+p {
+  font-size: 18px;
+}
+
+@media print
+{
+  button
+  {
+    display: none !important;
+  }
+}

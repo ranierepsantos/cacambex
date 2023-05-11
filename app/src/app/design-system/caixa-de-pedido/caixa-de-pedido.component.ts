@@ -13,6 +13,7 @@ export class CaixaDePedidoComponent implements OnInit {
   @Input() isAdmin!: boolean;
   @Output() solicitarColeta: EventEmitter<void> = new EventEmitter();
   @Output() gerenciarPedido: EventEmitter<void> = new EventEmitter();
+  @Output() emitirRecibo: EventEmitter<void> = new EventEmitter();
   @Output() verDetalhes: EventEmitter<void> = new EventEmitter();
   @Output() excluir: EventEmitter<void> = new EventEmitter();
   @Output() editar: EventEmitter<void> = new EventEmitter();

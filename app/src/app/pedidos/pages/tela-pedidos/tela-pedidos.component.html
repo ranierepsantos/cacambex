@@ -21,7 +21,7 @@
     <div *ngIf="dataSource.data;else elseTemplate">
       <ca-caixa-de-pedido [isAdmin]="this.usuarioDecodificado.role == 'Cliente' ? false : true"
         *ngFor="let data of dataSource.data" [pedidoVisualizar]="data" (editar)="editarPedido(data)"
-        (gerenciarPedido)="gerenciarPedido(data)" (excluir)="excluirPedido(data)">
+        (gerenciarPedido)="gerenciarPedido(data)" (emitirRecibo)="emitirRecibo(data)" (excluir)="excluirPedido(data)">
       </ca-caixa-de-pedido>
     </div>
 
