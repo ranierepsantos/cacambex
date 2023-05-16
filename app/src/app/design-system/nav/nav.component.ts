@@ -1,7 +1,10 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { UsuarioDecodificado } from 'src/app/identidade-acesso/interfaces/usuario-decodificado';
 import { AutorizacaoServico } from 'src/app/identidade-acesso/servicos/autorizacao.service';
 import { TokenServico } from 'src/app/identidade-acesso/servicos/token.servico';
+import { VisualizarPedido } from 'src/app/pedidos/interfaces/ipedido';
+import { PedidoService } from 'src/app/pedidos/servicos/pedido.service';
 
 @Component({
   selector: "ca-nav",
@@ -18,6 +21,8 @@ export class NavComponent implements OnInit {
   searchFocus: boolean = false;
   searchValues: string = " ";
   isOpenAdvanceFilter: boolean = false;
+  notificacaoQuantidade: number = 0;
+  notificacaoPedido: VisualizarPedido[] = [];
   usuario: UsuarioDecodificado = {
     email: "",
     role: "",
@@ -27,15 +32,30 @@ export class NavComponent implements OnInit {
   constructor(
     private autorizacaoServico: AutorizacaoServico,
     private tokenServico: TokenServico,
+    private pedidoServico: PedidoService,
+    private router: Router,
   ) { }
 
   ngOnInit(): void {
     this.tokenServico.usuario.subscribe((x) => {
       this.usuario = x
     });
+    this.getNotificacoes();
   }
 
   sair() {
     this.autorizacaoServico.logout();
+  }
+
+  getNotificacoes() {
+    this.pedidoServico.obterNotificacao(8).subscribe(data => {
+    console.log("notificacao=>", data)
+      this.notificacaoQuantidade = data.length;
+      this.notificacaoPedido = data;
+    });
+  }
+
+  goToPedido(pedidoId: number) {
+    this.router.navigate(["pedidos/gerenciar-pedido", pedidoId])
   }
 }

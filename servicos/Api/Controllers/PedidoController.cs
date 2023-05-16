@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Api.Controllers;
 
-[Authorize]
+//[Authorize]
 [ApiController]
 [Route("pedido")]
 public class PedidoController : Controller
@@ -200,5 +200,19 @@ public class PedidoController : Controller
         if (!result.Sucesso)
             return BadRequest(result);
         return NoContent();
+    }
+
+    [HttpGet("notificar-recolher/{dias}")]
+    public async Task<ActionResult<IList<VisualizarPedido>>> NotificarPedido(int dias)
+    {
+        string query = "SELECT pe.* FROM pedidos pe (nolock) " +
+            "INNER JOIN pedidoitens px (nolock) on px.id = pe.id " +
+            "INNER JOIN eventos ee (nolock) on ee.id = px.itementregueid and ee.status = 0 " +
+            "INNER JOIN eventos er (nolock) on er.id = px.recolheritemid and er.status = 3 " +
+            $"WHERE DATEDIFF(DAY, ee.quando, getdate()) >={dias}";
+
+        var data = await _db.Pedidos.FromSqlRaw(query).OrderBy(x => x.Id).Select(VisualizarPedidoExtensao.ToView()).ToListAsync();
+
+        return data;
     }
 }

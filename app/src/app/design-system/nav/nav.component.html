@@ -18,7 +18,16 @@
   <!-- (falta implementar parte lógica) <a class="logo">
     <img src="assets/pedro.jpg" alt="" srcset="" />
   </a> -->
-
+<button  mat-icon-button [matMenuTriggerFor]="menu" *ngIf="usuario.role === 'Administrador' && notificacaoQuantidade>0" >
+  <mat-icon style="color:#e5b034">notifications</mat-icon>
+  <sub style="color:red">{{notificacaoQuantidade}}</sub>
+</button>
+<mat-menu #menu="matMenu" >
+  <div *ngFor="let notif of notificacaoPedido">
+    <button mat-menu-item (click)="goToPedido(notif.id)">Pedido {{notif.id}}</button>
+    </div>
+</mat-menu>
+  
   <div class="iniciais-do-usuario mat-elevation-z3">
     <span [matTooltip]="usuario.email">
       {{usuario.name | slice : 0: 2}}

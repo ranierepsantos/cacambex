@@ -140,6 +140,14 @@ export class PedidoService {
     return this.http.delete(`${url}/${id}`);
   }
 
+  obterNotificacao( dias: number = 0): Observable<VisualizarPedido[]> 
+  {
+
+    let endPoint = `${url}/notificar-recolher/${dias}`;
+
+    return this.http.get<VisualizarPedido[]>(endPoint);
+  }
+
   private removeParametrosVaziosOuNulos(params: HttpParams) {
     const paramsKeysAux = params.keys();
     paramsKeysAux.forEach((key) => {

@@ -8,5 +8,7 @@ namespace Domain.Pedidos.Interface
         Task AtualizarPedidoAsync(Pedido pedido);
         Task DeletarPedidoAsync(Pedido pedido);
         Task<Pedido?> ObterPedidoPorIdAsync(int id);
+        
+        Task<IList<Pedido>> GetPedidosNotificar(int dias);
     }
 }
