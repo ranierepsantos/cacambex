@@ -46,6 +46,7 @@ import { PopupInformativoComponent } from './popup-informativo/popup-informativo
 import { ProcurarClienteComponent } from './procurar-cliente/procurar-cliente.component';
 import { VerItemPedidoComponent } from './ver-item-pedido/ver-item-pedido.component';
 import { TipoCacambaItem } from './tipo-cacamba-item/tipo-cacamba-item.component';
+import { MatBadgeModule } from '@angular/material/badge';
 
 registerLocaleData(ptBr)
 
@@ -101,7 +102,8 @@ const maskConfig: Partial<IConfig> = {
     NgxMaskModule.forRoot(maskConfig),
     MatAutocompleteModule,
     MatSelectModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    MatBadgeModule
   ],
   exports: [
     CaixaDePedidoComponent,

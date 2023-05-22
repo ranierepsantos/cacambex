@@ -10,9 +10,9 @@ import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatGridListModule } from '@angular/material/grid-list';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatBadgeModule} from '@angular/material/badge';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -40,7 +40,7 @@ import { PedidosModule } from './pedidos/pedidos.module';
     FormsModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatGridListModule,
+    MatBadgeModule
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy },
