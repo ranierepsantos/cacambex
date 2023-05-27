@@ -49,7 +49,6 @@ export class NavComponent implements OnInit {
 
   getNotificacoes() {
     this.pedidoServico.obterNotificacao(8).subscribe(data => {
-    console.log("notificacao=>", data)
       this.notificacaoQuantidade = data.length;
       this.notificacaoPedido = data;
     });

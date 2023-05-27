@@ -1,7 +1,13 @@
 <div class="principal">
 
   <div class="cabecalho">
-    <ca-cabecalho [desabilitado]="false" [titulo]="tituloCabecalho" (novoEventoAbrir)="novoPedido()">
+    <ca-cabecalho [desabilitado]="false" 
+                  [titulo]="tituloCabecalho" 
+                  (novoEventoAbrir)="novoPedido()"
+                  [hasData]="false"
+                  [mostrarBotaoRelatorio]="true"
+                  (imprimirRelatorio)="imprimirRelatorio()"
+                  >
     </ca-cabecalho>
   </div>
 

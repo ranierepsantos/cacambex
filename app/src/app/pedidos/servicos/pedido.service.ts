@@ -15,6 +15,13 @@ const url = `${environment.urlApi}/pedido`;
   providedIn: 'root',
 })
 export class PedidoService {
+  pedidos: VisualizarPedido [] = []
+  setPedidos(data: any) {
+    this.pedidos = data; 
+  }
+  getPedidos() {
+    return this.pedidos
+  }
   constructor(private http: HttpClient) { }
   vincularCacamba(
     pedidoId: number,
@@ -113,6 +120,9 @@ export class PedidoService {
     nomeCliente: string = "",
     notaFiscal: string = "",
     numeroCTR: string = "",
+    dataInicio: any = null,
+    dataFim: any = new Date(),
+    filtrarData: boolean = false,
     sort: string = "desc"
   ): Observable<Paginacao<VisualizarPedido>> {
 
@@ -123,6 +133,9 @@ export class PedidoService {
       .append('nomeCliente', nomeCliente)
       .append('notaFiscal', notaFiscal)
       .append('numeroCTR', numeroCTR)
+      .append('dataInicio', dataInicio.toISOString())
+      .append('dataFim', dataFim.toISOString())
+      .append('filtrarPorData', filtrarData)
       .append('sort', sort);
 
     let params = this.removeParametrosVaziosOuNulos(params_);

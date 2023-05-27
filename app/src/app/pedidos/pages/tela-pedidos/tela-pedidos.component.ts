@@ -17,6 +17,7 @@ import { TokenServico } from 'src/app/identidade-acesso/servicos/token.servico';
 import { VisualizarPedido } from '../../interfaces/ipedido';
 import { PedidoService } from './../../servicos/pedido.service';
 import { ReciboComponent } from '../recibo/recibo.component';
+import { relatorioComponent } from '../relatorio/relatorio.component';
 
 @Component({
   templateUrl: "./tela-pedidos.component.html",
@@ -67,29 +68,29 @@ export class TelaPedidosComponent implements OnInit {
   private obterPedidosGeral() {
     this.usuarioDecodificado.role == 'Cliente' ?
       this.obterPedidosPorClienteId(this.usuarioDecodificado.nameid)
-      : this.obterPedidos();
+      : this.obterPedidosComFiltros();
   }
 
   novoPedido() {
     this.router.navigate(["/pedidos/novo-pedido"]);
   }
-  private obterPedidos(
-    pageIndex: number = 0,
-    pageSize: number = 10
-  ) {
-    this.servicoPedido
-      .obter(
-        pageIndex,
-        pageSize,
-        this.sort
-      )
-      .subscribe((x) => {
-        this.dataSource = x;
-        this.load = true;
-      }, (e) => {
-        this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente contato com o suporte.", true);
-      });
-  }
+  // private obterPedidos(
+  //   pageIndex: number = 0,
+  //   pageSize: number = 10
+  // ) {
+  //   this.servicoPedido
+  //     .obter(
+  //       pageIndex,
+  //       pageSize,
+  //       this.sort
+  //     )
+  //     .subscribe((x) => {
+  //       this.dataSource = x;
+  //       this.load = true;
+  //     }, (e) => {
+  //       this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente contato com o suporte.", true);
+  //     });
+  // }
   private obterPedidosPorClienteId(
     clienteId: any,
     pageIndex: number = 0,
@@ -114,7 +115,11 @@ export class TelaPedidosComponent implements OnInit {
     documentoCliente: string = "",
     nomeCliente: string = "",
     notaFiscal: string ="",
-    numeroCTR: string =""
+    numeroCTR: string ="",
+    dataInicio: Date = new Date(),
+    dataFim: Date = new Date(),
+    filtrarData: boolean = false,
+    sort: string ="desc"
   ) {
     this.servicoPedido.obterPedidoComFiltro(
       pageIndex,
@@ -122,7 +127,11 @@ export class TelaPedidosComponent implements OnInit {
       documentoCliente,
       nomeCliente,
       notaFiscal,
-      numeroCTR
+      numeroCTR,
+      dataInicio,
+      dataFim,
+      filtrarData,
+      sort
     ).subscribe((x) => {
       this.dataSource = x;
       this.load = true;
@@ -137,18 +146,35 @@ export class TelaPedidosComponent implements OnInit {
     this.router.navigate(["pedidos/gerenciar-pedido", visualizarPedido.id])
   }
   emitirRecibo(pedido: VisualizarPedido) {
-    console.log(pedido)
     this.dialog.open(ReciboComponent, {
       width: '750px',
       data: pedido,
     });
   }
+  imprimirRelatorio() {
+    let result: any;
+    this.servicoPedido.obterPedidoComFiltro(0, this.dataSource.totalCount,
+      this.filtroDocumentoCliente,
+      this.filtroNomeCliente,
+      this.filtroNumeroNotaFiscal,
+      this.filtroNumeroCTR,
+      this.filtroDataInicio,
+      this.filtroDataFim,
+      this.filtrarPorData,
+      this.sort).subscribe((x) => {
+        this.servicoPedido.setPedidos(x.data)
+        this.router.navigate(["pedidos/relatorio-pedido"]);
+      }, (e) => {
+        this.snackBar.mostrarMensagem("Erro ao carregar pedidos. Tente novamente em 1 minuto.", true);
+      })
+  }
+
   mudarPagina(e: PageEvent) {
     this.usuarioDecodificado.role == 'Cliente' ?
       this.obterPedidosPorClienteId(this.usuarioDecodificado.nameid, e.pageIndex, e.pageSize)
-      : this.obterPedidos(e.pageIndex, e.pageSize);
+      : this.aplicandoFiltros(e.pageIndex, e.pageSize);
   }
-  aplicandoFiltros() {
+  aplicandoFiltros(page: number = 0, pageSize: number = 10) {
     this.filtroNomeCliente = this.filtroNomeCliente;
     this.filtroNumeroCTR = this.filtroNumeroCTR;
     this.filtroNumeroNotaFiscal = this.filtroNumeroNotaFiscal;
@@ -156,7 +182,7 @@ export class TelaPedidosComponent implements OnInit {
     this.filtroDataInicio = this.filtroDataInicio;
     this.filtroDataFim = this.filtroDataFim;
     this.filtrarPorData = this.filtrarPorData;
-    this.obterPedidosComFiltros(0, 10, this.filtroDocumentoCliente, this.filtroNomeCliente, this.filtroNumeroNotaFiscal, this.filtroNumeroCTR);
+    this.obterPedidosComFiltros(page, pageSize, this.filtroDocumentoCliente, this.filtroNomeCliente, this.filtroNumeroNotaFiscal, this.filtroNumeroCTR, this.filtroDataInicio, this.filtroDataFim, this.filtrarPorData,  this.sort);
   }
 
   excluirPedido(visualizarPedido: VisualizarPedido) {

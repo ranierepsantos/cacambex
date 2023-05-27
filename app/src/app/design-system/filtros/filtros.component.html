@@ -37,16 +37,16 @@
         <span>Filtrar por data</span>
         <mat-form-field appearance="legacy">
           <mat-date-range-input [rangePicker]="picker" [disabled]="!filtroPorData">
-            <input matStartDate placeholder="Data início" [(ngModel)]="dataInicio" name="dataInicio" disabled
+            <input matStartDate placeholder="Data início" [(ngModel)]="dataInicio" name="dataInicio" 
               (ngModelChange)="dataInicioChange.emit($event)">
-            <input matEndDate placeholder="Data final" [(ngModel)]="dataFim" name="dataFim" disabled
+            <input matEndDate placeholder="Data final" [(ngModel)]="dataFim" name="dataFim" 
               (ngModelChange)="dataFimChange.emit($event)">
           </mat-date-range-input>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
 
-        <mat-checkbox type="checkbox" [(ngModel)]="filtroPorData" name="filtroPorData" disabled
+        <mat-checkbox type="checkbox" [(ngModel)]="filtroPorData" name="filtroPorData"
           (ngModelChange)="filtroPorDataChange.emit($event)">Aplicar data</mat-checkbox>
 
         <mat-radio-group [(ngModel)]="sort" name="sort" (ngModelChange)="sortChange.emit($event)">

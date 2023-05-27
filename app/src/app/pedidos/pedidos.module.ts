@@ -34,6 +34,7 @@ import { SelecionarCacambaComponent } from './pages/selecionar-cacamba/seleciona
 import { TelaPedidosComponent } from './pages/tela-pedidos/tela-pedidos.component';
 import { PedidosRoutingModule } from './pedidos-routing.module';
 import { ReciboComponent } from './pages/recibo/recibo.component';
+import { relatorioComponent } from './pages/relatorio/relatorio.component';
 
 const maskConfig: Partial<IConfig> = {
   validation: false,
@@ -49,6 +50,7 @@ registerLocaleData(ptBr)
     EditarPedidoComponent,
     EmitirCtrComponent,
     ReciboComponent,
+    relatorioComponent
   ],
   imports: [
     CommonModule,

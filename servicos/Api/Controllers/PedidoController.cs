@@ -100,15 +100,13 @@ public class PedidoController : Controller
         if (!string.IsNullOrEmpty(consulta.NumeroCTR))
             query = query.Where(x => x.NumeroCTR.Equals(consulta.NumeroCTR));
 
-
-        //IMPLANTAR
-        // if (consulta.FiltrarPorData)
-        // {
-        //     var inicio = (DateTime)consulta.DataInicio;
-        //     var fim = (DateTime)consulta.DataFim;
-        //     query = query.Where(x => x.EmitidoEm >= inicio.Date);
-        //     query = query.Where(x => x.EmitidoEm <= fim.Date);
-        // }
+        if (consulta.FiltrarPorData)
+        {
+            var inicio = (DateTime)consulta.DataInicio;
+            var fim = (DateTime)consulta.DataFim;
+            query = query.Where(x => x.EmitidoEm >= inicio);
+            query = query.Where(x => x.EmitidoEm <= fim);
+        }
         return new Paginacao<VisualizarPedido>(query, consulta.PageIndex, consulta.PageSize);
     }
 

@@ -41,6 +41,7 @@ namespace Domain.Pedidos.Visualizacoes
             NumeroNotaFiscal = x.NumeroNotaFiscal,
             NumeroCTR = x.NumeroCTR,
             EnderecoEntrega = x.EnderecoEntrega,
+            EmitidoEm = x.PedidoEmitido.Quando,
             Eventos = new()
             {
                 x.PedidoEmitido.ToView(),

@@ -17,9 +17,9 @@ namespace Domain.Pedidos.Consultas
         public string NomeCliente { get; set; } = "";
         //IMPLANTAR
         public string NotaFiscal { get; set; } = "";
-        // public DateTime? DataInicio { get; set; } = null;
-        // public DateTime? DataFim { get; set; } = null;
-        // public bool FiltrarPorData { get; set; } = false;
+        public DateTime? DataInicio { get; set; } = null;
+        public DateTime? DataFim { get; set; } = null;
+        public bool FiltrarPorData { get; set; } = false;
         public string Sort { get; set; } = "desc";
     }
 }

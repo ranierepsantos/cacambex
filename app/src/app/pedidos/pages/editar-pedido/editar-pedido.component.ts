@@ -117,7 +117,6 @@ export class EditarPedidoComponent implements OnInit {
     this.enderecoId.enable();
   }
   onSelectEnderecoChange(endereco: any) {
-    console.log(endereco)
     this.editarPedidoForm.get('enderecoId')?.patchValue(endereco.value.id);
 
     this.carregarListaTipoCacambas(endereco.value.cep);

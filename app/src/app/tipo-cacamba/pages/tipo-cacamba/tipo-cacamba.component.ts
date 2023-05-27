@@ -63,7 +63,6 @@ export class TipoCacambaComponent implements OnInit {
         switchMap((data: any) => {
           if (data == undefined) return of();
           this.snackBar.mostrarMensagem("Processando...");
-          console.log("...",data);
           
           return this.apiService.alterar(data);
         })
@@ -72,7 +71,6 @@ export class TipoCacambaComponent implements OnInit {
         this.obterDados();
         this.snackBar.mostrarMensagem("Tipo Caçamba alterada com sucesso.");
       }, (e: any) => {
-        console.log(e.error)
         this.snackBar.mostrarMensagem(e.error.mensagem, true)
       });
   }

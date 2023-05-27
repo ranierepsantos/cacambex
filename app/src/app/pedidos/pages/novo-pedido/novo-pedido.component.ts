@@ -144,7 +144,6 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
   }
   async onSelectEnderecoChange(endereco: any) {
     this.pedidoForm.get('enderecoId')?.patchValue(endereco.value.id);
-    console.log(this.pedidoForm.get('volumeCacamba')?.value)
     this.carregarListaTipoCacambas(endereco.value.cep, this.pedidoForm.get('volumeCacamba')?.value)
   }
 

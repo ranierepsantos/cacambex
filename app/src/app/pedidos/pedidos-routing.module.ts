@@ -8,6 +8,7 @@ import { GerenciarPedidoComponent } from './pages/gerenciar-pedido/gerenciar-ped
 import { NovoPedidoComponent } from './pages/novo-pedido/novo-pedido.component';
 import { TelaPedidosComponent } from './pages/tela-pedidos/tela-pedidos.component';
 import { ReciboComponent } from './pages/recibo/recibo.component';
+import { relatorioComponent } from './pages/relatorio/relatorio.component';
 
 const routes: Routes = [
   { path: '', component: TelaPedidosComponent },
@@ -19,6 +20,7 @@ const routes: Routes = [
   { path: 'gerenciar-pedido/:id', component: GerenciarPedidoComponent },
   { path: 'editar-pedido/:id', component: EditarPedidoComponent, resolve: { pedido: PedidoGuard } },
   { path: 'recibo-pedido', component: ReciboComponent},
+  { path: 'relatorio-pedido', component: relatorioComponent},
   
   { path: '', pathMatch: 'full', redirectTo: '' },
 ];

@@ -41,10 +41,10 @@ export class ClienteFormComponent implements OnInit {
   setTipoDocumento() {
     this.documento.value.length == 11 ? this.tipoDocumento.setValue(0) : this.tipoDocumento.setValue(1);
   }
+  
   mudarValidatorDocumento(documento: any) {
     let length = documento.value.length > 11 ? 14 : 11;
     this.cliente.controls["documento"].setValidators([Validators.minLength(length), Validators.maxLength(length)]);
-
   }
 
   validaNascimento(): ValidatorFn {
@@ -55,6 +55,7 @@ export class ClienteFormComponent implements OnInit {
       return null
     }
   }
+
   verificarAnoNascimento(dataNascimento: any) {
     var data = dataNascimento.value ? dataNascimento.value?.format('YYY-MM-DD') : dataNascimento;
     var hoje = new Date();

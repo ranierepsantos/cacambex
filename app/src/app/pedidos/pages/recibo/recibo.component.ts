@@ -38,7 +38,6 @@ export class ReciboComponent implements OnInit {
   }
 
   imprimir() {
-    console.log("imprimindo...")
     window.print()
     // let area = document.getElementById("print")?.innerHTML ?? ''
     // let printwin = window.open("");

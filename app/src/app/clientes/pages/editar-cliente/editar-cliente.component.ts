@@ -182,7 +182,7 @@ export class EditarClienteComponent implements OnInit {
       this.visualizarEndereco.bairro = x.bairro;
       this.visualizarEndereco.cidade = x.localidade;
       this.visualizarEndereco.uf = x.uf;
-      console.log(x);
+      
     }, (e: HttpErrorResponse) => {
       this.snackBar.mostrarMensagem("Informe um CEP válido!", true);
     })

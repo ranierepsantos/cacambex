@@ -17,7 +17,7 @@
       <mat-error *ngIf="documento.value.length > 0 && documento.value.length < 11">
         CPF inválido
       </mat-error>
-      <mat-error *ngIf="documento.value.length < 15">
+      <mat-error *ngIf="documento.value.length > 11 && documento.value.length < 14">
         CNPJ inválido
       </mat-error>
     </mat-form-field>

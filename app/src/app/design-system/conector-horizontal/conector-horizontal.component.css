@@ -1,4 +1,6 @@
 .conector-horizontal {
     border-top: 1px solid var(--text-color-2);
-    width: 100px;
+    width: 55px;
+    margin-right: 5px;
+    margin-left: 5px;
   }
