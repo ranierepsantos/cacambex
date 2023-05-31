@@ -72,8 +72,12 @@ public class CriarClienteManipulador : IRequestHandler<CriarClienteComando, Resp
             return new("Já existe um cliente cadastrado com esse documento.", false);
         }
         #endregion
+        var omieEnderecos = new List<EnderecoEntregaOmie>();
+        var enderecosEntrega = new List<EnderecoEntrega>();
 
-        var omieEnderecos = request.EnderecosEntrega
+        if (request.EnderecosEntrega.Count> 0)
+        {
+            omieEnderecos = request.EnderecosEntrega
                         .Select(x => new EnderecoEntregaOmie(
                             x.Logradouro,
                             x.Numero,
@@ -84,17 +88,39 @@ public class CriarClienteManipulador : IRequestHandler<CriarClienteComando, Resp
                             )
                             ).ToList();
 
-        #region obtendo cliente p/ omie
-        var enderecosEntrega = request.EnderecosEntrega
-                                .Select(x => new EnderecoEntrega(
-                                    x.CEP,
-                                    x.Logradouro,
-                                    x.Numero,
-                                    x.Bairro,
-                                    x.Cidade,
-                                    x.UF,
-                                    x.Complemento)
-                                    ).ToList();
+            #region obtendo cliente p/ omie
+            enderecosEntrega = request.EnderecosEntrega
+                                    .Select(x => new EnderecoEntrega(
+                                        x.CEP,
+                                        x.Logradouro,
+                                        x.Numero,
+                                        x.Bairro,
+                                        x.Cidade,
+                                        x.UF,
+                                        x.Complemento)
+                                        ).ToList();
+        }
+        //SEMPRE INCLUIR O ENDEREÇO DO CLIENTE (cobrança) como entrega também
+        omieEnderecos.Add(new EnderecoEntregaOmie(
+                    request.EnderecoCobranca.Logradouro,
+                    request.EnderecoCobranca.Numero,
+                    request.EnderecoCobranca.Bairro,
+                    request.EnderecoCobranca.CEP,
+                    request.EnderecoCobranca.UF,
+                    request.EnderecoCobranca.Cidade
+        ));
+
+        enderecosEntrega.Add(
+            new EnderecoEntrega(
+                    request.EnderecoCobranca.CEP,
+                    request.EnderecoCobranca.Logradouro,
+                    request.EnderecoCobranca.Numero,
+                    request.EnderecoCobranca.Bairro,
+                    request.EnderecoCobranca.Cidade,
+                    request.EnderecoCobranca.UF,
+                    request.EnderecoCobranca.Complemento
+                )
+        );
 
         EnderecoCobranca enderecoCobranca = new(
                     request.EnderecoCobranca.CEP,
