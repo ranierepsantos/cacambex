@@ -88,7 +88,7 @@ export class EditarClienteComponent implements OnInit {
         complemento: [cliente.enderecoCobranca.complemento, [Validators.maxLength(255)]],
         uf: [cliente.enderecoCobranca.uf, [Validators.required, Validators.maxLength(11), Validators.pattern('[a-zA-Z]+')]]
       }),
-      enderecosEntrega: this.fb.array([])
+      enderecosEntrega: this.fb.array(cliente.enderecosEntrega)
     });
   }
 

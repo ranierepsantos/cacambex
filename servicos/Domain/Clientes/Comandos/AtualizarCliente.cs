@@ -135,7 +135,7 @@ public class AtualizarCliente : IRequestHandler<AtualizarClienteComando, Respost
 
         List<EnderecoEntrega> enderecosParaRemover = cliente
            .EnderecosEntrega
-           .Where(x => !request.EnderecosEntrega.Any(y => y.Id == x.Id))
+           .Where(x => request.EnderecosEntrega.Where(q => q.Id == x.Id).Count() == 0)
                 .Where(x => x.Id != 0)
                 .ToList();
 
