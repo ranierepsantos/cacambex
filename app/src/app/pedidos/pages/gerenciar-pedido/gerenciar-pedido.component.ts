@@ -59,7 +59,7 @@ export class GerenciarPedidoComponent implements OnInit {
       this.obterEventoCTR(this.visualizarPedido$.value.eventos);
       this.obterEventoRecolher(this.visualizarPedido$.value.eventos);
       this.obterEventoConcluido(this.visualizarPedido$.value.eventos);
-    }, 100);
+    }, 500);
 
   }
   emitirNotaFiscal() {
