@@ -48,7 +48,7 @@ jobs:
         uses: azure/webapps-deploy@v2
         id: deploy-to-webapp
         with:
-          app-name: 'app-cacambex-hml'
+          app-name: 'cacambex-app'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_3CF52321F9F541A6A0A3C196B1F24889 }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_5483BDEFEFBE4625962C6D6EACB89832 }}
           package: .
