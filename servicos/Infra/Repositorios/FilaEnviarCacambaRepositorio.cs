@@ -9,9 +9,9 @@ namespace Infra.Repositorios;
 public class FilaEnviarCacambaRepositorio : IFilaEnviarCacambaRepositorio
 {
     private readonly QueueClient _queueClient;
-    private readonly StorageContext _storageContext;
+    private readonly StorageContextSettings _storageContext;
 
-    public FilaEnviarCacambaRepositorio(IOptions<StorageContext> storageContext)
+    public FilaEnviarCacambaRepositorio(IOptions<StorageContextSettings> storageContext)
     {
         _storageContext = storageContext.Value;
         _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba,

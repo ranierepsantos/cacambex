@@ -31,20 +31,21 @@ public class CTR
         _httpClient = httpClient;
         _coletasOnlineContext = coletasOnlineContext;
         _clienteRepositorio = clienteRepositorio;
+        _connString = GetEnvironmentVariable("ConnectionString");
     }
     [FunctionName("SolicitaCTR")]
-    public async Task SolicitarCTR([QueueTrigger("solicitactr", Connection = "connString")] string myQueueItem,
+    public async Task SolicitarCTR([QueueTrigger("solicitactr", Connection = "ConnectionString")] string myQueueItem,
                                    ILogger log)
     {
         CTRs.Models.SolicitarCTR.SolicitaCTRRequest solicitaCTR = JsonSerializer.Deserialize<CTRs.Models.SolicitarCTR.SolicitaCTRRequest>(myQueueItem);
         var response = await SolicitaCTR(
-                                          solicitaCTR, 
-                                          _coletasOnlineContext.Value.UsuarioColetasOnline, 
+                                          solicitaCTR,
+                                          _coletasOnlineContext.Value.UsuarioColetasOnline,
                                           _coletasOnlineContext.Value.SenhaColetasOnline);
 
-        if(response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.codigo is not 0)
+        var jsonResponse = JsonSerializer.Serialize(response);
+        if (response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.codigo is not 0)
         {
-            _connString = GetEnvironmentVariable("connString");
             _queueClient = new QueueClient(_connString, "solicitactr", new QueueClientOptions
             {
                 MessageEncoding = QueueMessageEncoding.Base64,
@@ -52,7 +53,7 @@ public class CTR
             await Task.Delay(30000);
             await _clienteRepositorio.SalvarNumeroCTRComErro(solicitaCTR.CTR_Id, response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.mensagem);
             await _queueClient.SendMessageAsync(myQueueItem);
-            log.LogInformation("Pedido de solicitacão de CTR falhou. Solicitacao reenviada para fila.");
+            log.LogInformation("Pedido de solicitacao de CTR falhou. Solicitacao reenviada para fila.");
         }
         else
         {
@@ -60,9 +61,10 @@ public class CTR
                                                                 response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.mensagem,
                                                                 solicitaCTR.PedidoId,
                                                                 response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.ID_CTR);
-            log.LogInformation("Pedido de solicitacão de CTR processado:", new { response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.mensagem });
+            log.LogInformation($"resposta do ctr: {response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.mensagem}");
+            log.LogInformation("Pedido de solicitacao de CTR processado:", new { response.Body.SolicitaCTRResponse.SolicitaCTRResult.resultado.mensagem });
         }
-
+        log.LogInformation($"resposta completa: {response}");
 
     }
     private static async Task<CTRs.Models.SolicitarCTR.Envelope> SolicitaCTR(CTRs.Models.SolicitarCTR.SolicitaCTRRequest request, string usuario, string senha)
@@ -114,9 +116,9 @@ public class CTR
         }
 
     }
-  
+
     [FunctionName("EnviaCacambaObra")]
-    public async Task EnviaCacambaObra([QueueTrigger("enviarcacamba", Connection = "connString")] string myQueueItem, ILogger log)
+    public async Task EnviaCacambaObra([QueueTrigger("enviarcacamba", Connection = "ConnectionString")] string myQueueItem, ILogger log)
     {
         CTRs.Models.EnviarCacambaObra.EnviarCacambaObraRequest enviaCacamba = JsonSerializer.Deserialize<CTRs.Models.EnviarCacambaObra.EnviarCacambaObraRequest>(myQueueItem);
         var response = await EnviarCacambaObra(
@@ -126,7 +128,6 @@ public class CTR
 
         if (response.Body.EnviaCacambaObra_LocalResponse.EnviaCacambaObra_LocalResult.resultado.codigo is not 0)
         {
-            _connString = GetEnvironmentVariable("connString");
             _queueClient = new QueueClient(_connString, "enviarcacamba", new QueueClientOptions
             {
                 MessageEncoding = QueueMessageEncoding.Base64
@@ -139,8 +140,10 @@ public class CTR
         }
         else
         {
-            await _clienteRepositorio.SetStatusAguardandoParaRecolherCacamba(enviaCacamba.RecolherItem_Id,
-                                                           response.Body.EnviaCacambaObra_LocalResponse.EnviaCacambaObra_LocalResult.resultado.mensagem);
+            await _clienteRepositorio.SetStatusAguardandoParaRecolherCacamba(
+                enviaCacamba.RecolherItem_Id,
+                response.Body.EnviaCacambaObra_LocalResponse.EnviaCacambaObra_LocalResult.resultado.mensagem
+                );
             log.LogInformation("Pedido de envio de cacamba processado:", new { response.Body.EnviaCacambaObra_LocalResponse.EnviaCacambaObra_LocalResult.resultado.mensagem });
         }
     }
@@ -180,7 +183,7 @@ public class CTR
     }
 
     [FunctionName("RetirarCacambaObra")]
-    public async Task RetirarCacamba([QueueTrigger("retirarcacamba", Connection = "connString")] string myQueueItem, ILogger log)
+    public async Task RetirarCacamba([QueueTrigger("retirarcacamba", Connection = "ConnectionString")] string myQueueItem, ILogger log)
     {
         CTRs.Models.RetirarCacamba.RetirarCacambaObraRequest retirarCacamba = JsonSerializer.Deserialize<CTRs.Models.RetirarCacamba.RetirarCacambaObraRequest>(myQueueItem);
         var response = await RetirarCacambaObra(
@@ -190,7 +193,7 @@ public class CTR
 
         if (response.Body.RetirarCacambaObraResponse.RetirarCacambaObraResult.resultado.codigo is not 0)
         {
-            _connString = GetEnvironmentVariable("connString");
+            _connString = GetEnvironmentVariable("ConnectionString");
             _queueClient = new QueueClient(_connString, "retirarcacamba", new QueueClientOptions
             {
                 MessageEncoding = QueueMessageEncoding.Base64

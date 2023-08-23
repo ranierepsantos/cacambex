@@ -40,7 +40,7 @@ public static class ConfiguracaoDeServicos
                 string app_secret = configuration.GetSection("OmieConfigurations:APP_SECRET").Value;
                 return new(omie_url, app_key, app_secret);
             }));
-        services.Configure<StorageContext>(configuration.GetSection(nameof(StorageContext)));
+        services.Configure<StorageContextSettings>(configuration.GetSection(nameof(StorageContextSettings)));
         services.Configure<OmieInformacoesAdicionais>(configuration.GetSection(nameof(OmieInformacoesAdicionais)));
         services.Configure<EmailConfiguracao>(configuration.GetSection(nameof(EmailConfiguracao)));
         services.AddScoped<IAutenticacaoRepositorio, AutenticacaoRepositorio>();

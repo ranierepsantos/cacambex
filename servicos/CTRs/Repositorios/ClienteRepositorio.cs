@@ -150,4 +150,9 @@ public class ClienteRepositorio : IClienteRepositorio
             return false;
         }
     }
+    private static string GetEnvironmentVariable(string nome)
+    {
+        return nome + ": " +
+            System.Environment.GetEnvironmentVariable(nome, EnvironmentVariableTarget.Process);
+    }
 }

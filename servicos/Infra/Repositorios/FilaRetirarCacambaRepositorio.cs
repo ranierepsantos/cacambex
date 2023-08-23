@@ -10,12 +10,12 @@ public class FilaRetirarCacambaRepositorio : IFilaRetirarCacambaRepositorio
 {
     private readonly QueueClient _queueClient;
 
-    private readonly StorageContext _storageContext;
+    private readonly StorageContextSettings _storageContext;
 
-    public FilaRetirarCacambaRepositorio(IOptions<StorageContext> storageContext)
+    public FilaRetirarCacambaRepositorio(IOptions<StorageContextSettings> storageContext)
     {
         _storageContext = storageContext.Value;
-        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba,
+        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaRetirarCacamba,
         new QueueClientOptions
         {
             MessageEncoding = QueueMessageEncoding.Base64

@@ -52,15 +52,12 @@ export class GerenciarPedidoComponent implements OnInit {
         if (x) {
           this.pedidoItem$.next(x.pedidoItem);
           this.visualizarPedido$.next(x);
+          this.obterEventoNotaFiscal(this.visualizarPedido$.value.eventos);
+          this.obterEventoCTR(this.visualizarPedido$.value.eventos);
+          this.obterEventoRecolher(this.visualizarPedido$.value.eventos);
+          this.obterEventoConcluido(this.visualizarPedido$.value.eventos);
         }
       });
-    setTimeout(() => {
-      this.obterEventoNotaFiscal(this.visualizarPedido$.value.eventos);
-      this.obterEventoCTR(this.visualizarPedido$.value.eventos);
-      this.obterEventoRecolher(this.visualizarPedido$.value.eventos);
-      this.obterEventoConcluido(this.visualizarPedido$.value.eventos);
-    }, 500);
-
   }
   emitirNotaFiscal() {
     this.enviando = true;

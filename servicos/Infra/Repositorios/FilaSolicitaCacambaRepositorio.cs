@@ -9,17 +9,19 @@ namespace Infra.Repositorios;
 public class FilaSolicitaCacambaRepositorio : IFilaSolicitaCacambaRepositorio
 {
     private readonly QueueClient _queueClient;
+    private readonly StorageContextSettings _storageContextSettings;
 
-    private readonly StorageContext _storageContext;
-
-    public FilaSolicitaCacambaRepositorio(IOptions<StorageContext> storageContext)
+    public FilaSolicitaCacambaRepositorio(IOptions<StorageContextSettings> storageContextSettings)
     {
-        _storageContext = storageContext.Value;
-        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba,
-        new QueueClientOptions
-        {
-            MessageEncoding = QueueMessageEncoding.Base64
-        });
+        _storageContextSettings = storageContextSettings.Value;
+        _queueClient = new(
+            _storageContextSettings.ConnectionString,
+            _storageContextSettings.FilaSolicitaCTR,
+            new QueueClientOptions
+            {
+                MessageEncoding = QueueMessageEncoding.Base64
+            }
+        );
     }
     public async Task FilaSolicitaCTR(SolicitaCTRRequest ctr)
     {

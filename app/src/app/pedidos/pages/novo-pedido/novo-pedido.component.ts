@@ -42,7 +42,7 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
     valorPedido: ['']
   })
   listCacambas: VisualizarTipoCacamba[] = [];
-  
+
   constructor(
     private clienteService: ClienteService,
     private fb: NonNullableFormBuilder,
