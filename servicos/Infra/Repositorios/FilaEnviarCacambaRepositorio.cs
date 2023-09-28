@@ -14,7 +14,7 @@ public class FilaEnviarCacambaRepositorio : IFilaEnviarCacambaRepositorio
     public FilaEnviarCacambaRepositorio(IOptions<StorageContextSettings> storageContext)
     {
         _storageContext = storageContext.Value;
-        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba)
+        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba);
         new QueueClientOptions
         {
             MessageEncoding = QueueMessageEncoding.Base64
