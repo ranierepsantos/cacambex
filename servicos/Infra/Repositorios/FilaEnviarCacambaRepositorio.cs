@@ -14,8 +14,7 @@ public class FilaEnviarCacambaRepositorio : IFilaEnviarCacambaRepositorio
     public FilaEnviarCacambaRepositorio(IOptions<StorageContextSettings> storageContext)
     {
         _storageContext = storageContext.Value;
-        //_queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba,
-        _queueClient = new("DefaultEndpointsProtocol=https;AccountName=grcacambexbrbaf4;AccountKey=RC6l6AOTXoKPhcbSY8EXb5WchJsGbhAkG+NQdH6VPiP9KCBsgXOkhyNiJ69nDg8/bBiSIfOy+fjr+AStYBHFRw==;EndpointSuffix=core.windows.net", "enviarcacamba",
+        _queueClient = new(_storageContext.ConnectionString, _storageContext.FilaEnviarCacamba)
         new QueueClientOptions
         {
             MessageEncoding = QueueMessageEncoding.Base64
