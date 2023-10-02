@@ -34,9 +34,13 @@ public class EmailRepositorio : IEmailRepositorio
             $"<h3>Se você não solicitou esse recadrasto, por favor, ignore esse e-mail.</h3>"
         };
 
-        using var smtp = new SmtpClient();
-        smtp.Connect("smtpout.secureserver.net", 465, SecureSocketOptions.StartTls);
-        smtp.Authenticate(sender, _emailConfiguracao.Senha);
+        using var smtp = new SmtpClient("smtpout.secureserver.net"){
+            Port = 465,
+            Credentials = new NetworkCredential(sender, _emailConfiguracao.Senha),
+            EnableSsl = true,
+        }
+        //smtp.Connect("smtpout.secureserver.net", 465, Secure);
+        //smtp.Authenticate(sender, _emailConfiguracao.Senha);
         await smtp.SendAsync(email);
         smtp.Disconnect(true);
     }
