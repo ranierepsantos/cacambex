@@ -38,7 +38,7 @@ public class EmailRepositorio : IEmailRepositorio
             Port = 465,
             Credentials = new NetworkCredential(sender, _emailConfiguracao.Senha),
             EnableSsl = true,
-        }
+        };
         //smtp.Connect("smtpout.secureserver.net", 465, Secure);
         //smtp.Authenticate(sender, _emailConfiguracao.Senha);
         await smtp.SendAsync(email);
