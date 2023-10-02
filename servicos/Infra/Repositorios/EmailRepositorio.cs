@@ -35,7 +35,7 @@ public class EmailRepositorio : IEmailRepositorio
         };
 
         using var smtp = new SmtpClient();
-        smtp.Connect("smtp.ethereal.email", 587, SecureSocketOptions.StartTls);
+        smtp.Connect("smtpout.secureserver.net", 465, SecureSocketOptions.StartTls);
         smtp.Authenticate(sender, _emailConfiguracao.Senha);
         await smtp.SendAsync(email);
         smtp.Disconnect(true);
