@@ -27,7 +27,7 @@ export class ClientesComponent implements OnInit {
 
   private obterClientes(
     pageIndex: number = 0,
-    pageSize: number = 10
+    pageSize: number = 100000
   ) {
     this.clienteService
       .obterCliente(pageIndex, pageSize)
