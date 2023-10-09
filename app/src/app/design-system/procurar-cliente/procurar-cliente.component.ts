@@ -44,7 +44,7 @@ export class ProcurarClienteComponent implements OnInit {
   }
   obterClientes(
     pageIndex: number = 0,
-    pageSize: number = 10
+    pageSize: number = 99999
   ) {
     this.clienteService.obterCliente(pageIndex, pageSize).subscribe((x) => {
       this.dataSource = x;
