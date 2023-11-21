@@ -20,12 +20,7 @@ public class OmiePedidos : IOmiePedidos
         try
         {
 
-            var httpTest = await _configurations.OMIE_TEST_URL
-             .AppendPathSegment("teste")
-             .WithHeader("Content-type", "application/json")
-             .WithHeader("accept", "application/json")
-             .PostJsonAsync(request)
-             .ReceiveJson<OmieOrdemServicoResult>();
+            Console.WriteLine(request);
 
 
             var httpResult = await _configurations.OMIE_URL
