@@ -110,7 +110,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
                             codigo_cliente_omie = cliente.Codigo_cliente_omie
                         }
                     }
-                }).ReceiveString();
+                }).ReceiveJson();
 
             var jsonResponse = JObject.Parse(responseString);
 
@@ -127,7 +127,6 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         catch (FlurlHttpException ex)
         {
             _logger.LogError($"Erro ao analisar resposta JSON: {ex.Message}");
-            var errors = await ex.GetResponseJsonAsync<OmieErrorResult>();
         }
 
         //FIM CONSULTA CLIENTE
