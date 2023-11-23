@@ -19,23 +19,38 @@ public async Task<Resposta> CriarPedido(OmieRequest request)
 {
     try
     {
-        // Consultar a API para obter informações do serviço
-        var consultaApiResult = await ConsultarApiServico(request.param[0].servicosPrestados.nCodServico);
-
-        // Verificar se a consulta foi bem-sucedida
-        if (consultaApiResult != null)
+        // Verificar se há pelo menos um parâmetro na lista
+        if (request.param != null && request.param.Count > 0)
         {
-            // Adicionar as informações de imposto ao objeto request
-            request.param[0].servicosPrestados.impostos = new
+            // Obter o primeiro parâmetro da lista
+            var primeiroParametro = request.param[0] as Dictionary<string, object>;
+
+            // Verificar se a conversão foi bem-sucedida e se contém a chave "servicosPrestados"
+            if (primeiroParametro != null && primeiroParametro.TryGetValue("servicosPrestados", out var servicosPrestadosObj) && servicosPrestadosObj is Dictionary<string, object> servicosPrestados)
             {
-                cRetemIRRF = consultaApiResult.impostos.cRetIR,
-                cRetemPIS = consultaApiResult.impostos.cRetPIS,
-                nAliqCOFINS = consultaApiResult.impostos.nAliqCOFINS,
-                nAliqCSLL = consultaApiResult.impostos.nAliqCSLL,
-                nAliqIRRF = consultaApiResult.impostos.nAliqIR,
-                nAliqISS = consultaApiResult.impostos.nAliqISS,
-                nAliqPIS = consultaApiResult.impostos.nAliqPIS
-            };
+                // Verificar se "nCodServico" está presente antes de consultar a API
+                if (servicosPrestados.TryGetValue("nCodServico", out var nCodServicoObj) && nCodServicoObj is long nCodServico)
+                {
+                    // Consultar a API para obter informações do serviço
+                    var consultaApiResult = await ConsultarApiServico(nCodServico);
+
+                    // Verificar se a consulta foi bem-sucedida
+                    if (consultaApiResult != null)
+                    {
+                        // Adicionar as informações de imposto ao objeto request
+                        servicosPrestados["impostos"] = new
+                        {
+                            cRetemIRRF = consultaApiResult.impostos.cRetIR,
+                            cRetemPIS = consultaApiResult.impostos.cRetPIS,
+                            nAliqCOFINS = consultaApiResult.impostos.nAliqCOFINS,
+                            nAliqCSLL = consultaApiResult.impostos.nAliqCSLL,
+                            nAliqIRRF = consultaApiResult.impostos.nAliqIR,
+                            nAliqISS = consultaApiResult.impostos.nAliqISS,
+                            nAliqPIS = consultaApiResult.impostos.nAliqPIS
+                        };
+                    }
+                }
+            }
         }
 
         // Realizar a requisição POST
