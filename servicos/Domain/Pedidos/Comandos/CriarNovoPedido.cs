@@ -12,8 +12,6 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Flurl;
 using Flurl.Http;
-using Domain.Omie.Clientes.OmieClienteResults;
-
 
 
 namespace Domain.Pedidos.Comandos;
@@ -111,9 +109,9 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
                         codigo_cliente_omie = cliente.Codigo_cliente_omie
                     }
                 }
-            }).ReceiveJson<OmieObterClienteResult>();
+            }).ReceiveJson<ClienteOmie>();
 
-            if(httpConsultaCliente.pessoa_fisica == "S"){
+            if(httpConsultaCliente.Pessoa_fisica == "S"){
                 nCodServ = 2464051552;
             }else{
                 nCodServ = 2464051484;
@@ -193,4 +191,11 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         return omieResponse;
         
     }
+
+}
+
+public class ClienteOmie
+{
+    public long CodigoClienteOmie { get; set; }
+    public string Pessoa_fisica { get; set; }
 }
