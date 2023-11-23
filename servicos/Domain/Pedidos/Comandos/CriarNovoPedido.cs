@@ -10,6 +10,11 @@ using Domain.Pedidos.Validacoes;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Flurl;
+using Flurl.Http;
+using Domain.Omie.Clientes.OmieClienteResults;
+
+
 
 namespace Domain.Pedidos.Comandos;
 
@@ -30,13 +35,16 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
     private readonly ILogger<NovoPedidoManipulador> _logger;
     private readonly IMediator _mediator;
 
+     private readonly OmieConfigurations _configurations;
+
     public NovoPedidoManipulador(
                                  IPedidoRepositorio pedidoRepositorio,
                                  IClienteRepositorio clienteRepositorio,
                                  ICacambaRepositorio cacambaRepositorio,
                                  ILogger<NovoPedidoManipulador> logger,
                                  IOptions<OmieInformacoesAdicionais> informacoesAdicionais,
-                                 IMediator mediator)
+                                 IMediator mediator,
+                                 OmieConfigurations configurations)
     {
         _pedidoRepositorio = pedidoRepositorio;
         _clienteRepositorio = clienteRepositorio;
@@ -44,6 +52,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         _logger = logger;
         _informacoesAdicionais = informacoesAdicionais.Value;
         _mediator = mediator;
+        _configurations = configurations;
     }
 
     public async Task<Resposta> Handle(NovoPedidoComando request, CancellationToken cancellationToken)
@@ -68,6 +77,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         }
 
         var cliente = _clienteRepositorio.ObterClientePorIdComEndereco(request.ClienteId);
+
         if (cliente is null)
         {
             _logger.LogError("**********Cliente nao encontrado.**********");
@@ -80,6 +90,41 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
             _logger.LogError("**********Nao existem cacambas com esse volume.**********");
             return new("Nao existem cacambas com esse volume.", false);
         }
+
+
+        var nCodServ = cacamba.nCodServ;
+
+        //consulta se o cliente é pessoa física ou jurídica
+        try
+        {
+            var httpConsultaCliente = await "https://app.omie.com.br/api/v1/geral/clientes/"
+            .WithTimeout(TimeSpan.FromMilliseconds(-1))
+            .PostJsonAsync(new
+            {
+                call = "ConsultarCliente",
+                app_key = _configurations.APP_KEY,
+                app_secret = _configurations.APP_SECRET,
+                param = new[]
+                {
+                    new
+                    {
+                        codigo_cliente_omie = cliente.Codigo_cliente_omie
+                    }
+                }
+            }).ReceiveJson<OmieObterClienteResult>();
+
+            if(httpConsultaCliente.pessoa_fisica == "S"){
+                nCodServ = 2464051552;
+            }else{
+                nCodServ = 2464051484;
+            }
+        }
+        catch (FlurlHttpException ex)
+        {
+            var errors = await ex.GetResponseJsonAsync<OmieErrorResult>();
+        }
+
+        //FIM CONSULTA CLIENTE
 
         var enderecoEntrega = _clienteRepositorio.ObterEnderecoEntregaDoCliente(request.EnderecoId);
         if (enderecoEntrega is null)
@@ -102,7 +147,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente);
 
         int sequenciaDoItem = 1;
-        ServicosPrestados servicosPrestados = new(1, cacamba.nCodServ, request.valorPedido, sequenciaDoItem);
+        ServicosPrestados servicosPrestados = new(1, nCodServ, request.valorPedido, sequenciaDoItem);
         string enviarNotaFiscal = "S";
         string enviarBoleto = "S";
         string naoEnviarBoleto = "S";
