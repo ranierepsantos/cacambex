@@ -20,21 +20,21 @@ public async Task<Resposta> CriarPedido(OmieRequest request)
     try
     {
         // Consultar a API para obter informações do serviço
-        var consultaApiResult = await ConsultarApiServico(request.param[0].servicosPrestados.nCodServico);
+        var consultaApiResult = await ConsultarApiServico(request.param[0]["servicosPrestados"]["nCodServico"]);
 
         // Verificar se a consulta foi bem-sucedida
         if (consultaApiResult != null)
         {
             // Adicionar as informações de imposto ao objeto request
-            request.param[0].servicosPrestados.impostos = new
+            request.param[0]["servicosPrestados"]["impostos"] = new
             {
-                cRetemIRRF = consultaApiResult.impostos.cRetIR,
-                cRetemPIS = consultaApiResult.impostos.cRetPIS,
-                nAliqCOFINS = consultaApiResult.impostos.nAliqCOFINS,
-                nAliqCSLL = consultaApiResult.impostos.nAliqCSLL,
-                nAliqIRRF = consultaApiResult.impostos.nAliqIR,
-                nAliqISS = consultaApiResult.impostos.nAliqISS,
-                nAliqPIS = consultaApiResult.impostos.nAliqPIS
+                cRetemIRRF = consultaApiResult["impostos"]["cRetIR"],
+                cRetemPIS = consultaApiResult["impostos"]["cRetPIS"],
+                nAliqCOFINS = consultaApiResult["impostos"]["nAliqCOFINS"],
+                nAliqCSLL = consultaApiResult["impostos"]["nAliqCSLL"],
+                nAliqIRRF = consultaApiResult["impostos"]["nAliqIR"],
+                nAliqISS = consultaApiResult["impostos"]["nAliqISS"],
+                nAliqPIS = consultaApiResult["impostos"]["nAliqPIS"]
             };
         }
 
