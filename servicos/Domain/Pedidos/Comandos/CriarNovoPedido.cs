@@ -100,8 +100,8 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
             .PostJsonAsync(new
             {
                 call = "ConsultarCliente",
-                app_key = _configurations.APP_KEY,
-                app_secret = _configurations.APP_SECRET,
+                app_key = "1955488711176",
+                app_secret = "deaa35aba6ac00e7d1057174b526570f",
                 param = new[]
                 {
                     new
@@ -119,6 +119,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         }
         catch (FlurlHttpException ex)
         {
+            _logger.LogError($"Erro ao analisar resposta JSON: {ex.Message}");
             var errors = await ex.GetResponseJsonAsync<OmieErrorResult>();
         }
 
