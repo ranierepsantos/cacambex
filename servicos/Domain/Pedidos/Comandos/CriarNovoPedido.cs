@@ -12,6 +12,7 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Flurl;
 using Flurl.Http;
+using Newtonsoft.Json.Linq;
 
 
 namespace Domain.Pedidos.Comandos;
@@ -95,23 +96,29 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         //consulta se o cliente é pessoa física ou jurídica
         try
         {
-            var httpConsultaCliente = await "https://app.omie.com.br/api/v1/geral/clientes/"
-            .WithTimeout(TimeSpan.FromMilliseconds(-1))
-            .PostJsonAsync(new
-            {
-                call = "ConsultarCliente",
-                app_key = "1955488711176",
-                app_secret = "deaa35aba6ac00e7d1057174b526570f",
-                param = new[]
+                var responseString = await "https://app.omie.com.br/api/v1/geral/clientes/"
+                .WithTimeout(TimeSpan.FromMilliseconds(-1))
+                .PostJsonAsync(new
                 {
-                    new
+                    call = "ConsultarCliente",
+                    app_key = "1955488711176",
+                    app_secret = "deaa35aba6ac00e7d1057174b526570f",
+                    param = new[]
                     {
-                        codigo_cliente_omie = cliente.Codigo_cliente_omie
+                        new
+                        {
+                            codigo_cliente_omie = cliente.Codigo_cliente_omie
+                        }
                     }
-                }
-            }).ReceiveJson<ClienteOmie>();
+                }).ReceiveString();
 
-            if(httpConsultaCliente.Pessoa_fisica == "S"){
+            var jsonResponse = JObject.Parse(responseString);
+
+            // A partir deste ponto, você pode acessar dinamicamente propriedades do JSON.
+            var pessoaFisica = jsonResponse["Pessoa_fisica"]?.ToString();
+            var codigoClienteOmie = jsonResponse["CodigoClienteOmie"]?.ToString();
+
+            if(pessoaFisica == "S"){
                 nCodServ = 2464051552;
             }else{
                 nCodServ = 2464051484;
