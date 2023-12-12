@@ -11,7 +11,7 @@
         </ca-procurar-cliente>
 
       </mat-card-content>
-      
+
       <mat-card-actions align="end">
 
         <button mat-raised-button type="button" color="secondary" routerLink="/pedidos">Cancelar</button>
@@ -59,7 +59,7 @@
               </mat-radio-button>
             </mat-radio-group>
           </ng-container>
-          
+
           <ng-container *ngIf="this.usuarioDecodificado.role == 'Administrador' && pedidoForm.get('volumeCacamba')?.value != ''">
             <mat-form-field appearance="legacy">
               <mat-label>Total Pedido</mat-label>
@@ -68,7 +68,7 @@
               <span matPrefix>R$ &nbsp;</span>
             </mat-form-field>
           </ng-container>
-          
+
         </mat-card-content>
 
         <mat-card-actions align="end">
@@ -145,7 +145,7 @@
         </div>
 
         <mat-form-field appearance="outline" class="observacao">
-          <textarea matInput maxlength="255" type="text" formControlName="observacao" placeholder="Observação">
+          <textarea matInput maxlength="255" type="text" formControlName="observacao" placeholder="Observação (Essa informação será descrita no campo descrição da nota fiscal)">
           </textarea>
           <mat-hint align="end">{{this.observacao.value.length || 0}}/255</mat-hint>
         </mat-form-field>
