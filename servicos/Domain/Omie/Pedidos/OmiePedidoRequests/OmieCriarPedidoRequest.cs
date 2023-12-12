@@ -5,7 +5,7 @@ using MediatR;
 namespace Domain.Omie.Pedidos.OmiePedidoRequests;
 public record OmieCriarPedidoRequest(Cabecalho cabecalho, InformacoesAdicionais informacoesAdicionais, ServicosPrestados servicosPrestados, Email email) : IRequest<Resposta>;
 public record Cabecalho(Guid cCodIntOS, long nCodCli, int nQtdeParc, string cEtapa);
-public record InformacoesAdicionais(string cCidPrestServ, string cCodCateg, long nCodCC);
+public record InformacoesAdicionais(string cCidPrestServ, string cCodCateg, long nCodCC, string? cDadosAdicNF = null);
 public record ServicosPrestados(int nQtde, long nCodServico, decimal nValUnit, int nSeqItem, string? cAcaoItem = null);
 public record Email(string cEnvLink, string cEnvBoleto, string cEnviarPara);
 public class OmieCriarPedidoHandler : IRequestHandler<OmieCriarPedidoRequest, Resposta>

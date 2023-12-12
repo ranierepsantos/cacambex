@@ -151,7 +151,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         var cidadeCliente = cliente.EnderecoCobranca.Cidade;
         var estadoCliente = cliente.EnderecoCobranca.UF;
         string cidadeEstado = cidadeCliente + " (" + estadoCliente + ")";
-        InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente);
+        InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente, _informacoesAdicionais.observacao);
 
         int sequenciaDoItem = 1;
         ServicosPrestados servicosPrestados = new(1, nCodServ, request.valorPedido, sequenciaDoItem);
