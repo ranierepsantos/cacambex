@@ -157,7 +157,7 @@ public class NovoPedidoManipulador : IRequestHandler<NovoPedidoComando, Resposta
         ServicosPrestados servicosPrestados = new(1, nCodServ, request.valorPedido, sequenciaDoItem);
         string enviarNotaFiscal = "S";
         string enviarBoleto = "S";
-        string naoEnviarBoleto = "S";
+        string naoEnviarBoleto = "N"; 
 
         Email email = (request.TipoDePagamento is TipoDePagamento.Boleto) ?
         new(enviarNotaFiscal, enviarBoleto, cliente.Email)
