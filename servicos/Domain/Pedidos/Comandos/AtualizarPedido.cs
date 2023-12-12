@@ -94,7 +94,7 @@ public class AtualizarPedido : IRequestHandler<AtualizarPedidoComando, Resposta>
         var cidadeCliente = pedido.Cliente.EnderecoCobranca.Cidade;
         var estadoCliente = pedido.Cliente.EnderecoCobranca.UF;
         string cidadeEstado = cidadeCliente + " (" + estadoCliente + ")";
-        InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente, _informacoesAdicionais.observacao);
+        InformacoesAdicionais informacoesAdicionais = new(cidadeEstado, _informacoesAdicionais.CodigoCategoria, _informacoesAdicionais.ContaCorrente, _informacoesAdicionais.Observacao);
 
 
         int sequenciaDoItem = 1;
