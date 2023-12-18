@@ -144,6 +144,13 @@
           </mat-button-toggle-group>
         </div>
 
+        <mat-form-field appearance="fill">
+          <mat-label>Data de faturamento</mat-label>
+          <input matInput [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
         <mat-form-field appearance="outline" class="observacao">
           <textarea matInput maxlength="255" type="text" formControlName="observacao" placeholder="Observação (Essa informação será descrita no campo descrição da nota fiscal)">
           </textarea>
