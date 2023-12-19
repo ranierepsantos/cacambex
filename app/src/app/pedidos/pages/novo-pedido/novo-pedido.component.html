@@ -146,7 +146,7 @@
 
         <mat-form-field appearance="fill">
           <mat-label>Data de faturamento</mat-label>
-          <input matInput [matDatepicker]="picker">
+          <input matInput [matDatepicker]="picker" ormControlName="dataFaturamento">
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
         </mat-form-field>
