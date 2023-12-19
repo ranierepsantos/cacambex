@@ -39,7 +39,8 @@ export class NovoPedidoComponent implements OnInit, AfterViewInit {
     enderecoId: [this.endId],
     tipoDePagamento: [''],
     observacao: [''],
-    valorPedido: ['']
+    valorPedido: [''],
+    dataFaturamento: ['']
   })
   listCacambas: VisualizarTipoCacamba[] = [];
 

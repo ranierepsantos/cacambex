@@ -17,12 +17,14 @@ public class Pedido : Entidade, IAggregateRoot
         string observacao,
         decimal valorPedido,
         Guid cCodIntOS,
-        long nCodOS)
+        long nCodOS,
+        Date dataFaturamento)
     {
         Cliente = cliente;
         TipoDePagamento = tipoDePagamento;
         PedidoItem = pedidoItem;
         Observacao = observacao;
+        DataFaturamento = dataFaturamento;
         EnderecoEntrega = enderecoEntrega;
         ValorPedido = valorPedido;
         Ativo = true;
